@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6g81h6yam6go"]
+[gd_scene load_steps=7 format=3 uid="uid://c6g81h6yam6go"]
 
 [ext_resource type="PackedScene" uid="uid://b1hixpwyg6q0" path="res://Scenes/card_view.tscn" id="1_0qqmn"]
 [ext_resource type="Script" uid="uid://cwj5hpa57gbjs" path="res://Scripts/Cards/card.gd" id="1_u5wvb"]
 [ext_resource type="Script" uid="uid://dabu40xay05va" path="res://Scripts/Cards/card_player.gd" id="2_brehn"]
-[ext_resource type="PackedScene" uid="uid://dj8qx7bp1lf3b" path="res://Scenes/card_movement.tscn" id="4_e6po8"]
+[ext_resource type="PackedScene" uid="uid://dj8qx7bp1lf3b" path="res://Scenes/card_transform_animator.tscn" id="4_e6po8"]
 [ext_resource type="PackedScene" uid="uid://cusfhxfmh7gyh" path="res://Scenes/drag.tscn" id="5_bnspj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6po8"]
+size = Vector2(776, 1108)
 
 [node name="Card" type="Node2D"]
 script = ExtResource("1_u5wvb")
@@ -14,6 +17,18 @@ script = ExtResource("1_u5wvb")
 [node name="CardPlayer" type="Node" parent="."]
 script = ExtResource("2_brehn")
 
-[node name="CardMovement" parent="." instance=ExtResource("4_e6po8")]
+[node name="CardTransformAnimator" parent="." instance=ExtResource("4_e6po8")]
 
 [node name="Drag" parent="." instance=ExtResource("5_bnspj")]
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, -2)
+shape = SubResource("RectangleShape2D_e6po8")
+
+[connection signal="started_dragging" from="Drag" to="." method="_on_drag_started_dragging"]
+[connection signal="stopped_dragging" from="Drag" to="." method="_on_drag_stopped_dragging"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

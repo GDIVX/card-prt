@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b1hixpwyg6q0"]
+[gd_scene load_steps=11 format=3 uid="uid://b1hixpwyg6q0"]
 
 [ext_resource type="Texture2D" uid="uid://d35oqquaipu6u" path="res://Sprites/UI/fantasy card/card fantasy back.png" id="1_d6b8v"]
 [ext_resource type="Script" uid="uid://c7j3wgceyxvob" path="res://Scripts/Cards/card_view.gd" id="1_xamp4"]
@@ -20,9 +20,6 @@ default_font_size = 35
 [sub_resource type="LabelSettings" id="LabelSettings_sj14m"]
 font = ExtResource("7_1qmrt")
 font_size = 80
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6b8v"]
-size = Vector2(776, 1108)
 
 [node name="CardView" type="Node2D"]
 script = ExtResource("1_xamp4")
@@ -73,6 +70,7 @@ text = "This is a long very very vertyy long text texty texty that says a lot ab
 oh wow! New line!
 
 Oh great! *bold* "
+fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [node name="CostFrame" type="Sprite2D" parent="."]
@@ -94,10 +92,3 @@ label_settings = SubResource("LabelSettings_sj14m")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
-
-[node name="Area2D" type="Area2D" parent="."]
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4, -2)
-shape = SubResource("RectangleShape2D_d6b8v")

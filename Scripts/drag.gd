@@ -1,4 +1,4 @@
-extends Node2D
+class_name Drag extends Node2D
 
 @export var smoothness_speed: float = 1
 @export var smoothing_curve: Curve = Curve.new()

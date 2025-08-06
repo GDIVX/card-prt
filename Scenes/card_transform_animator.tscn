@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj8qx7bp1lf3b"]
 
-[ext_resource type="Script" uid="uid://dyqmfpvwahxa6" path="res://Scripts/Cards/card_movement.gd" id="1_y66o6"]
+[ext_resource type="Script" uid="uid://dyqmfpvwahxa6" path="res://Scripts/Cards/card_transform_animator.gd" id="1_h0wua"]
 
-[node name="CardMovement" type="Node2D"]
-script = ExtResource("1_y66o6")
+[node name="CardTransformAnimator" type="Node2D"]
+script = ExtResource("1_h0wua")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 rect = Rect2(-372, -519.5, 744, 1039)
