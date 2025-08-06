@@ -1,23 +1,20 @@
 class_name CardView
-extends Node2D
+extends Control
 
+@export_category("params")
 @export var header: String
 @export var description: String
 @export var artwork: Texture2D
 @export var cost: int
 
-#nodes to display params
-var _header_label: Label
-var _description_label: RichTextLabel 
-var _artwork_sprite: Sprite2D
-var _cost_label: Label
+@export_category("nodes")
+@export var _header_label: Label
+@export var _description_label: RichTextLabel 
+@export var _artwork_sprite: TextureRect
+@export var _cost_label: Label
 
 
-func _ready() -> void:
-	_header_label = get_node("CardFrame/Header") 
-	_description_label = get_node("CardFrame/Description")
-	_artwork_sprite = get_node("Artwork Container/Artwork")
-	_cost_label = get_node("CostFrame/CostLabel")
+
 
 
 func display_card():

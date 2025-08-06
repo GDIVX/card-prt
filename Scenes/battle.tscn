@@ -4,26 +4,13 @@
 
 [node name="Battle" type="Node2D"]
 
-[node name="Card" parent="." instance=ExtResource("1_w7k78")]
-position = Vector2(-5, 712)
-
-[node name="Card2" parent="." instance=ExtResource("1_w7k78")]
-position = Vector2(813, 694)
-
-[node name="Card3" parent="." instance=ExtResource("1_w7k78")]
-position = Vector2(-837, 717)
-
-[node name="Card4" parent="." instance=ExtResource("1_w7k78")]
-position = Vector2(-1733, 703)
-
-[node name="Card5" parent="." instance=ExtResource("1_w7k78")]
-position = Vector2(1663, 694)
-
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.35, 0.35)
 limit_left = -500
 limit_top = 500
 limit_right = 500
 limit_bottom = -500
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="Card" parent="." instance=ExtResource("1_w7k78")]
+position = Vector2(-598, 548)

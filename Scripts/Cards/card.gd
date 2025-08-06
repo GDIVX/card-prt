@@ -38,29 +38,4 @@ func _handle_card_play() -> void:
 
 
 
-
-func _on_drag_stopped_dragging() -> void:
-	pass # Replace with function body.
-
-
-func _on_drag_started_dragging() -> void:
-	pass # Replace with function body.
-
-
-func _on_area_2d_mouse_exited() -> void:
-	var drag:Drag = $Drag
-	if drag and drag.is_selected: return
-	# reset the card transform to the anchor
-	card_transform_animator.reset(on_reset_tween_duration)
-
-func _on_area_2d_mouse_entered() -> void:
-	var drag:Drag = $Drag
-	if drag and drag.is_selected: return
-	# Scale the card and slightly move it up when hovered
-	card_transform_animator.animate_to_scale(on_hover_scale, on_hover_tween_duration)
-	card_transform_animator.animate_to(
-		card_transform_animator.anchor_position + Vector2(0, on_hover_y_offset),
-		card_transform_animator.anchor_rotation_degrees,
-		on_hover_tween_duration
-	)
 	

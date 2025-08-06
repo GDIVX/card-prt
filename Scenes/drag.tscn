@@ -7,7 +7,7 @@ _data = [Vector2(0, 0), 0.0, 1.3326, 0, 0, Vector2(0.753086, 0.991985), 2.92111,
 point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eumee"]
-size = Vector2(776, 1108)
+size = Vector2(250, 350)
 
 [node name="Drag" type="Node2D"]
 script = ExtResource("1_oqoye")
