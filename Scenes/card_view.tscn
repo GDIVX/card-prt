@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1hixpwyg6q0"]
+
+[ext_resource type="Texture2D" uid="uid://d35oqquaipu6u" path="res://Sprites/UI/fantasy card/card fantasy back.png" id="1_d6b8v"]
+[ext_resource type="Script" uid="uid://c7j3wgceyxvob" path="res://Scripts/Cards/card_view.gd" id="1_xamp4"]
+[ext_resource type="Texture2D" uid="uid://dm3yen1lc4oua" path="res://Sprites/UI/CardFront.png" id="3_j67o0"]
+[ext_resource type="FontFile" uid="uid://gfci41uvpimu" path="res://Themes/Fonts/Roboto-Black.ttf" id="4_4u580"]
+[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://Themes/Fonts/Roboto-Medium.ttf" id="5_d6b8v"]
+[ext_resource type="Texture2D" uid="uid://hsnkgmdurnai" path="res://Sprites/UI/fantasy card/icons/vampire golden frame.png" id="6_acxyf"]
+[ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="7_1qmrt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvxpl"]
+font = ExtResource("4_4u580")
+font_size = 45
+shadow_color = Color(0, 0, 0, 0.439216)
+
+[sub_resource type="Theme" id="Theme_xamp4"]
+default_font = ExtResource("5_d6b8v")
+default_font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_sj14m"]
+font = ExtResource("7_1qmrt")
+font_size = 80
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d6b8v"]
+size = Vector2(776, 1108)
+
+[node name="CardView" type="Node2D"]
+script = ExtResource("1_xamp4")
+
+[node name="Artwork Container" type="Sprite2D" parent="."]
+clip_children = 1
+texture = ExtResource("1_d6b8v")
+
+[node name="Artwork" type="Sprite2D" parent="Artwork Container"]
+
+[node name="CardFrame" type="Sprite2D" parent="."]
+texture = ExtResource("3_j67o0")
+
+[node name="Header" type="Label" parent="CardFrame"]
+anchors_preset = -1
+anchor_left = 0.06
+anchor_top = 0.617
+anchor_right = 0.946
+anchor_bottom = 0.672
+offset_left = -374.64
+offset_top = -520.063
+offset_right = -374.64
+offset_bottom = -520.063
+grow_horizontal = 2
+grow_vertical = 2
+text = "Header"
+label_settings = SubResource("LabelSettings_yvxpl")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Description" type="RichTextLabel" parent="CardFrame"]
+anchors_preset = -1
+anchor_left = 0.058
+anchor_top = 0.68
+anchor_right = 0.942
+anchor_bottom = 0.956
+offset_left = -368.152
+offset_top = -515.52
+offset_right = -376.848
+offset_bottom = -522.284
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme = SubResource("Theme_xamp4")
+bbcode_enabled = true
+text = "This is a long very very vertyy long text texty texty that says a lot about the thingy majig and all of its wonders.
+oh wow! New line!
+
+Oh great! *bold* "
+metadata/_edit_use_anchors_ = true
+
+[node name="CostFrame" type="Sprite2D" parent="."]
+position = Vector2(-355, -504)
+texture = ExtResource("6_acxyf")
+
+[node name="CostLabel" type="Label" parent="CostFrame"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -117.5
+offset_top = -117.5
+offset_right = -117.5
+offset_bottom = -117.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+label_settings = SubResource("LabelSettings_sj14m")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4, -2)
+shape = SubResource("RectangleShape2D_d6b8v")

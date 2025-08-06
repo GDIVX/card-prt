@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bk33as3v8egl1"]
+
+[ext_resource type="FontFile" uid="uid://gfci41uvpimu" path="res://Themes/Fonts/Roboto-Black.ttf" id="1_3js1v"]
+
+[resource]
+default_base_scale = 1.0
+default_font = ExtResource("1_3js1v")
+default_font_size = 14
