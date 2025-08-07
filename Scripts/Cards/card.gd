@@ -7,10 +7,12 @@ extends Node2D
 @export var on_hover_tween_duration: float = 0.2
 @export var on_reset_tween_duration: float = 0.3
 
+@export var card_view: CardView
+@export var card_player: CardPlayer
+@export var card_transform_animator: CardTransformAnimator
+
+
 var _is_bind = false
-@onready var card_view: CardView = $CardView
-@onready var card_player: CardPlayer = $CardPlayer
-@onready var card_transform_animator: CardTransformAnimator = $CardTransformAnimator
 
 
 ## Bind card data to the card

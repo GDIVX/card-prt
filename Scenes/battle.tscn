@@ -1,8 +1,19 @@
 [gd_scene load_steps=2 format=3 uid="uid://dmkj4psn3atng"]
 
-[ext_resource type="PackedScene" uid="uid://c6g81h6yam6go" path="res://Scenes/card.tscn" id="1_w7k78"]
+[ext_resource type="PackedScene" uid="uid://cd3mdwykfe6t1" path="res://Scenes/hand.tscn" id="2_oxf17"]
 
 [node name="Battle" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hand" parent="CanvasLayer" instance=ExtResource("2_oxf17")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+offset_top = -117.0
+offset_bottom = -4.0
+grow_vertical = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -500
@@ -12,5 +23,9 @@ limit_bottom = -500
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Card" parent="." instance=ExtResource("1_w7k78")]
-position = Vector2(-598, 548)
+[node name="Button" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Create Card"
+
+[connection signal="pressed" from="Button" to="CanvasLayer/Hand" method="_on_button_pressed"]

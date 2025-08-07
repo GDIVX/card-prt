@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd3mdwykfe6t1"]
+
+[ext_resource type="Script" uid="uid://csdra7o8sg8tq" path="res://Scripts/Cards/hand.gd" id="1_u7o8q"]
+[ext_resource type="PackedScene" uid="uid://c6g81h6yam6go" path="res://Scenes/card.tscn" id="2_jrln0"]
+[ext_resource type="Script" uid="uid://ced1g4ui0fedw" path="res://Scripts/GUI/fan_contiener.gd" id="2_vumah"]
+
+[sub_resource type="Curve" id="Curve_u7o8q"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 2.0, 0, 1, Vector2(1, 1), 2.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vumah"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 10.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), -10.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_jrln0"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 2.0, 0, 1, Vector2(1, 1), 2.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="Hand" type="Control" node_paths=PackedStringArray("fan")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_u7o8q")
+card_scene = ExtResource("2_jrln0")
+fan = NodePath("FanContiener")
+
+[node name="FanContiener" type="Container" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_vumah")
+animation_speed = 0.3
+spread_curve = SubResource("Curve_u7o8q")
+hand_width = 500.0
+height_curve = SubResource("Curve_vumah")
+hand_height = 50.0
+rotation_curve = SubResource("Curve_jrln0")
+rotation_strength = 10.0

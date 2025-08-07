@@ -41,11 +41,11 @@ func animate_to(target_position: Vector2, target_rotation_degrees: float, durati
 
 	reset_tween()
 	
-	tween.tween_property(root, "position", target_position , duration)\
-	.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+	tween.parallel().tween_property(root, "position", target_position, duration)\
+		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 
-	tween.tween_property(root,"rotation_degrees", target_rotation_degrees , duration)\
-	.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+	tween.parallel().tween_property(root, "rotation_degrees", target_rotation_degrees, duration)\
+		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 
 func animate_to_scale(target_scale: Vector2, duration: float = 1):
 	if root == null:
