@@ -1,11 +1,11 @@
 class_name CardPlayer
 extends Node
 
-var _card_effects: Array[CardEffectData]
+var _card_effects: Array[CardEffect]
 var _range: float
 var _card_cost: int
 
-func bind_data(effects : Array[CardEffectData], targeting_range: float, cost: int) -> void:
+func bind_data(effects : Array[CardEffect], targeting_range: float, cost: int) -> void:
     _card_effects = effects
     _range = targeting_range
     _card_cost = cost
@@ -13,5 +13,5 @@ func bind_data(effects : Array[CardEffectData], targeting_range: float, cost: in
 
 func play():
     #TODO: implement target finding 
-    for effect_data: CardEffectData in _card_effects:
-        effect_data.card_effect.apply(self, [], effect_data.params)
+    for effect: CardEffect in _card_effects:
+        effect.apply(self, [])

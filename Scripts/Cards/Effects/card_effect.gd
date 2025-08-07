@@ -2,5 +2,5 @@
 class_name CardEffect
 extends Resource
 
-func apply(_caster, _targets: Array, _effect_params: Dictionary) -> void:
+func apply(_caster, _targets: Array) -> void:
     pass #replace with implementation

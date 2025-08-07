@@ -1,9 +1,13 @@
+## A resource that holds the data for a card
+## It is used to create a card instance in the game
 class_name CardData
 extends Resource
 
+## The card style defines the visual representation of the card
 @export var card_style : CardStyle
 
 @export_category("Stats")
+## The cost of the card, used to determine if the player can play it
 @export var cost: int
 
 
@@ -14,5 +18,7 @@ extends Resource
 
 
 @export_category("Effects")
-@export var card_effects: Array[CardEffectData]
+## The effects that the card has when played
+## Each effect is a CardEffect resource that defines the effect's behavior 
+@export var card_effects: Array[CardEffect]
 

@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="PrintLineEffect" load_steps=2 format=3 uid="uid://b25l613h7ck6w"]
-
-[ext_resource type="Script" uid="uid://2tmf5kbpcvp8" path="res://Scripts/Cards/Effects/log_string_effect.gd" id="1_6rf6y"]
-
-[resource]
-script = ExtResource("1_6rf6y")
-metadata/_custom_type_script = "uid://2tmf5kbpcvp8"
