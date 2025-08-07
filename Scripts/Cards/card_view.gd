@@ -13,7 +13,20 @@ extends Control
 @export var _artwork_sprite: TextureRect
 @export var _cost_label: Label
 
+@export_category("tweens")
+@export var hover_scale: Vector2 = Vector2(1.1, 1.1)
+@export var hover_y_offset: float = -10
+@export var hover_tween_duration: float = 0.2
+@export var reset_tween_duration: float = 0.3
+@export var scale_curve: Curve
+@export var y_offset_curve: Curve
 
+var _original_scale: Vector2
+var _original_position: Vector2
+
+func _ready() -> void:
+	_original_scale = self.scale
+	_original_position = self.position
 
 
 
@@ -30,3 +43,27 @@ func assign_data(data: CardStyle, cost_value: int):
 	artwork = data.Artwork
 	cost = cost_value
 
+
+var tween: Tween
+
+func  _refresh_tween() -> void:
+	if tween:
+		tween.kill()
+	tween = get_tree().create_tween()
+
+func _on_card_frame_mouse_entered() -> void:
+	_refresh_tween()
+	tween.parallel().tween_property(self, "position", self.position + Vector2(0, hover_y_offset), hover_tween_duration)\
+	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "scale", hover_scale, hover_tween_duration)\
+	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	z_index = 1000  # Bring to front when hovered
+
+
+func _on_card_frame_mouse_exited() -> void:
+	_refresh_tween()
+	tween.parallel().tween_property(self, "scale", _original_scale, reset_tween_duration)\
+	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "position", _original_position, reset_tween_duration)\
+	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	z_index = 0  # Reset z-index when not hovered

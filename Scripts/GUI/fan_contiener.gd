@@ -29,4 +29,4 @@ func arrange_cards(cards: Array[Card]) -> void:
 
 		card.anchor_rotation_degrees = rotation_curve.sample(normalized_index) * rotation_strength
 
-		card.reset(animation_speed)
+		card.move_to_anchor(animation_speed)

@@ -60,6 +60,7 @@ offset_right = 1.27588
 offset_bottom = 1.19998
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("2_d6b8v")
 expand_mode = 1
 stretch_mode = 6
@@ -112,6 +113,7 @@ anchor_right = 0.132
 anchor_bottom = 0.143
 offset_left = 0.5
 offset_bottom = -0.0500031
+mouse_filter = 2
 texture = ExtResource("6_acxyf")
 expand_mode = 3
 stretch_mode = 4
@@ -127,3 +129,6 @@ text = "3"
 label_settings = SubResource("LabelSettings_sj14m")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="mouse_entered" from="CardFrame" to="." method="_on_card_frame_mouse_entered"]
+[connection signal="mouse_exited" from="CardFrame" to="." method="_on_card_frame_mouse_exited"]

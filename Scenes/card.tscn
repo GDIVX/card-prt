@@ -13,12 +13,12 @@ card_player = NodePath("CardPlayer")
 card_transform_animator = NodePath("CardTransformAnimator")
 
 [node name="CardView" parent="." instance=ExtResource("1_0qqmn")]
-offset_left = -125.0
-offset_top = -175.0
-offset_right = 125.0
-offset_bottom = 175.0
+offset_right = 250.0
+offset_bottom = 350.0
 
 [node name="CardPlayer" type="Node" parent="."]
 script = ExtResource("2_brehn")
 
 [node name="CardTransformAnimator" parent="." instance=ExtResource("4_e6po8")]
+
+[connection signal="gui_input" from="CardView" to="." method="_on_card_view_gui_input"]
