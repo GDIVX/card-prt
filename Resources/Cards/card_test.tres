@@ -11,23 +11,24 @@ script = ExtResource("2_noif3")
 line = "I love GODOT"
 metadata/_custom_type_script = "uid://2tmf5kbpcvp8"
 
-[sub_resource type="Resource" id="Resource_odagn"]
+[sub_resource type="Resource" id="Resource_noif3"]
 script = ExtResource("2_noif3")
-line = "So so much!"
+line = "Default line to print"
 metadata/_custom_type_script = "uid://2tmf5kbpcvp8"
 
 [sub_resource type="Resource" id="Resource_4uo8f"]
 script = ExtResource("3_noif3")
 Header = "Nice Card"
 Description = "Print the phrase \"Nice Line\". 
-Nice"
+[i]Nice[/i]"
 Artwork = ExtResource("3_s2vro")
 metadata/_custom_type_script = "uid://bxkotdmlu11v"
 
 [resource]
 script = ExtResource("2_f1ej5")
 card_style = SubResource("Resource_4uo8f")
+rarity = "Common"
 cost = 1
 targeting_range = 0.0
-card_effects = Array[ExtResource("1_noif3")]([SubResource("Resource_s2vro"), SubResource("Resource_odagn")])
+card_effects = Array[ExtResource("1_noif3")]([SubResource("Resource_s2vro"), SubResource("Resource_noif3")])
 metadata/_custom_type_script = "uid://kaflyex0gc61"

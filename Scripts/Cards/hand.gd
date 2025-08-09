@@ -14,7 +14,11 @@ func create_card(data: CardData) -> Card:
 	fan.arrange_cards(cards)
 	return card
 
-func _on_button_pressed() -> void:
-	#TODO: Tempt
-	var card_data = load("res://Resources/Cards/card_test.tres")
-	create_card(card_data)
+
+func remove_card(card: Card) -> void:
+	if card in cards:
+		cards.erase(card)
+		card.queue_free()
+		fan.arrange_cards(cards)
+	else:
+		push_error("Card not found in hand.")

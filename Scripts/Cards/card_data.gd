@@ -7,8 +7,11 @@ extends Resource
 @export var card_style : CardStyle
 
 @export_category("Stats")
+## The Rarity of the card, used to determine its availability and power level
+@export_enum("Common", "Uncommon", "Rare", "Epic", "Legendary") var rarity: String = "Common"
 ## The cost of the card, used to determine if the player can play it
 @export var cost: int
+
 
 
 @export_category("Targeting")
@@ -22,3 +25,10 @@ extends Resource
 ## Each effect is a CardEffect resource that defines the effect's behavior 
 @export var card_effects: Array[CardEffect]
 
+func _get_configuration_warning() -> String:
+	var warnings = []
+	if card_style == null:
+		warnings.append("Card Style is not set! The card will have no visuals.")
+	if card_effects.is_empty():
+		warnings.append("Card has no effects! It will do nothing when played.")
+	return "\n".join(warnings)

@@ -1,7 +1,6 @@
 ## Represent a card in the game
-## This script act as a mediator between the card view and the card player.
-## It handles the card's visual representation and its gameplay logic.
-## The card view displays the card's information, while the card player handles the card's effects
+##
+## This script act as a mediator between the card view and the card player and any other card related logic
 class_name Card
 extends Node2D
 

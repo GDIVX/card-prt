@@ -1,21 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=4 format=3 uid="uid://dmkj4psn3atng"]
 
-[ext_resource type="PackedScene" uid="uid://cd3mdwykfe6t1" path="res://Scenes/hand.tscn" id="2_oxf17"]
+[ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://Scripts/battle.gd" id="1_oxf17"]
+[ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/card_gameplay_system.tscn" id="1_w7k78"]
+[ext_resource type="Resource" uid="uid://bbg02utc33i84" path="res://Resources/Heroes/test_hero.tres" id="2_1ruyk"]
 
-[node name="Battle" type="Node2D"]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Hand" parent="CanvasLayer" instance=ExtResource("2_oxf17")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-offset_left = -125.0
-offset_top = -298.0
-offset_right = -125.0
-offset_bottom = 52.0
-grow_vertical = 0
+[node name="Battle" type="Node2D" node_paths=PackedStringArray("card_gameplay_system")]
+script = ExtResource("1_oxf17")
+card_gameplay_system = NodePath("CardGameplaySystem")
+test_hero = ExtResource("2_1ruyk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -500
@@ -30,4 +22,4 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Create Card"
 
-[connection signal="pressed" from="Button" to="CanvasLayer/Hand" method="_on_button_pressed"]
+[node name="CardGameplaySystem" parent="." instance=ExtResource("1_w7k78")]
