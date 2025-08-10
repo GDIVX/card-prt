@@ -14,11 +14,25 @@ extends Node2D
 
 ## Indicates whether the card has been bound with data and is ready for activation
 var _is_bind: bool = false
+## Indicates if the card can be played
+var is_playable:bool = false:
+	set(value):
+		is_playable = value
+		card_view.show_playable_state(value)
+		is_playable_changed.emit(self,value)
+
+## The data resource of the card
+var data: CardData
+
+#signals
+## Called when the card playable status had changed
+signal is_playable_changed(card:Card, is_playable_value:bool)
 
 ## Bind card data to the card
-func bind(data: CardData , should_activate: bool = true) -> void:
-	card_view.assign_data(data.card_style, data.cost)
-	card_player.bind_data(data.card_effects, data.targeting_range, data.cost)
+func bind(card_data: CardData , should_activate: bool = true) -> void:
+	data = card_data
+	card_view.assign_data(card_data.card_style, card_data.cost)
+	card_player.bind_data(card_data.card_effects, card_data.targeting_range, card_data.cost)
 	
 	_is_bind = true
 
@@ -35,12 +49,16 @@ func activate():
 	self.visible = true
 	card_transform_animator.snap_to_anchor()
 	card_view.display_card()
+	is_playable = true
 
 
 ## Handle the card play action
 func _handle_card_play() -> void:
 	if not _is_bind:
 		push_error("Can't play a card before it is binned")
+		return
+	if not is_playable: 
+		#TODO: Implement reason
 		return
 	#TODO: implement target finding
 	card_player.play()

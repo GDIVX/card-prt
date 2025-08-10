@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://66jr8s2fprv4"]
+[gd_scene load_steps=5 format=3 uid="uid://66jr8s2fprv4"]
 
 [ext_resource type="Script" uid="uid://1827nhugu7i5" path="res://Scripts/Cards/card_gameplay_system.gd" id="1_dlalk"]
 [ext_resource type="PackedScene" uid="uid://cd3mdwykfe6t1" path="res://Scenes/hand.tscn" id="1_p0pwc"]
 [ext_resource type="PackedScene" uid="uid://b50ea2eekeihk" path="res://Scenes/deck.tscn" id="2_m8xvi"]
+[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/counter.tscn" id="4_4xco6"]
 
-[node name="CardGameplaySystem" type="CanvasLayer" node_paths=PackedStringArray("deck", "hand")]
+[node name="CardGameplaySystem" type="Control" node_paths=PackedStringArray("deck", "hand")]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_dlalk")
 deck = NodePath("Deck")
 hand = NodePath("Hand")
 
 [node name="Hand" parent="." instance=ExtResource("1_p0pwc")]
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -21,4 +25,16 @@ offset_bottom = 52.0
 grow_vertical = 0
 
 [node name="Deck" parent="." instance=ExtResource("2_m8xvi")]
+layout_mode = 1
 mouse_filter = 2
+
+[node name="Counter" parent="." instance=ExtResource("4_4xco6")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -25.0
+offset_bottom = 25.0
+grow_vertical = 2
+
+[editable path="Counter"]

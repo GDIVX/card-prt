@@ -13,13 +13,17 @@ extends Control
 @export var _artwork_sprite: TextureRect
 @export var _cost_label: Label
 
-@export_category("tweens")
+@export_category("hover")
 @export var hover_scale: Vector2 = Vector2(1.1, 1.1)
 @export var hover_y_offset: float = -10
 @export var hover_tween_duration: float = 0.2
 @export var reset_tween_duration: float = 0.3
-@export var scale_curve: Curve
-@export var y_offset_curve: Curve
+
+
+@export_category("Text")
+@export var playable_color:Color = Color.WHITE
+@export var unplayable_color:Color = Color.RED
+@export var text_color_transition_duration:float = 0.2
 
 var _original_scale: Vector2
 var _original_position: Vector2
@@ -27,6 +31,8 @@ var _original_position: Vector2
 func _ready() -> void:
 	_original_scale = self.scale
 	_original_position = self.position
+	_header_label.label_settings = _header_label.label_settings.duplicate()
+	_cost_label.label_settings = _cost_label.label_settings.duplicate()  
 
 
 
@@ -78,4 +84,15 @@ func _on_card_frame_mouse_exited() -> void:
 	z_index = 0  # Reset z-index when not hovered
 
 	#snap for safety
-	
+
+func show_playable_state(value: bool) -> void:
+
+	var color: Color = playable_color if value else unplayable_color
+
+	_refresh_tween()
+
+	tween.parallel().tween_property(_header_label.label_settings, "font_color", color, text_color_transition_duration)\
+	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+	tween.parallel().tween_property(_cost_label.label_settings, "font_color", color, text_color_transition_duration)\
+	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)

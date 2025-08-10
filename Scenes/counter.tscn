@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgibetgd24vje"]
+
+[ext_resource type="Texture2D" uid="uid://hsnkgmdurnai" path="res://Sprites/UI/fantasy card/icons/vampire golden frame.png" id="1_dfxaj"]
+[ext_resource type="Script" uid="uid://drvifx8ajwcer" path="res://Scripts/GUI/counter.gd" id="1_odkjx"]
+[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://Themes/Fonts/Roboto-Medium.ttf" id="2_odkjx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sq1kt"]
+font = ExtResource("2_odkjx")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Counter" type="Control" node_paths=PackedStringArray("counter_label")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_odkjx")
+counter_label = NodePath("TextureRect/Label")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dfxaj")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+label_settings = SubResource("LabelSettings_sq1kt")
+horizontal_alignment = 1
+vertical_alignment = 1
