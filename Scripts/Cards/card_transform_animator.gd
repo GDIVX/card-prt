@@ -36,7 +36,6 @@ func snap_to_anchor() -> void:
 
 	root.position = anchor_position
 	root.rotation_degrees = anchor_rotation_degrees
-	root.scale = anchor_scale
 
 ## Move the root object without moving the anchor. 
 ## Remember to call move_to_anchor() to recall the card to its resting state
@@ -52,14 +51,6 @@ func animate_to(target_position: Vector2, target_rotation_degrees: float, durati
 	tween.parallel().tween_property(root, "rotation_degrees", target_rotation_degrees, duration)\
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 
-func animate_to_scale(target_scale: Vector2, duration: float = 1):
-	if root == null:
-		push_error("Root node is missing")
-
-	reset_tween()
-	
-	tween.tween_property(root, "scale", target_scale, duration)\
-	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN_OUT)
 
 func reset_tween():
 	if tween:

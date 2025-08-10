@@ -35,6 +35,7 @@ _header_label = NodePath("CardFrame/Header")
 _description_label = NodePath("CardFrame/Description")
 _artwork_sprite = NodePath("CardFrame/Artwork")
 _cost_label = NodePath("CostFrame/CostLabel")
+hover_y_offset = -150.0
 
 [node name="CardFrame" type="TextureRect" parent="."]
 layout_mode = 1

@@ -52,18 +52,30 @@ func  _refresh_tween() -> void:
 	tween = get_tree().create_tween()
 
 func _on_card_frame_mouse_entered() -> void:
+
 	_refresh_tween()
+
 	tween.parallel().tween_property(self, "position", self.position + Vector2(0, hover_y_offset), hover_tween_duration)\
-	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", hover_scale, hover_tween_duration)\
-	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
+	tween.parallel().tween_property(self, "scale", hover_scale, hover_tween_duration)\
+	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
 	z_index = 1000  # Bring to front when hovered
 
 
 func _on_card_frame_mouse_exited() -> void:
+
 	_refresh_tween()
+	var finished = func ():
+		self.position = _original_position
+		self.scale = _original_scale
+
+	tween.parallel().tween_property(self, "position", _original_position, reset_tween_duration)\
+	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+
 	tween.parallel().tween_property(self, "scale", _original_scale, reset_tween_duration)\
-	.set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "position", _original_position, reset_tween_duration)\
-	.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT).finished.connect(finished)
 	z_index = 0  # Reset z-index when not hovered
+
+	#snap for safety
+	
