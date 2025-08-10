@@ -3,6 +3,9 @@ class_name  Hand extends Control
 @export var card_scene: PackedScene
 @export var fan: FanContainer
 
+@export var card_spawn_position: Vector2
+@export var card_despawn_position: Vector2
+
 var cards: Array[Card] = []
 
 signal card_created(card: Card)
@@ -10,6 +13,7 @@ signal card_created(card: Card)
 func create_card(data: CardData) -> Card:
 	var instant = card_scene.instantiate()
 	var card: Card = instant as Card
+	card.position = card_spawn_position
 
 	card.ready.connect(func ():
 		card.bind(data.duplicate(true))
@@ -24,8 +28,10 @@ func create_card(data: CardData) -> Card:
 
 func remove_card(card: Card) -> void:
 	if card in cards:
+		card.card_transform_animator.animate_to(card_despawn_position, card.rotation).tween.finished.connect(func ():
+			card.queue_free()
+		)
 		cards.erase(card)
-		card.queue_free()
 		fan.arrange_cards(cards)
 	else:
 		push_error("Card not found in hand.")
@@ -37,7 +43,6 @@ func activate_cards_when(delegate: Callable) -> void:
 		return
 	
 	for card in cards:
-		print(card)
 		var result = null
 		result = delegate.call(card)
 

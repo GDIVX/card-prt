@@ -30,6 +30,6 @@ metadata/_custom_type_script = "uid://kaflyex0gc61"
 [resource]
 script = ExtResource("1_y56dy")
 name = ""
-starting_cards = Array[ExtResource("2_0b3fd")]([ExtResource("3_tfaik"), SubResource("Resource_qg483")])
+starting_cards = Array[ExtResource("2_0b3fd")]([ExtResource("3_tfaik"), SubResource("Resource_qg483"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), SubResource("Resource_qg483"), SubResource("Resource_qg483"), SubResource("Resource_qg483"), SubResource("Resource_qg483")])
 unlocked_cards = Array[ExtResource("2_0b3fd")]([])
 metadata/_custom_type_script = "uid://dav6yh8q88yup"

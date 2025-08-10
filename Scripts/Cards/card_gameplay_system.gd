@@ -108,17 +108,9 @@ func discard_card(card: Card) -> void:
 	hand.remove_card(card)
 
 
-## Discards all cards in hand belonging to the specified key.
-func discard_hand(key: String) -> void:
-	if not _ensure_key_registered(key) or not hand:
-		return
-
-	var cards_to_discard := []
-	for card in hand.cards:
-		if card.has_meta(META_DECK_KEY) and card.get_meta(META_DECK_KEY) == key:
-			cards_to_discard.append(card)
-
-	for card in cards_to_discard:
+## Discards all cards in hand 
+func discard_hand() -> void:
+	for card in hand.cards.duplicate():
 		discard_card(card)
 
 
@@ -145,6 +137,11 @@ func _ensure_key_registered(key: String) -> bool:
 
 
 func _withdraw_from_draw(key: String) -> CardData:
+	
+	if deck.get_collection_size(key + "_draw") == 0\
+	 and deck.get_collection_size(key + "_discard") > 0:
+		reform_draw_pile(key)
+
 	var card_data = deck.withdraw(key + "_draw")
 
 	if not card_data:
@@ -154,3 +151,5 @@ func _withdraw_from_draw(key: String) -> CardData:
 		else:
 			push_error("Draw and discard piles are empty for key '%s'." % key)
 	return card_data
+
+

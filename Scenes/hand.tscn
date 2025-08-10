@@ -30,6 +30,8 @@ mouse_filter = 2
 script = ExtResource("1_u7o8q")
 card_scene = ExtResource("2_jrln0")
 fan = NodePath("FanContiener")
+card_spawn_position = Vector2(500, 0)
+card_despawn_position = Vector2(-500, 0)
 
 [node name="FanContiener" type="Container" parent="."]
 layout_mode = 0

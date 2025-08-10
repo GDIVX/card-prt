@@ -5,7 +5,7 @@ class_name Battle extends Node2D
 @export var card_gameplay_system: CardGameplaySystem
 @export var game_resources_system: GameResourcesSystem
 
-@export var test_hero: HeroData
+@export var heroes:Array[HeroData]
 
 func _ready() -> void:
 	if not card_gameplay_system:
@@ -13,9 +13,9 @@ func _ready() -> void:
 		return
 
 	# Initialize the hero deck
-	if test_hero:
-		create_hero(test_hero)
-	# draw a hand for the hero
+	if heroes and heroes.size() > 0:
+		for hero in heroes:
+			create_hero(hero)
 	card_gameplay_system.draw_hand()
 
 
@@ -25,7 +25,7 @@ func create_hero(hero_data: HeroData):
 
 
 func _create_hero_deck(hero_data: HeroData) -> void:
-	card_gameplay_system.register_deck_key(hero_data.name)
+	card_gameplay_system.register_deck_key(hero_data.name )
 	card_gameplay_system.setup_draw_pile(hero_data.name, hero_data.starting_cards)
 
 

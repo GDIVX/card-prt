@@ -8,6 +8,7 @@ class_name  CardTransformAnimator extends Node2D
 @export var anchor_rotation_degrees: float
 @export var anchor_scale: Vector2 = Vector2(1, 1)
 
+
 ## The parent of the card to animate_to
 var root: Node2D:
 	get:
@@ -39,7 +40,7 @@ func snap_to_anchor() -> void:
 
 ## Move the root object without moving the anchor. 
 ## Remember to call move_to_anchor() to recall the card to its resting state
-func animate_to(target_position: Vector2, target_rotation_degrees: float, duration: float = 1):
+func animate_to(target_position: Vector2, target_rotation_degrees: float, duration: float = 1) -> CardTransformAnimator:
 	if root == null:
 		push_error("Root node is missing")
 
@@ -50,6 +51,8 @@ func animate_to(target_position: Vector2, target_rotation_degrees: float, durati
 
 	tween.parallel().tween_property(root, "rotation_degrees", target_rotation_degrees, duration)\
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+	
+	return self
 
 
 func reset_tween():

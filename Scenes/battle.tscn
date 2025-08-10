@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=7 format=3 uid="uid://dmkj4psn3atng"]
 
 [ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://Scripts/battle.gd" id="1_oxf17"]
 [ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/card_gameplay_system.tscn" id="1_w7k78"]
-[ext_resource type="Resource" uid="uid://bbg02utc33i84" path="res://Resources/Heroes/test_hero.tres" id="2_1ruyk"]
 [ext_resource type="Script" uid="uid://dll0wjvpsj7a7" path="res://Scripts/GUI/combat_gui.gd" id="3_f6xt6"]
 [ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="4_1otgo"]
 [ext_resource type="Script" uid="uid://bl3doxao2w0oi" path="res://Scripts/game_resources_system.gd" id="6_ww2ai"]
@@ -15,7 +14,6 @@ font_size = 30
 script = ExtResource("1_oxf17")
 card_gameplay_system = NodePath("GUI/CardGameplaySystem")
 game_resources_system = NodePath("GameResourcesSystem")
-test_hero = ExtResource("2_1ruyk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -500
@@ -24,11 +22,6 @@ limit_right = 500
 limit_bottom = -500
 limit_smoothed = true
 position_smoothing_enabled = true
-
-[node name="Button" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
-text = "Create Card"
 
 [node name="GUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("mana_counter")]
 script = ExtResource("3_f6xt6")
@@ -54,6 +47,18 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" parent="GUI/CardGameplaySystem/Counter/TextureRect" index="0"]
 label_settings = SubResource("LabelSettings_pd5xk")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button3" type="Button" parent="GUI/VBoxContainer"]
+layout_mode = 2
+text = "Draw Hand"
+
+[node name="Button2" type="Button" parent="GUI/VBoxContainer"]
+layout_mode = 2
+text = "Discard Hand"
+
 [node name="GameResourcesSystem" type="Node" parent="."]
 script = ExtResource("6_ww2ai")
 resources = Dictionary[String, int]({
@@ -61,6 +66,8 @@ resources = Dictionary[String, int]({
 })
 
 [connection signal="card_created" from="GUI/CardGameplaySystem/Hand" to="." method="_on_hand_card_created"]
+[connection signal="pressed" from="GUI/VBoxContainer/Button3" to="GUI/CardGameplaySystem" method="draw_hand"]
+[connection signal="pressed" from="GUI/VBoxContainer/Button2" to="GUI/CardGameplaySystem" method="discard_hand"]
 [connection signal="resource_value_changed" from="GameResourcesSystem" to="." method="_on_game_resources_system_resource_value_changed"]
 [connection signal="resource_value_changed" from="GameResourcesSystem" to="GUI" method="_on_game_resources_system_resource_value_changed"]
 
