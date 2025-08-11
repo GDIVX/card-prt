@@ -2,8 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://57rkkx77pjd7" path="res://Sprites/UI/fantasy card/icons/fantasy skull.png" id="1_lkv7d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ushfy"]
-size = Vector2(114, 122)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkv7d"]
+radius = 44.46
+height = 118.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_owm7s"]
 animations = [{
@@ -21,7 +22,7 @@ motion_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 1)
-shape = SubResource("RectangleShape2D_ushfy")
+shape = SubResource("CapsuleShape2D_lkv7d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_owm7s")

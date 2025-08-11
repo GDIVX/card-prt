@@ -3,6 +3,7 @@ class_name CharacterDrag
 extends Node
 
 @export var character_body: CharacterBody2D
+@export var disabled: bool = false
 
 @export_category("Feel")
 @export var smoothness_speed: float = 10.0        # higher = snappier follow
@@ -29,6 +30,7 @@ func _ready() -> void:
 		smoothing_curve.add_point(Vector2(1, 1))
 
 func _physics_process(delta: float) -> void:
+	if disabled: return
 	if not character_body:
 		return
 
@@ -61,6 +63,7 @@ func _physics_process(delta: float) -> void:
 			character_body.velocity = Vector2.ZERO
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if disabled: return
 	if not character_body:
 		return
 
