@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bliyfogowi74a"]
+
+[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/character.tscn" id="1_dwi70"]
+[ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://Scenes/character_drag.tscn" id="2_sqtjf"]
+
+[sub_resource type="Curve" id="Curve_dwi70"]
+_data = [Vector2(0, 0.0116605), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="PlayerUnit" instance=ExtResource("1_dwi70")]
+
+[node name="CharacterDrag" parent="." index="0" node_paths=PackedStringArray("character_body") instance=ExtResource("2_sqtjf")]
+character_body = NodePath("..")
+smoothing_curve = SubResource("Curve_dwi70")
+
+[editable path="CharacterDrag"]

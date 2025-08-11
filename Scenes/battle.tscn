@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=8 format=3 uid="uid://dmkj4psn3atng"]
 
 [ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://Scripts/battle.gd" id="1_oxf17"]
 [ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/card_gameplay_system.tscn" id="1_w7k78"]
 [ext_resource type="Script" uid="uid://dll0wjvpsj7a7" path="res://Scripts/GUI/combat_gui.gd" id="3_f6xt6"]
 [ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="4_1otgo"]
+[ext_resource type="PackedScene" uid="uid://dpvypy8bivlq4" path="res://Scenes/map.tscn" id="6_f6xt6"]
 [ext_resource type="Script" uid="uid://bl3doxao2w0oi" path="res://Scripts/game_resources_system.gd" id="6_ww2ai"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
@@ -15,14 +16,6 @@ script = ExtResource("1_oxf17")
 card_gameplay_system = NodePath("GUI/CardGameplaySystem")
 game_resources_system = NodePath("GameResourcesSystem")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-limit_left = -500
-limit_top = 500
-limit_right = 500
-limit_bottom = -500
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="GUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("mana_counter")]
 script = ExtResource("3_f6xt6")
 mana_counter = NodePath("CardGameplaySystem/Counter")
@@ -33,6 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Counter" parent="GUI/CardGameplaySystem" index="2"]
 anchors_preset = -1
@@ -64,6 +58,8 @@ script = ExtResource("6_ww2ai")
 resources = Dictionary[String, int]({
 "mana": 3
 })
+
+[node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 
 [connection signal="card_created" from="GUI/CardGameplaySystem/Hand" to="." method="_on_hand_card_created"]
 [connection signal="pressed" from="GUI/VBoxContainer/Button3" to="GUI/CardGameplaySystem" method="draw_hand"]

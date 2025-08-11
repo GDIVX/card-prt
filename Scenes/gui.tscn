@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://2wu2w2301t8v"]
+
+[ext_resource type="Script" uid="uid://dll0wjvpsj7a7" path="res://Scripts/GUI/combat_gui.gd" id="1_n5m23"]
+[ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/card_gameplay_system.tscn" id="2_m6o0h"]
+[ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="3_8kag3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
+font = ExtResource("3_8kag3")
+font_size = 30
+
+[node name="GUI" type="CanvasLayer" node_paths=PackedStringArray("mana_counter")]
+script = ExtResource("1_n5m23")
+mana_counter = NodePath("CardGameplaySystem/Counter")
+
+[node name="CardGameplaySystem" parent="." instance=ExtResource("2_m6o0h")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Counter" parent="CardGameplaySystem" index="2"]
+anchors_preset = -1
+anchor_left = 0.0173611
+anchor_top = 0.57716
+anchor_right = 0.0173611
+anchor_bottom = 0.57716
+offset_right = 128.0
+offset_bottom = 103.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" parent="CardGameplaySystem/Counter/TextureRect" index="0"]
+label_settings = SubResource("LabelSettings_pd5xk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Draw Hand"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Discard Hand"
+
+[connection signal="pressed" from="VBoxContainer/Button3" to="CardGameplaySystem" method="draw_hand"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="CardGameplaySystem" method="discard_hand"]
+
+[editable path="CardGameplaySystem"]
+[editable path="CardGameplaySystem/Counter"]

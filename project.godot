@@ -17,3 +17,4 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [layer_names]
 
 2d_physics/layer_1="Card"
+2d_physics/layer_2="Entities"
