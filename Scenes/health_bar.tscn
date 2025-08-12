@@ -1,0 +1,67 @@
+[gd_scene load_steps=8 format=3 uid="uid://sc44qjvo5m7k"]
+
+[ext_resource type="Texture2D" uid="uid://d1tmfm2v1aaim" path="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/ProgressBar_07/BarV7_Bar.png" id="1_4vfrx"]
+[ext_resource type="Texture2D" uid="uid://hpwiw8ji3wyo" path="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/ProgressBar_07/BarV7_ProgressBarBorder.png" id="2_p1cfu"]
+[ext_resource type="Texture2D" uid="uid://daq23mg01vqep" path="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/ProgressBar_07/BarV7_ProgressBar.png" id="3_rdj5c"]
+[ext_resource type="Script" uid="uid://cq28t0rhjrnij" path="res://Scripts/GUI/health_bar.gd" id="4_wxnkl"]
+[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/counter.tscn" id="5_h867y"]
+[ext_resource type="Texture2D" uid="uid://mxrfq1negel6" path="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/ShieldLargeT2.png" id="6_ydxhk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dm6ib"]
+
+[node name="HealthBar" type="TextureProgressBar"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+max_value = 1.0
+step = 0.01
+value = 1.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_4vfrx")
+texture_over = ExtResource("2_p1cfu")
+texture_progress = ExtResource("3_rdj5c")
+script = ExtResource("4_wxnkl")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100/100"
+label_settings = SubResource("LabelSettings_dm6ib")
+horizontal_alignment = 1
+vertical_alignment = 3
+
+[node name="DefenseCounter" parent="." instance=ExtResource("5_h867y")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="TextureRect" parent="DefenseCounter" index="0"]
+texture = ExtResource("6_ydxhk")
+
+[node name="Label" parent="DefenseCounter/TextureRect" index="0"]
+offset_left = 17.0
+offset_top = 17.0
+offset_right = -12.0
+offset_bottom = -12.0
+text = "999"
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[editable path="DefenseCounter"]

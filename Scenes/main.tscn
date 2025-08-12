@@ -7,9 +7,9 @@
 [ext_resource type="Resource" uid="uid://bbg02utc33i84" path="res://Resources/Heroes/test_hero.tres" id="5_21xkr"]
 [ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="6_hptm8"]
 [ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="7_d1ilt"]
-[ext_resource type="Texture2D" uid="uid://cqtlfwgbqhvmn" path="res://Sprites/UI/Cash_Artw.png" id="8_6iyac"]
+[ext_resource type="Texture2D" uid="uid://cqtlfwgbqhvmn" path="res://Sprites/UI/Plceholders_tempt/Cash_Artw.png" id="8_6iyac"]
 [ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="9_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://hrc2ui71xelu" path="res://Sprites/UI/fantasy card/fantasy playboard decoration 2.png" id="10_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://hrc2ui71xelu" path="res://Sprites/UI/Plceholders_tempt/fantasy card/fantasy playboard decoration 2.png" id="10_jkdf5"]
 
 [sub_resource type="Resource" id="Resource_wsu2k"]
 script = ExtResource("9_fdnlq")

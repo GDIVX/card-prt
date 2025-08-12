@@ -1,19 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://yxqq5vrhs2cy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nytcm"]
-size = Vector2(115, 123)
+[ext_resource type="Script" uid="uid://b8bppnjyphnhp" path="res://Scripts/Entities/health.gd" id="1_1nx07"]
 
-[node name="Health" type="Node2D"]
-
-[node name="HitBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(1.5, 0.5)
-shape = SubResource("RectangleShape2D_nytcm")
-debug_color = Color(0.642018, 0.513761, 0.291617, 0.42)
-
-[node name="HealthBar" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Health" type="Node"]
+script = ExtResource("1_1nx07")

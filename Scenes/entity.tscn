@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bquawwyoq26t8"]
 
-[ext_resource type="Texture2D" uid="uid://57rkkx77pjd7" path="res://Sprites/UI/fantasy card/icons/fantasy skull.png" id="1_hsfu5"]
+[ext_resource type="Texture2D" uid="uid://57rkkx77pjd7" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy skull.png" id="1_hsfu5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l7g7l"]
 animations = [{

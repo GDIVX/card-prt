@@ -27,3 +27,4 @@ shape = SubResource("CapsuleShape2D_dwi70")
 [connection signal="stopped_dragging" from="CharacterDrag" to="." method="_on_character_drag_stopped_dragging"]
 
 [editable path="CharacterDrag"]
+[editable path="EntityGui/HealthBar/Counter"]
