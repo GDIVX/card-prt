@@ -5,7 +5,7 @@ extends TextureProgressBar
 @export var health_object: Health
 
 @onready var _health_label: Label = $Label
-@onready var _defense_label: Label = $Counter/TextureRect/Label
+@onready var _defense_counter: Counter = $DefenseCounter
 
 @export_category("Fill")
 @export var fill_tween_duration: float = 0.3
@@ -19,6 +19,8 @@ func _on_health_health_changed(current_value:int) -> void:
 	# TODO: blink shader would be nice
 	var max_health := health_object.max_health
 
+	if not _health_label:
+		_health_label = $Label
 	_health_label.text = "%s/%s" % [current_value , max_health]
 
 	var _ratio: float = current_value as float / max_health as float
@@ -39,6 +41,7 @@ func _on_health_health_changed(current_value:int) -> void:
 	# Play it after the previous animation is done
 	if current_value != max_health: return
 	tween.tween_property(_health_label , "self_modulate" , Color.TRANSPARENT, fill_tween_duration)
+	tween.parallel().tween_property(self , "self_modulate" , Color.TRANSPARENT, fill_tween_duration)
 
 
 	
@@ -47,4 +50,12 @@ func _on_health_health_changed(current_value:int) -> void:
 
 func _on_health_defense_changed(current_value:int) -> void:
 	# TODO: blink shader would be nice
-	_defense_label.text = str(current_value)
+
+	if not _defense_counter:
+		_defense_counter = $DefenseCounter
+	_defense_counter.set_count(current_value)
+
+	# if defense is 0, we don't need to show it
+	var color := Color.TRANSPARENT if current_value == 0 else Color.WHITE
+	var tween: Tween = get_tree().create_tween()
+	tween.tween_property(_defense_counter , "self_modulate", color , fill_tween_duration)
