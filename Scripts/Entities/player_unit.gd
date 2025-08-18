@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name PlayerUnit extends TacticalUnit
 
 @export var movement_distance_limit: float = 0.0
 

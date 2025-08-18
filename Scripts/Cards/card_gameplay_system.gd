@@ -12,6 +12,7 @@ const META_DECK_KEY := "deck_key"
 
 signal draw_pile_empty(key: String)
 signal discard_pile_empty(key: String)
+signal card_created_with_key(key: String, card: Card)
 
 
 func _ready() -> void:
@@ -69,6 +70,7 @@ func draw_card(key: String) -> Card:
 
 	var card = hand.create_card(card_data)
 	card.set_meta(META_DECK_KEY, key)
+	card_created_with_key.emit(key, card)
 	return card
 
 

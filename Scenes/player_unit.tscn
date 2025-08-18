@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bliyfogowi74a"]
 
-[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/character.tscn" id="1_dwi70"]
+[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/unit.tscn" id="1_dwi70"]
 [ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://Scenes/character_drag.tscn" id="2_sqtjf"]
 [ext_resource type="Script" uid="uid://cm5dq5aj3u6qt" path="res://Scripts/Entities/player_unit.gd" id="2_tlcot"]
 
@@ -15,6 +15,7 @@ height = 122.0
 [node name="PlayerUnit" instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
 movement_distance_limit = 600.0
+show_movement_distance_limit = true
 
 [node name="CharacterDrag" parent="." index="0" node_paths=PackedStringArray("character_body") instance=ExtResource("2_sqtjf")]
 character_body = NodePath("..")

@@ -12,6 +12,8 @@ extends Node2D
 ## The card transform animator is responsible for animating the card's position and rotation in world space
 @export var card_transform_animator: CardTransformAnimator
 
+var context: CardContext
+
 ## Indicates whether the card has been bound with data and is ready for activation
 var _is_bind: bool = false
 ## Indicates if the card can be played

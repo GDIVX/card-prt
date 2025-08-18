@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="HeroData" load_steps=10 format=3 uid="uid://bbg02utc33i84"]
+[gd_resource type="Resource" script_class="HeroData" load_steps=11 format=3 uid="uid://bbg02utc33i84"]
 
 [ext_resource type="Script" uid="uid://dav6yh8q88yup" path="res://Scripts/Meta/hero_data.gd" id="1_y56dy"]
 [ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="2_0b3fd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="4_35b88"]
 [ext_resource type="Script" uid="uid://2tmf5kbpcvp8" path="res://Scripts/Cards/Effects/log_string_effect.gd" id="5_rpoip"]
 [ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="6_qh2nf"]
+[ext_resource type="PackedScene" uid="uid://bliyfogowi74a" path="res://Scenes/player_unit.tscn" id="7_35b88"]
 
 [sub_resource type="Resource" id="Resource_ejb80"]
 script = ExtResource("5_rpoip")
@@ -29,6 +30,7 @@ metadata/_custom_type_script = "uid://kaflyex0gc61"
 
 [resource]
 script = ExtResource("1_y56dy")
+unit_scene = ExtResource("7_35b88")
 name = ""
 starting_cards = Array[ExtResource("2_0b3fd")]([ExtResource("3_tfaik"), SubResource("Resource_qg483"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik"), SubResource("Resource_qg483"), SubResource("Resource_qg483"), SubResource("Resource_qg483"), SubResource("Resource_qg483")])
 unlocked_cards = Array[ExtResource("2_0b3fd")]([])

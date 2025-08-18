@@ -1,6 +1,8 @@
 ## Hold data required for the creation and management of heroes in the game.
 class_name HeroData extends Resource
 
+@export var unit_scene : PackedScene
+
 @export_category("General")
 @export var name: String
 
