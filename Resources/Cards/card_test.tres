@@ -1,19 +1,15 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=9 format=3 uid="uid://80uiy7281xd7"]
+[gd_resource type="Resource" script_class="CardData" load_steps=10 format=3 uid="uid://80uiy7281xd7"]
 
 [ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="1_noif3"]
 [ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="2_f1ej5"]
 [ext_resource type="Script" uid="uid://2tmf5kbpcvp8" path="res://Scripts/Cards/Effects/log_string_effect.gd" id="2_noif3"]
 [ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="3_noif3"]
 [ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://Sprites/UI/Plceholders_tempt/knight.png" id="3_s2vro"]
+[ext_resource type="Script" uid="uid://hq6poehfo3mx" path="res://Scripts/Selection/SelectionSpec.gd" id="6_s2vro"]
 
 [sub_resource type="Resource" id="Resource_s2vro"]
 script = ExtResource("2_noif3")
 line = "I love GODOT"
-metadata/_custom_type_script = "uid://2tmf5kbpcvp8"
-
-[sub_resource type="Resource" id="Resource_noif3"]
-script = ExtResource("2_noif3")
-line = "Default line to print"
 metadata/_custom_type_script = "uid://2tmf5kbpcvp8"
 
 [sub_resource type="Resource" id="Resource_4uo8f"]
@@ -24,11 +20,19 @@ Description = "Print the phrase \"Nice Line\".
 Artwork = ExtResource("3_s2vro")
 metadata/_custom_type_script = "uid://bxkotdmlu11v"
 
+[sub_resource type="Resource" id="Resource_odagn"]
+script = ExtResource("6_s2vro")
+team_mask = 1
+mode = 0
+max_targets = 1
+max_range = 600.0
+metadata/_custom_type_script = "uid://hq6poehfo3mx"
+
 [resource]
 script = ExtResource("2_f1ej5")
 card_style = SubResource("Resource_4uo8f")
 rarity = "Common"
-cost = 0
-targeting_range = 0.0
-card_effects = Array[ExtResource("1_noif3")]([SubResource("Resource_s2vro"), SubResource("Resource_noif3")])
+cost = 1
+selection = SubResource("Resource_odagn")
+card_effects = Array[ExtResource("1_noif3")]([SubResource("Resource_s2vro")])
 metadata/_custom_type_script = "uid://kaflyex0gc61"

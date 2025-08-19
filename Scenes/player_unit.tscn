@@ -24,6 +24,9 @@ smoothing_curve = SubResource("Curve_dwi70")
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_dwi70")
 
+[node name="Team" parent="." index="5"]
+faction = 0
+
 [connection signal="started_dragging" from="CharacterDrag" to="." method="_on_character_drag_started_dragging"]
 [connection signal="stopped_dragging" from="CharacterDrag" to="." method="_on_character_drag_stopped_dragging"]
 

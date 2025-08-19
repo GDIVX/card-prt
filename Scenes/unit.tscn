@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dtr5kbqy68nck"]
+[gd_scene load_steps=58 format=3 uid="uid://dtr5kbqy68nck"]
 
 [ext_resource type="Script" uid="uid://buadw7jswgygx" path="res://Scripts/Entities/character.gd" id="1_wgsbd"]
 [ext_resource type="Texture2D" uid="uid://dul0dbdyui3ur" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack01.png" id="2_rlneq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dd0tt2sy2bnc3" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Walk.png" id="9_4jen7"]
 [ext_resource type="PackedScene" uid="uid://yxqq5vrhs2cy" path="res://Scenes/health.tscn" id="10_0mh70"]
 [ext_resource type="PackedScene" uid="uid://sc44qjvo5m7k" path="res://Scenes/health_bar.tscn" id="11_mbo8g"]
+[ext_resource type="Script" uid="uid://d22grvoyem0me" path="res://Scripts/Entities/team.gd" id="12_rlneq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkv7d"]
 radius = 44.46
@@ -395,6 +396,10 @@ offset_top = 0.0
 health_object = NodePath("../../Health")
 fill_tween_trans = 5
 fill_tween_ease = 1
+
+[node name="Team" type="Node" parent="."]
+script = ExtResource("12_rlneq")
+faction = 2
 
 [connection signal="defense_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_defense_changed"]
 [connection signal="health_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_health_changed"]
