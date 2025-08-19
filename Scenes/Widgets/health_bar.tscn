@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://hpwiw8ji3wyo" path="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/ProgressBar_07/BarV7_ProgressBarBorder.png" id="2_p1cfu"]
 [ext_resource type="Texture2D" uid="uid://daq23mg01vqep" path="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/ProgressBar_07/BarV7_ProgressBar.png" id="3_rdj5c"]
 [ext_resource type="Script" uid="uid://cq28t0rhjrnij" path="res://Scripts/GUI/health_bar.gd" id="4_wxnkl"]
-[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/counter.tscn" id="5_h867y"]
+[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/Widgets/counter.tscn" id="5_h867y"]
 [ext_resource type="Texture2D" uid="uid://mxrfq1negel6" path="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/ShieldLargeT2.png" id="6_ydxhk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dm6ib"]

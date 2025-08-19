@@ -2,7 +2,7 @@
 extends Resource
 class_name SelectionStrategy
 
-func _select(context: CardContext, _spec: SelectionSpec , controller: Node) -> Array:
+func _select(_context: CardContext, _spec: SelectionSpec , _controller: Node) -> Array:
     push_error("SelectionStrategy._select not implemented")
     return []
 

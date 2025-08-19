@@ -23,6 +23,11 @@ func _ready() -> void:
 		push_error("CardGameplaySystem is not set. Please set it in the inspector.")
 		return
 
+
+	selection.selection_completed.connect(_on_selection_completed )
+	selection.selection_canceled.connect(_on_selection_canceled )
+
+
 	# Initialize the hero deck
 	if heroes_data and heroes_data.size() > 0:
 		for hero in heroes_data:
@@ -112,8 +117,6 @@ func _handle_selection() -> void:
 	if spec == null:
 		push_error("Missing selection specs for the card" + _pending_card.data.to_string())
 
-	selection.selection_completed.connect(_on_selection_completed ,  CONNECT_ONE_SHOT)
-	selection.selection_canceled.connect(_on_selection_canceled , CONNECT_ONE_SHOT)
 
 	selection.start_selection(_pending_card.context, spec)
 	

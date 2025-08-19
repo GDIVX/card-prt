@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://66jr8s2fprv4"]
 
 [ext_resource type="Script" uid="uid://1827nhugu7i5" path="res://Scripts/Cards/card_gameplay_system.gd" id="1_dlalk"]
-[ext_resource type="PackedScene" uid="uid://cd3mdwykfe6t1" path="res://Scenes/hand.tscn" id="1_p0pwc"]
-[ext_resource type="PackedScene" uid="uid://b50ea2eekeihk" path="res://Scenes/deck.tscn" id="2_m8xvi"]
-[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/counter.tscn" id="4_4xco6"]
+[ext_resource type="PackedScene" uid="uid://cd3mdwykfe6t1" path="res://Scenes/Card Gameplay/hand.tscn" id="1_p0pwc"]
+[ext_resource type="PackedScene" uid="uid://b50ea2eekeihk" path="res://Scenes/Card Gameplay/deck.tscn" id="2_m8xvi"]
+[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/Widgets/counter.tscn" id="4_4xco6"]
 
 [node name="CardGameplaySystem" type="Control" node_paths=PackedStringArray("deck", "hand")]
 layout_mode = 3

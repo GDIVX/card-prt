@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6g81h6yam6go"]
 
-[ext_resource type="PackedScene" uid="uid://b1hixpwyg6q0" path="res://Scenes/card_view.tscn" id="1_0qqmn"]
+[ext_resource type="PackedScene" uid="uid://b1hixpwyg6q0" path="res://Scenes/Card Gameplay/card_view.tscn" id="1_0qqmn"]
 [ext_resource type="Script" uid="uid://cwj5hpa57gbjs" path="res://Scripts/Cards/card.gd" id="1_u5wvb"]
 [ext_resource type="Script" uid="uid://dabu40xay05va" path="res://Scripts/Cards/card_player.gd" id="2_brehn"]
-[ext_resource type="PackedScene" uid="uid://dj8qx7bp1lf3b" path="res://Scenes/card_transform_animator.tscn" id="4_e6po8"]
+[ext_resource type="PackedScene" uid="uid://dj8qx7bp1lf3b" path="res://Scenes/Card Gameplay/card_transform_animator.tscn" id="4_e6po8"]
 
 [node name="Card" type="Node2D" node_paths=PackedStringArray("card_view", "card_player", "card_transform_animator")]
 scale = Vector2(0.8, 0.8)

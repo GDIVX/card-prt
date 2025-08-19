@@ -3,5 +3,5 @@ class_name SelectionView
 
 var _spec: SelectionSpec
 
-func SetSpec(spec: SelectionSpec) -> void:
+func set_spec(spec: SelectionSpec) -> void:
     _spec = spec

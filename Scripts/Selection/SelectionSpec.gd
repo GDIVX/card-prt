@@ -17,7 +17,7 @@ enum SelectionMode { CURSOR, AUTO_AROUND_CASTER }
 
 @export_category("Behavior")
 @export var strategy: SelectionStrategy
-@export var visualScene: PackedScene
+@export var visualScene: PackedScene = preload("res://Scenes/Selection/selection_view.tscn")
 
 @export_category("Limits")
 @export var max_targets: int = 1
