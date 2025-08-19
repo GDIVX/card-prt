@@ -15,7 +15,10 @@ var team_mask: int = TeamMask.ALLY | TeamMask.ENEMY
 enum SelectionMode { CURSOR, AUTO_AROUND_CASTER }
 @export var mode: SelectionMode = SelectionMode.CURSOR
 
+@export_category("Behavior")
 @export var strategy: SelectionStrategy
+@export var visualScene: PackedScene
+
 @export_category("Limits")
 @export var max_targets: int = 1
 @export var max_range: float = 600.0

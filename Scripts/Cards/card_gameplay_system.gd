@@ -5,6 +5,7 @@ extends Control
 @export var deck: Deck
 @export var hand: Hand
 
+
 ## Dictionary of per-key hand draw amounts, e.g., { "hero_1": 2, "enemy": 3 }
 var hand_draw_amounts: Dictionary = {}
 
@@ -13,6 +14,7 @@ const META_DECK_KEY := "deck_key"
 signal draw_pile_empty(key: String)
 signal discard_pile_empty(key: String)
 signal card_created_with_key(key: String, card: Card)
+signal card_discarded(card: Card)
 
 
 func _ready() -> void:
@@ -108,6 +110,7 @@ func discard_card(card: Card) -> void:
 
 	deck.deposit(key + "_discard", card.data)
 	hand.remove_card(card)
+	card_discarded.emit(card)
 
 
 ## Discards all cards in hand 
@@ -127,6 +130,8 @@ func draw_hand() -> void:
 		var needed = max(hand_draw_amounts[key] - current_count, 0)
 		for i in range(needed):
 			draw_card(key)
+
+
 
 
 ## --- Internal helpers ---

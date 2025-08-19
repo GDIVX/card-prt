@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=10 format=3 uid="uid://dmkj4psn3atng"]
 
 [ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://Scripts/battle.gd" id="1_oxf17"]
 [ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/card_gameplay_system.tscn" id="1_w7k78"]
@@ -6,27 +6,8 @@
 [ext_resource type="Script" uid="uid://dll0wjvpsj7a7" path="res://Scripts/GUI/combat_gui.gd" id="3_f6xt6"]
 [ext_resource type="Resource" uid="uid://bbg02utc33i84" path="res://Resources/Heroes/test_hero.tres" id="3_qeyqd"]
 [ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="4_1otgo"]
-[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="4_upb72"]
-[ext_resource type="Resource" uid="uid://80uiy7281xd7" path="res://Resources/Cards/card_test.tres" id="5_rssjf"]
 [ext_resource type="PackedScene" uid="uid://dpvypy8bivlq4" path="res://Scenes/map.tscn" id="6_f6xt6"]
-[ext_resource type="PackedScene" uid="uid://bliyfogowi74a" path="res://Scenes/player_unit.tscn" id="6_heh15"]
 [ext_resource type="Script" uid="uid://bl3doxao2w0oi" path="res://Scripts/game_resources_system.gd" id="6_ww2ai"]
-
-[sub_resource type="Resource" id="Resource_xkp4y"]
-script = ExtResource("2_lrv64")
-unit_scene = ExtResource("6_heh15")
-name = "Jimmy"
-starting_cards = Array[ExtResource("4_upb72")]([ExtResource("5_rssjf"), ExtResource("5_rssjf"), ExtResource("5_rssjf"), ExtResource("5_rssjf"), ExtResource("5_rssjf")])
-unlocked_cards = Array[ExtResource("4_upb72")]([])
-metadata/_custom_type_script = "uid://dav6yh8q88yup"
-
-[sub_resource type="Resource" id="Resource_vd41i"]
-script = ExtResource("2_lrv64")
-unit_scene = ExtResource("6_heh15")
-name = "tiummy"
-starting_cards = Array[ExtResource("4_upb72")]([ExtResource("5_rssjf"), ExtResource("5_rssjf"), ExtResource("5_rssjf"), ExtResource("5_rssjf"), ExtResource("5_rssjf")])
-unlocked_cards = Array[ExtResource("4_upb72")]([])
-metadata/_custom_type_script = "uid://dav6yh8q88yup"
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
 font = ExtResource("4_1otgo")
@@ -36,7 +17,7 @@ font_size = 30
 script = ExtResource("1_oxf17")
 card_gameplay_system = NodePath("GUI/CardGameplaySystem")
 game_resources_system = NodePath("GameResourcesSystem")
-heroes_data = Array[ExtResource("2_lrv64")]([ExtResource("3_qeyqd"), SubResource("Resource_xkp4y"), SubResource("Resource_vd41i")])
+heroes_data = Array[ExtResource("2_lrv64")]([ExtResource("3_qeyqd")])
 spawn_position_center = Vector2(530, 320)
 spawn_radius = 600.0
 
@@ -86,6 +67,7 @@ resources = Dictionary[String, int]({
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 
 [connection signal="card_created_with_key" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_created_with_key"]
+[connection signal="card_discarded" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_discarded"]
 [connection signal="card_created" from="GUI/CardGameplaySystem/Hand" to="." method="_on_hand_card_created"]
 [connection signal="pressed" from="GUI/VBoxContainer/Button3" to="GUI/CardGameplaySystem" method="draw_hand"]
 [connection signal="pressed" from="GUI/VBoxContainer/Button2" to="GUI/CardGameplaySystem" method="discard_hand"]

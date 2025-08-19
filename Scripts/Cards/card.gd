@@ -29,12 +29,14 @@ var data: CardData
 #signals
 ## Called when the card playable status had changed
 signal is_playable_changed(card:Card, is_playable_value:bool)
+## Called when a card is waiting to be played
+signal pending_play(card: Card)
 
 ## Bind card data to the card
 func bind(card_data: CardData , should_activate: bool = true) -> void:
 	data = card_data
 	card_view.assign_data(card_data.card_style, card_data.cost)
-	card_player.bind_data(card_data.card_effects, card_data.targeting_range, card_data.cost)
+	card_player.bind_data(card_data.card_effects)
 	
 	_is_bind = true
 
@@ -62,8 +64,7 @@ func _handle_card_play() -> void:
 	if not is_playable: 
 		#TODO: Implement reason
 		return
-	#TODO: implement target finding
-	card_player.play()
+	pending_play.emit(self)
 
 
 ## Handle the card view GUI input events

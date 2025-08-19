@@ -3,3 +3,4 @@ class_name CardContext extends RefCounted
 
 var unit: TacticalUnit
 var battle: Battle
+var selection_spec : SelectionSpec

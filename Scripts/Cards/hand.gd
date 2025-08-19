@@ -37,9 +37,9 @@ func remove_card(card: Card) -> void:
 		push_error("Card not found in hand.")
 
 
-func activate_cards_when(delegate: Callable) -> void:
+func set_cards_playable_when(delegate: Callable) -> void:
 	if not delegate.is_valid():
-		push_error("activate_cards_when: passed an invalid callable")
+		push_error("set_cards_playable_when: passed an invalid callable")
 		return
 	
 	for card in cards:
@@ -47,7 +47,9 @@ func activate_cards_when(delegate: Callable) -> void:
 		result = delegate.call(card)
 
 		if typeof(result) != TYPE_BOOL:
-			push_error("activate_cards_when: delegate must return a bool (got %s)" % typeof(result))
+			push_error("set_cards_playable_when: delegate must return a bool (got %s)" % typeof(result))
 			continue  
 		
 		card.is_playable = result
+
+	

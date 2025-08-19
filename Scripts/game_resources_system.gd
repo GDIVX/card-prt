@@ -21,3 +21,11 @@ func get_resource(key: String) -> int:
 func set_resource(key: String, value: int) -> void:
 	resources[key] = value
 	resource_value_changed.emit(key,value)
+
+func add_resource(key: String, value: int) -> void:
+	if not resources.has(key):
+		set_resource(key, value)
+		return
+		
+	resources[key] += value
+	resource_value_changed.emit(key, resources[key])
