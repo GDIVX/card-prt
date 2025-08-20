@@ -67,8 +67,12 @@ resources = Dictionary[String, int]({
 })
 
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
+position = Vector2(0, -100)
+border_size = Vector2(1024, 500)
 
 [node name="SelectionController" parent="." instance=ExtResource("9_qeyqd")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="card_created_with_key" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_created_with_key"]
 [connection signal="card_discarded" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_discarded"]
@@ -80,3 +84,4 @@ resources = Dictionary[String, int]({
 
 [editable path="GUI/CardGameplaySystem"]
 [editable path="GUI/CardGameplaySystem/Counter"]
+[editable path="Map"]
