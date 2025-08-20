@@ -123,7 +123,7 @@ func _handle_selection() -> void:
 
 
 func _on_selection_completed(results : Array) -> void:
-	_pending_card.card_player.play(results)
+	_pending_card.card_player.play(_pending_card,results)
 	var cost = _pending_card.data.cost
 	game_resources_system.add_resource("mana",-cost)
 	_selection_cleanup()

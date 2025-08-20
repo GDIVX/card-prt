@@ -70,7 +70,14 @@ func draw_card(key: String) -> Card:
 		emit_signal("draw_pile_empty", key)
 		return null
 
+	return create_and_register_card(card_data,key)
+
+## Create a card and then properly assign it to a key deck and handle discard on resolve
+func create_and_register_card(card_data: CardData , key: String) -> Card:
 	var card = hand.create_card(card_data)
+
+	card.card_player.card_late_resolved.connect(discard_card)
+
 	card.set_meta(META_DECK_KEY, key)
 	card_created_with_key.emit(key, card)
 	return card

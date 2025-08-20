@@ -11,6 +11,6 @@ extends CardEffect
 ## Applies the effect by printing the specified line.
 ## @param _caster The entity casting the effect.
 ## @param _targets The array of target entities.
-func apply(_caster, _targets: Array) -> void:
+func apply(_card, _targets: Array) -> void:
     # Print the exported line
     print(line)
