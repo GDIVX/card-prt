@@ -18,3 +18,7 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 2d_physics/layer_1="Entities"
 2d_physics/layer_2="Cards"
+
+[physics]
+
+2d/default_gravity=0.0

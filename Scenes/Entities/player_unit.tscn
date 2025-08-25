@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://cm5dq5aj3u6qt" path="res://Scripts/Entities/player_unit.gd" id="2_tlcot"]
 
 [sub_resource type="Curve" id="Curve_dwi70"]
-_data = [Vector2(0, 0.0116605), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 1.5, 0, 0, Vector2(1, 1), 2.60427e-07, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwi70"]
@@ -17,8 +17,8 @@ script = ExtResource("2_tlcot")
 movement_distance_limit = 600.0
 show_movement_distance_limit = true
 
-[node name="CharacterDrag" parent="." index="0" node_paths=PackedStringArray("character_body") instance=ExtResource("2_sqtjf")]
-character_body = NodePath("..")
+[node name="CharacterDrag" parent="." index="0" instance=ExtResource("2_sqtjf")]
+smoothness_speed = 5.0
 smoothing_curve = SubResource("Curve_dwi70")
 
 [node name="CollisionShape2D" parent="." index="1"]

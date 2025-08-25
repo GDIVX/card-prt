@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cckiwwd1v4p6"]
+[gd_scene load_steps=4 format=3 uid="uid://cckiwwd1v4p6"]
 
 [ext_resource type="Script" uid="uid://yhypo8iixmlw" path="res://Scripts/Entities/character_drag.gd" id="1_awcum"]
+[ext_resource type="Texture2D" uid="uid://d3angokb02o0x" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy button or empty life holder.png" id="2_daq0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yahk"]
 size = Vector2(125, 131)
 
-[node name="CharacterDrag" type="Node2D"]
+[node name="CharacterDrag" type="Node2D" node_paths=PackedStringArray("_handle")]
 script = ExtResource("1_awcum")
+_handle = NodePath("Handle")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitorable = false
@@ -15,5 +17,9 @@ monitorable = false
 position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_0yahk")
 debug_color = Color(0.112024, 0.545085, 0.209384, 0.42)
+
+[node name="Handle" type="Sprite2D" parent="."]
+z_index = 100
+texture = ExtResource("2_daq0a")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

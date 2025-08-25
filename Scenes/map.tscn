@@ -1,9 +1,53 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpvypy8bivlq4"]
+[gd_scene load_steps=4 format=3 uid="uid://dpvypy8bivlq4"]
 
-[ext_resource type="Script" uid="uid://qk1pwmoguo57" path="res://Scripts/map.gd" id="1_myvm1"]
-[ext_resource type="Texture2D" uid="uid://dkkjx1nx3mqf5" path="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/FrameSquare.png" id="2_26yhd"]
+[ext_resource type="Texture2D" uid="uid://pjpk6nvtvgeo" path="res://Sprites/UI/Plceholders_tempt/fantasy card/fantasy empty playboard.png" id="1_ci6au"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci6au"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58wgy"]
 
 [node name="Map" type="Node2D"]
-script = ExtResource("1_myvm1")
-border_bias = 0.1
-border_texture = ExtResource("2_26yhd")
+
+[node name="Bounds" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(3.50003, 101)
+scale = Vector2(0.660937, 0.812963)
+texture = ExtResource("1_ci6au")
+
+[node name="BorderN" type="StaticBody2D" parent="Bounds"]
+position = Vector2(-5.29556, -493.257)
+scale = Vector2(1.513, 1.23007)
+physics_material_override = SubResource("PhysicsMaterial_ci6au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/BorderN"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_58wgy")
+
+[node name="BorderS" type="StaticBody2D" parent="Bounds"]
+position = Vector2(-5.29556, -247.244)
+scale = Vector2(1.513, 1.23007)
+physics_material_override = SubResource("PhysicsMaterial_ci6au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/BorderS"]
+position = Vector2(0, 600)
+shape = SubResource("WorldBoundaryShape2D_58wgy")
+
+[node name="BorderE" type="StaticBody2D" parent="Bounds"]
+position = Vector2(902.506, -124.237)
+scale = Vector2(1.513, 1.23007)
+physics_material_override = SubResource("PhysicsMaterial_ci6au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/BorderE"]
+rotation = 4.71239
+shape = SubResource("WorldBoundaryShape2D_58wgy")
+
+[node name="BorderW" type="StaticBody2D" parent="Bounds"]
+position = Vector2(-913.097, -124.237)
+scale = Vector2(1.513, 1.23007)
+physics_material_override = SubResource("PhysicsMaterial_ci6au")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/BorderW"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_58wgy")

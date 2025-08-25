@@ -8,7 +8,7 @@
 [resource]
 script = ExtResource("1_y56dy")
 unit_scene = ExtResource("7_35b88")
-name = ""
+name = "Testron"
 starting_cards = Array[ExtResource("2_0b3fd")]([ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik")])
 unlocked_cards = Array[ExtResource("2_0b3fd")]([])
 metadata/_custom_type_script = "uid://dav6yh8q88yup"

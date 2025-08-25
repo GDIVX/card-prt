@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=13 format=3 uid="uid://dmkj4psn3atng"]
 
 [ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://Scripts/battle.gd" id="1_oxf17"]
 [ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/Card Gameplay/card_gameplay_system.tscn" id="1_w7k78"]
@@ -9,10 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dpvypy8bivlq4" path="res://Scenes/map.tscn" id="6_f6xt6"]
 [ext_resource type="Script" uid="uid://bl3doxao2w0oi" path="res://Scripts/game_resources_system.gd" id="6_ww2ai"]
 [ext_resource type="PackedScene" uid="uid://dkhkwq7tpa5v7" path="res://Scenes/Selection/selection_controller.tscn" id="9_qeyqd"]
+[ext_resource type="Texture2D" uid="uid://d3angokb02o0x" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy button or empty life holder.png" id="10_k7mbx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
 font = ExtResource("4_1otgo")
 font_size = 30
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7mbx"]
+radius = 19.0263
 
 [node name="Battle" type="Node2D" node_paths=PackedStringArray("card_gameplay_system", "game_resources_system", "selection")]
 script = ExtResource("1_oxf17")
@@ -68,11 +72,19 @@ resources = Dictionary[String, int]({
 
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 position = Vector2(0, -100)
-border_size = Vector2(1024, 500)
 
 [node name="SelectionController" parent="." instance=ExtResource("9_qeyqd")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.76, 0.76)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_k7mbx")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("10_k7mbx")
 
 [connection signal="card_created_with_key" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_created_with_key"]
 [connection signal="card_discarded" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_discarded"]
