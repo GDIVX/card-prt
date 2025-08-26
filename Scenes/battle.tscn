@@ -78,13 +78,20 @@ position = Vector2(0, -100)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.76, 0.76)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(3.765, 3.765)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_k7mbx")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture = ExtResource("10_k7mbx")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="RigidBody2D"]
+radius = 20.67
+vertices = PackedVector2Array(-0.531209, -20.1859, -15.6707, -14.6082, -20.7171, -1.06242, -16.9987, 13.2802, -3.98406, 20.7171, 7.70252, 20.1859, 18.3267, 8.76494, 20.4515, -4.51527, 13.2802, -15.9363)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
 
 [connection signal="card_created_with_key" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_created_with_key"]
 [connection signal="card_discarded" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_discarded"]

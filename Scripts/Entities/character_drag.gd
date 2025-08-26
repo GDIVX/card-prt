@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 		var next := current.lerp(mouse_pos, curved_t)
 
 		_handle.global_position = next
-		while_dragging.emit(_handle.position)
+		while_dragging.emit(_handle.global_position)
 
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
@@ -45,7 +45,7 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			_handle.position = Vector2.ZERO
-			emit_signal("started_dragging", _handle.position)
+			emit_signal("started_dragging", _handle.global_position)
 			_handle.visible = true
 			_is_dragging = true
 			get_viewport().set_input_as_handled()
@@ -55,6 +55,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed and _is_dragging:
 			_is_dragging = false
-			emit_signal("stopped_dragging", _handle.position)
+			emit_signal("stopped_dragging", _handle.global_position)
 			_handle.visible = false
 			get_viewport().set_input_as_handled()

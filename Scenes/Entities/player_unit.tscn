@@ -12,19 +12,27 @@ point_count = 2
 radius = 51.0
 height = 122.0
 
-[node name="PlayerUnit" instance=ExtResource("1_dwi70")]
+[node name="PlayerUnit" node_paths=PackedStringArray("nav_agent") instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
 movement_distance_limit = 600.0
+speed = 600.0
+nav_agent = NodePath("NavigationAgent2D")
 show_movement_distance_limit = true
 
-[node name="CharacterDrag" parent="." index="0" instance=ExtResource("2_sqtjf")]
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="0"]
+target_desired_distance = 15.0
+path_max_distance = 600.0
+debug_enabled = true
+debug_path_custom_color = Color(0.080776, 0.616057, 0.938655, 1)
+
+[node name="CharacterDrag" parent="." index="1" instance=ExtResource("2_sqtjf")]
 smoothness_speed = 5.0
 smoothing_curve = SubResource("Curve_dwi70")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CapsuleShape2D_dwi70")
 
-[node name="Team" parent="." index="5"]
+[node name="Team" parent="." index="6"]
 faction = 0
 
 [connection signal="started_dragging" from="CharacterDrag" to="." method="_on_character_drag_started_dragging"]

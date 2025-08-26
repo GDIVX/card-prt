@@ -1,6 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpvypy8bivlq4"]
+[gd_scene load_steps=6 format=3 uid="uid://dpvypy8bivlq4"]
 
+[ext_resource type="Script" uid="uid://qk1pwmoguo57" path="res://Scripts/map.gd" id="1_26yhd"]
 [ext_resource type="Texture2D" uid="uid://pjpk6nvtvgeo" path="res://Sprites/UI/Plceholders_tempt/fantasy card/fantasy empty playboard.png" id="1_ci6au"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ci6au"]
+vertices = PackedVector2Array(604.023, -296.031, 605.969, 499.023, -596, 501.969, -596, -299.961)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-606, -310, 614, -306, 616, 509, -606, 512)])
+parsed_collision_mask = 4294967293
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci6au"]
 friction = 0.0
@@ -8,7 +15,9 @@ bounce = 1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_58wgy"]
 
-[node name="Map" type="Node2D"]
+[node name="Map" type="NavigationRegion2D"]
+navigation_polygon = SubResource("NavigationPolygon_ci6au")
+script = ExtResource("1_26yhd")
 
 [node name="Bounds" type="Sprite2D" parent="."]
 z_index = -10
