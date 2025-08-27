@@ -4,8 +4,8 @@ class_name  TacticalUnit extends CharacterBody2D
 
 @onready var health : Health = $"Health"
 
-@export_category("Movement")
-@export var movement_distance_limit: float = 450.0
+@export_category("ClickAndDragMovement")
+@export var pixels_moved_per_movement: float = 450.0
 @export var speed : float = 600.0
 @export var nav_agent : NavigationAgent2D
 

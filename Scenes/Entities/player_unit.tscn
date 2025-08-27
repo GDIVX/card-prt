@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bliyfogowi74a"]
+[gd_scene load_steps=8 format=3 uid="uid://bliyfogowi74a"]
 
 [ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/Entities/unit.tscn" id="1_dwi70"]
 [ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://Scenes/Entities/character_drag.tscn" id="2_sqtjf"]
 [ext_resource type="Script" uid="uid://cm5dq5aj3u6qt" path="res://Scripts/Entities/player_unit.gd" id="2_tlcot"]
+[ext_resource type="Script" uid="uid://dyfpgk65mqpln" path="res://Scripts/Entities/click_and_drag_movement.gd" id="3_6lqko"]
+[ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://Scripts/Utilities/obserable_points.gd" id="3_qvrb7"]
 
 [sub_resource type="Curve" id="Curve_dwi70"]
 _data = [Vector2(0, 0), 0.0, 1.5, 0, 0, Vector2(1, 1), 2.60427e-07, 0.0, 0, 0]
@@ -12,20 +14,37 @@ point_count = 2
 radius = 51.0
 height = 122.0
 
-[node name="PlayerUnit" instance=ExtResource("1_dwi70")]
+[node name="PlayerUnit" node_paths=PackedStringArray("movement_points") instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
+movement_points = NodePath("MovementPoints")
 show_movement_distance_limit = true
 
-[node name="CharacterDrag" parent="." index="0" instance=ExtResource("2_sqtjf")]
+[node name="ClickAndDragMovement" type="Node" parent="." index="0" node_paths=PackedStringArray("movement_points", "drag")]
+script = ExtResource("3_6lqko")
+movement_points = NodePath("../MovementPoints")
+drag = NodePath("../CharacterDrag")
+metadata/_custom_type_script = "uid://dyfpgk65mqpln"
+
+[node name="CharacterDrag" parent="." index="1" instance=ExtResource("2_sqtjf")]
 smoothness_speed = 5.0
 smoothing_curve = SubResource("Curve_dwi70")
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="ClickAndDragMovement" type="Node" parent="CharacterDrag" index="2"]
+script = ExtResource("3_6lqko")
+metadata/_custom_type_script = "uid://dyfpgk65mqpln"
+
+[node name="MovementPoints" type="Node" parent="." index="2"]
+script = ExtResource("3_qvrb7")
+value = 3
+metadata/_custom_type_script = "uid://bmeybtk0sncvn"
+
+[node name="CollisionShape2D" parent="." index="3"]
 shape = SubResource("CapsuleShape2D_dwi70")
 
-[node name="Team" parent="." index="5"]
+[node name="Team" parent="." index="7"]
 faction = 0
 
+[connection signal="before_started_dragging" from="CharacterDrag" to="ClickAndDragMovement" method="_on_character_drag_before_started_dragging"]
 [connection signal="started_dragging" from="CharacterDrag" to="." method="_on_character_drag_started_dragging"]
 [connection signal="stopped_dragging" from="CharacterDrag" to="." method="_on_character_drag_stopped_dragging"]
 

@@ -3,7 +3,7 @@ class_name DragHandle
 extends Node
 
 @export var _handle : Node2D
-@export var disabled: bool = false
+@export var enabled: bool = true
 
 @export_category("Feel")
 @export var smoothness_speed: float = 10.0        # higher = snappier follow
@@ -11,6 +11,7 @@ extends Node
 
 var _is_dragging := false
 
+signal before_started_dragging
 signal started_dragging(start_position: Vector2)
 signal stopped_dragging(end_position: Vector2)
 signal while_dragging(current_position: Vector2, delta: float)
@@ -20,7 +21,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if disabled: return
+	if not enabled: return
 	if not _handle:
 		return
 
@@ -39,22 +40,36 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if disabled: return
+	if not enabled: return
 	if not _handle: return
 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
-			_handle.position = Vector2.ZERO
-			emit_signal("started_dragging", _handle.global_position)
-			_handle.visible = true
-			_is_dragging = true
-			get_viewport().set_input_as_handled()
+			#fire early signal for query and wait for conformation
+			before_started_dragging.emit()
+			var timer := get_tree().create_timer(0.2)
+			timer.timeout.connect(func ():
+				if enabled:
+					start_drag())
+			
+
+
+func start_drag() -> void:
+	_handle.position = Vector2.ZERO
+	emit_signal("started_dragging", _handle.global_position)
+	_handle.visible = true
+	_is_dragging = true
+	get_viewport().set_input_as_handled()
 
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if not event.pressed and _is_dragging:
-			_is_dragging = false
-			emit_signal("stopped_dragging", _handle.global_position)
-			_handle.visible = false
-			get_viewport().set_input_as_handled()
+			stop_drag()
+
+
+func stop_drag() -> void:
+	_is_dragging = false
+	emit_signal("stopped_dragging", _handle.global_position)
+	_handle.visible = false
+	get_viewport().set_input_as_handled()
