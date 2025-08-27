@@ -364,12 +364,13 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Unit" type="CharacterBody2D"]
+[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
 disable_mode = 1
 motion_mode = 1
 platform_floor_layers = 4294967294
 platform_wall_layers = 2
 script = ExtResource("1_3g3so")
+nav_agent = NodePath("NavigationAgent2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 1)
@@ -403,6 +404,13 @@ fill_tween_ease = 1
 [node name="Team" type="Node" parent="."]
 script = ExtResource("12_8sanv")
 faction = 2
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 15.0
+path_max_distance = 600.0
+radius = 50.0
+debug_enabled = true
+debug_path_custom_color = Color(0.080776, 0.616057, 0.938655, 1)
 
 [connection signal="defense_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_defense_changed"]
 [connection signal="health_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_health_changed"]

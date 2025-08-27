@@ -8,6 +8,7 @@ vertices = PackedVector2Array(604.023, -296.031, 605.969, 499.023, -596, 501.969
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-606, -310, 614, -306, 616, 509, -606, 512)])
 parsed_collision_mask = 4294967293
+agent_radius = 50.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ci6au"]
 friction = 0.0

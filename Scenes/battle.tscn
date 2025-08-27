@@ -9,14 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://dpvypy8bivlq4" path="res://Scenes/map.tscn" id="6_f6xt6"]
 [ext_resource type="Script" uid="uid://bl3doxao2w0oi" path="res://Scripts/game_resources_system.gd" id="6_ww2ai"]
 [ext_resource type="PackedScene" uid="uid://dkhkwq7tpa5v7" path="res://Scenes/Selection/selection_controller.tscn" id="9_qeyqd"]
-[ext_resource type="Texture2D" uid="uid://d3angokb02o0x" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy button or empty life holder.png" id="10_k7mbx"]
+[ext_resource type="Texture2D" uid="uid://cwotd5srwx0jd" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy genreci action button.png" id="10_k7mbx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
 font = ExtResource("4_1otgo")
 font_size = 30
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k7mbx"]
-radius = 19.0263
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upb72"]
+size = Vector2(260, 132)
 
 [node name="Battle" type="Node2D" node_paths=PackedStringArray("card_gameplay_system", "game_resources_system", "selection")]
 script = ExtResource("1_oxf17")
@@ -73,25 +73,19 @@ resources = Dictionary[String, int]({
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 position = Vector2(0, -100)
 
+[node name="Sprite2D" type="Sprite2D" parent="Map"]
+position = Vector2(0, 100)
+texture = ExtResource("10_k7mbx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Map/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Sprite2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_upb72")
+
 [node name="SelectionController" parent="." instance=ExtResource("9_qeyqd")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.76, 0.76)
-
-[node name="RigidBody2D" type="StaticBody2D" parent="."]
-scale = Vector2(3.765, 3.765)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_k7mbx")
-
-[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("10_k7mbx")
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="RigidBody2D"]
-radius = 20.67
-vertices = PackedVector2Array(-0.531209, -20.1859, -15.6707, -14.6082, -20.7171, -1.06242, -16.9987, 13.2802, -3.98406, 20.7171, 7.70252, 20.1859, 18.3267, 8.76494, 20.4515, -4.51527, 13.2802, -15.9363)
-affect_navigation_mesh = true
-carve_navigation_mesh = true
 
 [connection signal="card_created_with_key" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_created_with_key"]
 [connection signal="card_discarded" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_discarded"]
