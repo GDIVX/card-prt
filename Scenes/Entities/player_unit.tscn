@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bliyfogowi74a"]
+[gd_scene load_steps=9 format=3 uid="uid://bliyfogowi74a"]
 
 [ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/Entities/unit.tscn" id="1_dwi70"]
 [ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://Scenes/Entities/character_drag.tscn" id="2_sqtjf"]
 [ext_resource type="Script" uid="uid://cm5dq5aj3u6qt" path="res://Scripts/Entities/player_unit.gd" id="2_tlcot"]
 [ext_resource type="Script" uid="uid://dyfpgk65mqpln" path="res://Scripts/Entities/click_and_drag_movement.gd" id="3_6lqko"]
 [ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://Scripts/Utilities/obserable_points.gd" id="3_qvrb7"]
+[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/Widgets/counter.tscn" id="6_qhlhk"]
 
 [sub_resource type="Curve" id="Curve_dwi70"]
 _data = [Vector2(0, 0), 0.0, 1.5, 0, 0, Vector2(1, 1), 2.60427e-07, 0.0, 0, 0]
@@ -41,11 +42,16 @@ metadata/_custom_type_script = "uid://bmeybtk0sncvn"
 [node name="CollisionShape2D" parent="." index="3"]
 shape = SubResource("CapsuleShape2D_dwi70")
 
+[node name="Counter" parent="EntityGui" index="1" instance=ExtResource("6_qhlhk")]
+layout_mode = 1
+mouse_filter = 2
+
 [node name="Team" parent="." index="7"]
 faction = 0
 
 [connection signal="before_started_dragging" from="CharacterDrag" to="ClickAndDragMovement" method="_on_character_drag_before_started_dragging"]
 [connection signal="started_dragging" from="CharacterDrag" to="." method="_on_character_drag_started_dragging"]
 [connection signal="stopped_dragging" from="CharacterDrag" to="." method="_on_character_drag_stopped_dragging"]
+[connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]
 
 [editable path="CharacterDrag"]
