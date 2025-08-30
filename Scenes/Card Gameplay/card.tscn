@@ -15,6 +15,7 @@ card_transform_animator = NodePath("CardTransformAnimator")
 [node name="CardView" parent="." instance=ExtResource("1_0qqmn")]
 offset_right = 250.0
 offset_bottom = 350.0
+mouse_filter = 0
 
 [node name="CardPlayer" type="Node" parent="."]
 script = ExtResource("2_brehn")

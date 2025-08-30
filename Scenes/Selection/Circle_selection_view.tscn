@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://uxx8jh4wo8qq"]
+
+[ext_resource type="Script" uid="uid://bwoncme0mrpxd" path="res://Scripts/circle_2d.gd" id="1_4lm5f"]
+[ext_resource type="Script" uid="uid://6otek8mbdoos" path="res://Scripts/Selection/area_selection_view.gd" id="1_faqfa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ilq3"]
+radius = 200.0
+
+[node name="CircleAreaSelectionView" type="Node2D"]
+script = ExtResource("1_faqfa")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5ilq3")
+
+[node name="Circle2D" type="Polygon2D" parent="."]
+color = Color(0.168627, 0.556863, 0.670588, 0.784314)
+antialiased = true
+polygon = PackedVector2Array(200, 0, 198.423, 25.0666, 193.717, 49.738, 185.955, 73.6249, 175.261, 96.3507, 161.803, 117.557, 145.794, 136.909, 127.485, 154.103, 107.165, 168.866, 85.1559, 180.965, 61.8034, 190.211, 37.4763, 196.457, 12.5581, 199.605, -12.5581, 199.605, -37.4763, 196.457, -61.8034, 190.211, -85.1559, 180.965, -107.165, 168.866, -127.485, 154.103, -145.794, 136.909, -161.803, 117.557, -175.261, 96.3507, -185.955, 73.6249, -193.717, 49.738, -198.423, 25.0666, -200, 2.44921e-14, -198.423, -25.0666, -193.717, -49.738, -185.955, -73.6249, -175.261, -96.3507, -161.803, -117.557, -145.794, -136.909, -127.485, -154.103, -107.165, -168.866, -85.1559, -180.965, -61.8034, -190.211, -37.4763, -196.457, -12.5581, -199.605, 12.5581, -199.605, 37.4763, -196.457, 61.8034, -190.211, 85.1559, -180.965, 107.165, -168.866, 127.485, -154.103, 145.794, -136.909, 161.803, -117.557, 175.261, -96.3507, 185.955, -73.6249, 193.717, -49.738, 198.423, -25.0666)
+script = ExtResource("1_4lm5f")
+radius = 200.0
+segments = 50
+metadata/_custom_type_script = "uid://bwoncme0mrpxd"

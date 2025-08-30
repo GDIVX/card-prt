@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dtr5kbqy68nck"]
+[gd_scene load_steps=59 format=3 uid="uid://dtr5kbqy68nck"]
 
 [ext_resource type="Script" uid="uid://buadw7jswgygx" path="res://Scripts/Entities/character.gd" id="1_3g3so"]
 [ext_resource type="Texture2D" uid="uid://dul0dbdyui3ur" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack01.png" id="2_a65fh"]
@@ -364,6 +364,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3g3so"]
+size = Vector2(112, 123)
+
 [node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
 disable_mode = 1
 motion_mode = 1
@@ -411,6 +414,15 @@ path_max_distance = 600.0
 radius = 50.0
 debug_enabled = true
 debug_path_custom_color = Color(0.080776, 0.616057, 0.938655, 1)
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_mask = 3
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_3g3so")
+debug_color = Color(1, 0, 0, 0.419608)
 
 [connection signal="defense_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_defense_changed"]
 [connection signal="health_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_health_changed"]

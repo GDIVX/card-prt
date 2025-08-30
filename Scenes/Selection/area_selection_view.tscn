@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctb171q31rd0o"]
+
+[ext_resource type="Script" uid="uid://bwoncme0mrpxd" path="res://Scripts/circle_2d.gd" id="1_n6ppu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ilq3"]
+radius = 200.0
+
+[node name="CircleAreaSelectionView" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5ilq3")
+
+[node name="Circle2D" type="Polygon2D" parent="."]
+color = Color(0.168627, 0.556863, 0.670588, 0.784314)
+antialiased = true
+script = ExtResource("1_n6ppu")
+radius = 200.0
+segments = 50
+metadata/_custom_type_script = "uid://bwoncme0mrpxd"
