@@ -9,10 +9,6 @@ func _select(context: CardContext, spec: SelectionSpec, _controller: Node) -> Ar
     var space_state := context.battle.get_world_2d().direct_space_state
     var params := PhysicsShapeQueryParameters2D.new()
     
-    #try to modify the shape to fit range if possible
-    if shape is CircleShape2D or shape is CapsuleShape2D:
-        shape.radius = spec.max_range
-
 
     params.shape = shape
     params.collision_mask = collision_mask

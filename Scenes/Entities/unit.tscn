@@ -416,7 +416,8 @@ debug_enabled = true
 debug_path_custom_color = Color(0.080776, 0.616057, 0.938655, 1)
 
 [node name="Hitbox" type="Area2D" parent="."]
-collision_mask = 3
+collision_layer = 4
+collision_mask = 0
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]

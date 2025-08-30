@@ -2,6 +2,7 @@
 extends Node2D
 class_name SelectionController
 
+
 signal selection_started
 signal selection_completed(results: Array)
 signal selection_canceled
@@ -36,6 +37,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	match _spec.mode:
 		SelectionSpec.SelectionMode.CURSOR:
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+				#handle range
+				var mouse_position = get_global_mouse_position()
+				if mouse_position.distance_to(_context.unit.global_position) > _spec.max_range: return
 				_finish_once()
 		SelectionSpec.SelectionMode.AUTO_AROUND_CASTER:
 			_finish_once()  # no input—auto pick immediately
