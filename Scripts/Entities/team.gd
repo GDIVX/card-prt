@@ -4,7 +4,7 @@ class_name Team
 @export var faction: Faction
 
 enum Faction {PLAYER, ENEMY, NEUTRAL}
-enum RelativeRelation {ALLIED, ENEMIES, INDIFFERENT}
+enum RelativeRelation {ALLIED, ENEMIES, INDIFFERENT, ANY}
 
 func get_relative_relation(other_faction: Faction) -> RelativeRelation:
     # Neutral team is indifferent towards anyone, including itself

@@ -2,7 +2,7 @@
 @icon("res://Sprites/IconGodotNode/color/icon_character.png")
 class_name  TacticalUnit extends CharacterBody2D
 
-@onready var health : Health = $"Health"
+@export var health : Health 
 
 @export_category("ClickAndDragMovement")
 @export var pixels_moved_per_movement: float = 450.0

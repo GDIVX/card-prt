@@ -7,13 +7,13 @@
 [ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://Scripts/Utilities/obserable_points.gd" id="3_qvrb7"]
 [ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/Widgets/counter.tscn" id="6_qhlhk"]
 
-[sub_resource type="Curve" id="Curve_dwi70"]
-_data = [Vector2(0, 0), 0.0, 1.5, 0, 0, Vector2(1, 1), 2.60427e-07, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwi70"]
 radius = 51.0
 height = 122.0
+
+[sub_resource type="Curve" id="Curve_dwi70"]
+_data = [Vector2(0, 0), 0.0, 1.5, 0, 0, Vector2(1, 1), 2.60427e-07, 0.0, 0, 0]
+point_count = 2
 
 [node name="PlayerUnit" node_paths=PackedStringArray("movement_points") instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
@@ -26,32 +26,36 @@ movement_points = NodePath("../MovementPoints")
 drag = NodePath("../CharacterDrag")
 metadata/_custom_type_script = "uid://dyfpgk65mqpln"
 
-[node name="CharacterDrag" parent="." index="1" instance=ExtResource("2_sqtjf")]
-smoothness_speed = 5.0
-smoothing_curve = SubResource("Curve_dwi70")
-
-[node name="ClickAndDragMovement" type="Node" parent="CharacterDrag" index="2"]
-script = ExtResource("3_6lqko")
-metadata/_custom_type_script = "uid://dyfpgk65mqpln"
-
-[node name="MovementPoints" type="Node" parent="." index="2"]
+[node name="MovementPoints" type="Node" parent="." index="1"]
 script = ExtResource("3_qvrb7")
 value = 3
 metadata/_custom_type_script = "uid://bmeybtk0sncvn"
 
-[node name="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource("CapsuleShape2D_dwi70")
 
 [node name="Counter" parent="EntityGui" index="1" instance=ExtResource("6_qhlhk")]
 layout_mode = 1
 mouse_filter = 2
 
-[node name="Team" parent="." index="7"]
+[node name="Team" parent="." index="6"]
 faction = 0
 
+[node name="CharacterDrag" parent="." index="7" instance=ExtResource("2_sqtjf")]
+smoothness_speed = 5.0
+smoothing_curve = SubResource("Curve_dwi70")
+
+[node name="Area2D" parent="CharacterDrag" index="0"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="ClickAndDragMovement" type="Node" parent="CharacterDrag" index="2"]
+script = ExtResource("3_6lqko")
+metadata/_custom_type_script = "uid://dyfpgk65mqpln"
+
+[connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]
 [connection signal="before_started_dragging" from="CharacterDrag" to="ClickAndDragMovement" method="_on_character_drag_before_started_dragging"]
 [connection signal="started_dragging" from="CharacterDrag" to="." method="_on_character_drag_started_dragging"]
 [connection signal="stopped_dragging" from="CharacterDrag" to="." method="_on_character_drag_stopped_dragging"]
-[connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]
 
 [editable path="CharacterDrag"]

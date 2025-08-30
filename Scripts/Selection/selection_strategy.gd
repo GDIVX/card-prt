@@ -24,17 +24,17 @@ func _select(_context: CardContext, _spec: SelectionSpec, _controller: Node) -> 
 ## If either side lacks [Team], treated as neutral and requires [enum SelectionSpec.TeamMask] to be [b]NEUTRAL[/b].[br]
 ## Otherwise compares [method Team.get_relative_relation] against [b]ALLY[/b], [b]ENEMY[/b], [b]NEUTRAL[/b].[br]
 ## Returns: [bool].
-static func _matches_team_mask(caster: Node, target: Node, mask: int) -> bool:
-	if caster == target:
-		return (mask & SelectionSpec.TeamMask.CASTER) != 0
-	var caster_team: Team = _get_team(caster)
-	var target_team: Team = _get_team(target)
-	if target_team == null or caster_team == null:
-		return (mask & SelectionSpec.TeamMask.NEUTRAL) != 0
-	var rel: Team.RelativeRelation = caster_team.get_relative_relation(target_team.faction)
-	return (rel == Team.RelativeRelation.ALLIED      and (mask & SelectionSpec.TeamMask.ALLY)    != 0) \
-	    or (rel == Team.RelativeRelation.ENEMIES     and (mask & SelectionSpec.TeamMask.ENEMY)   != 0) \
-	    or (rel == Team.RelativeRelation.INDIFFERENT and (mask & SelectionSpec.TeamMask.NEUTRAL) != 0)
+static func _matches_team_mask(caster: Node, target: Node, mask: Team.RelativeRelation) -> bool:
+	if mask == Team.RelativeRelation.ANY: return true
+	var caster_team := _get_team(caster)
+	var target_team := _get_team(target)
+
+	if not caster_team: return false
+	if not target_team: return false
+
+	var relation := caster_team.get_relative_relation(target_team.faction)
+	return relation == mask
+	
 
 
 ## Resolve a [annotation Team] component from a node.
@@ -48,4 +48,7 @@ static func _get_team(node: Node) -> Team:
 	for child in node.get_children():
 		if child is Team:
 			return child
+	for sibling in node.get_parent().get_children():
+		if sibling is Team:
+			return sibling
 	return null

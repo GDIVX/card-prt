@@ -365,14 +365,15 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g3so"]
-size = Vector2(112, 123)
+size = Vector2(113, 120)
 
-[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("nav_agent")]
+[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("health", "nav_agent")]
 disable_mode = 1
 motion_mode = 1
 platform_floor_layers = 4294967294
 platform_wall_layers = 2
 script = ExtResource("1_3g3so")
+health = NodePath("Health")
 nav_agent = NodePath("NavigationAgent2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -382,10 +383,6 @@ shape = SubResource("CapsuleShape2D_lkv7d")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_owm7s")
 animation = &"new_animation"
-
-[node name="Health" parent="." instance=ExtResource("10_bymjo")]
-max_health = 20
-defense = 5
 
 [node name="EntityGui" type="Control" parent="."]
 layout_mode = 3
@@ -404,10 +401,6 @@ health_object = NodePath("../../Health")
 fill_tween_trans = 5
 fill_tween_ease = 1
 
-[node name="Team" type="Node" parent="."]
-script = ExtResource("12_8sanv")
-faction = 2
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 15.0
 path_max_distance = 600.0
@@ -415,13 +408,18 @@ radius = 50.0
 debug_enabled = true
 debug_path_custom_color = Color(0.080776, 0.616057, 0.938655, 1)
 
+[node name="Health" parent="." instance=ExtResource("10_bymjo")]
+max_health = 20
+defense = 5
+
+[node name="Team" type="Node" parent="."]
+script = ExtResource("12_8sanv")
+faction = 2
+
 [node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 0
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, 0.5)
+position = Vector2(1.5, 4)
 shape = SubResource("RectangleShape2D_3g3so")
 debug_color = Color(1, 0, 0, 0.419608)
 

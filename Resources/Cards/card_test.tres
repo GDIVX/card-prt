@@ -27,17 +27,18 @@ radius = 50.0
 [sub_resource type="Resource" id="Resource_78aya"]
 script = ExtResource("7_odagn")
 shape = SubResource("CircleShape2D_d0uci")
-collision_mask = 5
+collision_mask = 1
 metadata/_custom_type_script = "uid://cvd3tww6q8044"
 
 [sub_resource type="Resource" id="Resource_odagn"]
 script = ExtResource("6_4uo8f")
-team_mask = 15
-mode = 2
+relation_mask = 0
+mode = 0
 strategy = SubResource("Resource_78aya")
 visualScene = ExtResource("8_ldxb2")
 max_targets = 1
 min_targets = 1
+repeats = 3
 max_range = 150.0
 metadata/_custom_type_script = "uid://hq6poehfo3mx"
 

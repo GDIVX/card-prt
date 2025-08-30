@@ -11,13 +11,16 @@ signal selection_canceled
 var _active := false
 var _spec: SelectionSpec
 var _context: CardContext
-var selection_view: Node
+var _repeats_processed :int = 0
+var _all_targets :Array = []
+var selection_view: Array[Node] = []
 
 
 func start_selection(context: CardContext, spec: SelectionSpec) -> void:
 	_context = context
 	_spec = spec
-	_spawn_visual(spec)
+	_repeats_processed = 0
+	_spawn_visual()
 	get_tree().create_timer(0.1).timeout.connect(func ():
 		_active = true
 		selection_started.emit()
@@ -49,25 +52,37 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _finish_once():
 	var targets := _spec.strategy._select(_context, _spec , self)
+	_all_targets.append_array(targets)
+	_repeats_processed += 1
+
+	if _repeats_processed < _spec.repeats:
+		if not selection_view.is_empty():
+			# Freeze the last view since it is handled 
+			var back_view: Node = selection_view.back() as Node
+			back_view.set_process(false)
+		# Add new view 
+		_spawn_visual()
+		return
+
 	_cleanup_visual()
 	_active = false
 	#If the specs ask for a minimum targets count, count a small array as invalid and cancel 
 	if targets.size() >= _spec.min_targets:
-		selection_completed.emit(targets)
+		selection_completed.emit(_all_targets)
 	else:
 		selection_canceled.emit()
 
-func _spawn_visual(spec: SelectionSpec) -> void:
-	var instance = spec.visualScene.instantiate()
+func _spawn_visual() -> void:
+	var instance = _spec.visualScene.instantiate()
+	selection_view.append(instance)
 	if not instance.has_method("set_spec"): return
 
-	instance.set_spec(spec, _context)
+	instance.set_spec(_spec, _context)
 	add_child(instance)
-	selection_view = instance
 	
 	pass
 
 func _cleanup_visual() -> void:
-	if selection_view and selection_view.is_inside_tree():
-		selection_view.queue_free()
-	selection_view = null
+	for view in selection_view.duplicate():
+		view.queue_free()
+	selection_view.clear()

@@ -44,7 +44,7 @@ func _select(context: CardContext, spec: SelectionSpec, _controller: Node) -> Ar
 		if n == null or seen.has(n):
 			continue
 		seen[n] = true
-		if SelectionStrategy._matches_team_mask(context.unit, n, spec.team_mask):
+		if SelectionStrategy._matches_team_mask(context.unit, n, spec.relation_mask):
 			nodes.append(n)
 
 	return nodes
