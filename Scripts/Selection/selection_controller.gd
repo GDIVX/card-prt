@@ -35,14 +35,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 
 	match _spec.mode:
-		SelectionSpec.SelectionMode.CURSOR:
+		SelectionSpec.SelectionMode.CENTER_ON_CASTER:
+			_finish_once()  # no input—auto pick immediately
+		_:
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 				#handle range
 				var mouse_position = get_global_mouse_position()
 				if mouse_position.distance_to(_context.unit.global_position) > _spec.max_range: return
 				_finish_once()
-		SelectionSpec.SelectionMode.AUTO_AROUND_CASTER:
-			_finish_once()  # no input—auto pick immediately
 	get_viewport().set_input_as_handled()
 	
 

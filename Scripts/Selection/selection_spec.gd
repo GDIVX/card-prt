@@ -9,6 +9,7 @@ enum TeamMask {
     NEUTRAL = 1 << 3, ## Neutral entities
 }
 
+## What should this selection be looking for
 @export_flags(
     "Caster", ## The unit that cast the effect
     "Ally",## Allies to the caster
@@ -16,11 +17,17 @@ enum TeamMask {
     "Neutral",)## Neutral entities
 var team_mask: int = TeamMask.ALLY | TeamMask.ENEMY
 
+## Determine the shape and positional logic of the selection
 enum SelectionMode 
 {
-     CURSOR,
-      AUTO_AROUND_CASTER
+    ## Center the selection method on the mouse position
+    CURSOR,
+    ## Center on the caster and immediately fire
+    CENTER_ON_CASTER,
+    ## Center one end on the caster, and use the mouse as a second point
+    FROM_CASTER_TO_MOUSE
 }
+## Determine the shape and positional logic of the selection
 @export var mode: SelectionMode = SelectionMode.CURSOR
 
 @export_category("Behavior")

@@ -1,4 +1,4 @@
-class_name AreaSelection extends SelectionView
+class_name CircleSelectionView extends SelectionView
 
 @onready var circle : Circle2D = $Circle2D
 
@@ -13,10 +13,14 @@ func _ready() -> void:
 	circle.calculate_circle()
 		
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	var mode : SelectionSpec.SelectionMode = _spec.mode
 	match  mode:
 		SelectionSpec.SelectionMode.CURSOR:
 			global_position = get_global_mouse_position()
-		SelectionSpec.SelectionMode.AUTO_AROUND_CASTER:
+		SelectionSpec.SelectionMode.CENTER_ON_CASTER:
 			global_position = _context.unit.global_position
+		SelectionSpec.SelectionMode.FROM_CASTER_TO_MOUSE:
+			global_position = _context.unit.global_position
+			var angle := get_global_mouse_position().angle_to(global_position)
+			rotate_toward(rotation , angle , delta)
