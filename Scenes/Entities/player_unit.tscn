@@ -38,9 +38,6 @@ shape = SubResource("CapsuleShape2D_dwi70")
 layout_mode = 1
 mouse_filter = 2
 
-[node name="Team" parent="." index="6"]
-faction = 0
-
 [node name="CharacterDrag" parent="." index="7" instance=ExtResource("2_sqtjf")]
 smoothness_speed = 5.0
 smoothing_curve = SubResource("Curve_dwi70")
@@ -52,6 +49,9 @@ collision_mask = 0
 [node name="ClickAndDragMovement" type="Node" parent="CharacterDrag" index="2"]
 script = ExtResource("3_6lqko")
 metadata/_custom_type_script = "uid://dyfpgk65mqpln"
+
+[node name="Team" parent="." index="8"]
+faction = 0
 
 [connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]
 [connection signal="before_started_dragging" from="CharacterDrag" to="ClickAndDragMovement" method="_on_character_drag_before_started_dragging"]

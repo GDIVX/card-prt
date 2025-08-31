@@ -3,6 +3,7 @@
         "AABB",
         "clampf",
         "elif",
+        "Hitbox",
         "lerp",
         "onready",
         "tweens"
