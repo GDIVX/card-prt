@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=14 format=3 uid="uid://dmkj4psn3atng"]
 
 [ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://Scripts/battle.gd" id="1_oxf17"]
 [ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/Card Gameplay/card_gameplay_system.tscn" id="1_w7k78"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dpvypy8bivlq4" path="res://Scenes/map.tscn" id="6_f6xt6"]
 [ext_resource type="Script" uid="uid://bl3doxao2w0oi" path="res://Scripts/game_resources_system.gd" id="6_ww2ai"]
 [ext_resource type="PackedScene" uid="uid://dkhkwq7tpa5v7" path="res://Scenes/Selection/selection_controller.tscn" id="9_qeyqd"]
+[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/Entities/unit.tscn" id="9_upb72"]
 [ext_resource type="Texture2D" uid="uid://cwotd5srwx0jd" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy genreci action button.png" id="10_k7mbx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
@@ -72,6 +73,9 @@ resources = Dictionary[String, int]({
 
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 position = Vector2(0, -100)
+
+[node name="Unit" parent="Map" instance=ExtResource("9_upb72")]
+position = Vector2(173, -218)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map"]
 position = Vector2(0, 100)

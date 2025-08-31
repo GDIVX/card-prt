@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=14 format=3 uid="uid://80uiy7281xd7"]
+[gd_resource type="Resource" script_class="CardData" load_steps=13 format=3 uid="uid://80uiy7281xd7"]
 
 [ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="1_noif3"]
 [ext_resource type="Script" uid="uid://t2nq85q1ucpe" path="res://Scripts/Cards/Effects/log_targets_arr_effect.gd" id="2_4uo8f"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="3_noif3"]
 [ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://Sprites/UI/Plceholders_tempt/knight.png" id="3_s2vro"]
 [ext_resource type="Script" uid="uid://hq6poehfo3mx" path="res://Scripts/Selection/selection_spec.gd" id="6_4uo8f"]
-[ext_resource type="Script" uid="uid://cvd3tww6q8044" path="res://Scripts/Selection/shape_selection.gd" id="7_odagn"]
+[ext_resource type="Script" uid="uid://c301ur022dni0" path="res://Scripts/Selection/raycast_selection.gd" id="7_odagn"]
 [ext_resource type="PackedScene" uid="uid://hn3fpnvd8sbh" path="res://Scenes/Selection/raycast_selection_view.tscn" id="8_odagn"]
 
 [sub_resource type="Resource" id="Resource_ldxb2"]
@@ -21,20 +21,16 @@ Description = "Print the phrase \"Nice Line\".
 Artwork = ExtResource("3_s2vro")
 metadata/_custom_type_script = "uid://bxkotdmlu11v"
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_d0uci"]
-radius = 50.0
-
-[sub_resource type="Resource" id="Resource_78aya"]
+[sub_resource type="Resource" id="Resource_d0uci"]
 script = ExtResource("7_odagn")
-shape = SubResource("CircleShape2D_d0uci")
 collision_mask = 1
-metadata/_custom_type_script = "uid://cvd3tww6q8044"
+metadata/_custom_type_script = "uid://c301ur022dni0"
 
 [sub_resource type="Resource" id="Resource_odagn"]
 script = ExtResource("6_4uo8f")
-relation_mask = 0
-mode = 0
-strategy = SubResource("Resource_78aya")
+relation_mask = 3
+mode = 2
+strategy = SubResource("Resource_d0uci")
 visualScene = ExtResource("8_odagn")
 max_targets = 1
 min_targets = 1

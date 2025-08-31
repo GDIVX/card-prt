@@ -37,6 +37,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		return
 
+	##TODO: test this. It doesn't seem to work correctly with [RaycastSelection]
 	match _spec.mode:
 		SelectionSpec.SelectionMode.CENTER_ON_CASTER:
 			_finish_once()  # no input—auto pick immediately
