@@ -11,7 +11,7 @@ extends SelectionStrategy
 ## Moves the shape according to [param spec.mode]:
 ##  - [param CURSOR]: center on mouse, no rotation.
 ##  - [param AUTO_AROUND_CASTER]: center on caster, rotate toward mouse.
-func _select(context: CardContext, spec: SelectionSpec, _controller: Node) -> Array:
+func _select(context: CardContext, spec: SelectionSpec, _controller: SelectionController) -> Array:
 	# Early out: 0 means no targets at all
 	if spec.max_targets == 0:
 		return []

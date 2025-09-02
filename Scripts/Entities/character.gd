@@ -2,7 +2,9 @@
 @icon("res://Sprites/IconGodotNode/color/icon_character.png")
 class_name  TacticalUnit extends CharacterBody2D
 
-@export var health : Health 
+@export_category("Nodes")
+@export var health : Health
+@export var raycast : RayCast2D 
 
 @export_category("ClickAndDragMovement")
 @export var pixels_moved_per_movement: float = 450.0

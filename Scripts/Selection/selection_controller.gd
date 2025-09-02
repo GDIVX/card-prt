@@ -26,27 +26,38 @@ func start_selection(context: CardContext, spec: SelectionSpec) -> void:
 		selection_started.emit()
 		)
 	
+func stop__selection() -> void:
+	_cleanup_visual()
+	_active = false
+	selection_canceled.emit()
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	if !_active: return
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
-		_cleanup_visual()
-		_active = false
-		selection_canceled.emit()
+		stop__selection()
 		get_viewport().set_input_as_handled()
 		return
 
-	##TODO: test this. It doesn't seem to work correctly with [RaycastSelection]
 	match _spec.mode:
 		SelectionSpec.SelectionMode.CENTER_ON_CASTER:
 			_finish_once()  # no input—auto pick immediately
 		_:
-			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-				#handle range
-				var mouse_position = get_global_mouse_position()
-				if mouse_position.distance_to(_context.unit.global_position) > _spec.max_range: return
-				_finish_once()
+			#Detect left mouse click
+			if event is not InputEventMouseButton: 
+				return
+			var click_event := event as InputEventMouseButton
+			if not click_event.pressed :
+				return
+			if click_event.button_index != MOUSE_BUTTON_LEFT:
+				return
+
+			#handle range
+			var mouse_position = get_global_mouse_position()
+			if mouse_position.distance_to(_context.unit.global_position) > _spec.max_range:
+				return
+
+			_finish_once()
 	get_viewport().set_input_as_handled()
 	
 

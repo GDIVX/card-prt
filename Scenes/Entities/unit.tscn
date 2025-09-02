@@ -367,14 +367,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3g3so"]
 size = Vector2(113, 120)
 
-[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("health", "nav_agent")]
+[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("health", "raycast", "nav_agent")]
 disable_mode = 1
 motion_mode = 1
 platform_floor_layers = 4294967294
 platform_wall_layers = 2
 script = ExtResource("1_3g3so")
 health = NodePath("Health")
+raycast = NodePath("RayCast2D")
 nav_agent = NodePath("NavigationAgent2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 1)

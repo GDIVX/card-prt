@@ -35,7 +35,7 @@ visualScene = ExtResource("8_odagn")
 max_targets = 1
 min_targets = 1
 repeats = 3
-max_range = 150.0
+max_range = 600.0
 metadata/_custom_type_script = "uid://hq6poehfo3mx"
 
 [resource]

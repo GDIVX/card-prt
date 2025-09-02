@@ -1,14 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://hn3fpnvd8sbh"]
+[gd_scene load_steps=7 format=3 uid="uid://hn3fpnvd8sbh"]
 
 [ext_resource type="Script" uid="uid://octuflg0mrq7" path="res://Scripts/Selection/raycast_selection_view.gd" id="1_myedt"]
+[ext_resource type="Shader" uid="uid://nq2bayapq6vb" path="res://Shaders/raycast_selection_view.gdshader" id="2_pyjtr"]
+
+[sub_resource type="Gradient" id="Gradient_pyjtr"]
+colors = PackedColorArray(0, 1, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_uqk87"]
+colors = PackedColorArray(0.207843, 0.972549, 0.639216, 0.392157, 0.976471, 0, 0.658824, 0.392157)
+
+[sub_resource type="Curve" id="Curve_pyjtr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(0.75, 0.2), 0.224652, 0.224652, 0, 0, Vector2(1, 1), 9.70317, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqk87"]
+shader = ExtResource("2_pyjtr")
+shader_parameter/frequency = 1.5
+shader_parameter/amplitude = 0.1
+shader_parameter/wave_speed = 1.0
+shader_parameter/direction = 1.0
+shader_parameter/thickness = 0.6
+shader_parameter/edge_soft = 0.02
+shader_parameter/dash_repeat = 24.0
+shader_parameter/dash_duty = 0.4
+shader_parameter/dash_speed = 1.5
+shader_parameter/dash_soft = 0.02
+shader_parameter/dash_angle_deg = 0.0
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0, 0, 1, 0.352941)
+shader_parameter/opacity = 1.0
 
 [node name="RaycastSelectionView" type="Node2D" node_paths=PackedStringArray("line", "raycast")]
 script = ExtResource("1_myedt")
 line = NodePath("Line2D")
 raycast = NodePath("RayCast2D")
+main_gradient = SubResource("Gradient_pyjtr")
+second_gradient = SubResource("Gradient_uqk87")
+sampling_curve = SubResource("Curve_pyjtr")
 metadata/_custom_type_script = "uid://dyt1qs26meaiw"
 
 [node name="Line2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_uqk87")
 points = PackedVector2Array(152, -79, 337, -79)
+texture_mode = 1
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

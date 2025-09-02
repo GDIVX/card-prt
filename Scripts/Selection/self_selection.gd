@@ -2,5 +2,5 @@
 class_name SelfSelection
 extends SelectionStrategy
 
-func _select(context: CardContext, _spec: SelectionSpec , _controller: Node) -> Array:
+func _select(context: CardContext, _spec: SelectionSpec , _controller: SelectionController) -> Array:
     return [context.unit]

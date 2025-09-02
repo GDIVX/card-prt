@@ -13,7 +13,7 @@ class_name SelectionStrategy
 ## Should be pure logic: input and visuals are handled by controller/view.[br]
 ## Returns: [Array] of [Node] targets (empty is valid).[br]
 ## Parameters: [b]context[/b] ([CardContext]), [b]spec[/b] ([SelectionSpec]), [b]controller[/b] ([SelectionController]).
-func _select(_context: CardContext, _spec: SelectionSpec, _controller: Node) -> Array:
+func _select(_context: CardContext, _spec: SelectionSpec, _controller: SelectionController) -> Array:
 	push_error("SelectionStrategy._select not implemented")
 	return []
 
