@@ -64,6 +64,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _finish_once():
 	var targets := _spec.strategy._select(_context, _spec , self)
+	if not _active : return
 	_all_targets.append_array(targets)
 	_repeats_processed += 1
 
