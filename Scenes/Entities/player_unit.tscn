@@ -31,7 +31,7 @@ script = ExtResource("3_qvrb7")
 value = 3
 metadata/_custom_type_script = "uid://bmeybtk0sncvn"
 
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="3"]
 shape = SubResource("CapsuleShape2D_dwi70")
 
 [node name="Counter" parent="EntityGui" index="1" instance=ExtResource("6_qhlhk")]
@@ -50,7 +50,7 @@ collision_mask = 0
 script = ExtResource("3_6lqko")
 metadata/_custom_type_script = "uid://dyfpgk65mqpln"
 
-[node name="Team" parent="." index="8"]
+[node name="Team" parent="." index="9"]
 faction = 0
 
 [connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]

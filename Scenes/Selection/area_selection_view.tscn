@@ -1,10 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctb171q31rd0o"]
+[gd_scene load_steps=6 format=3 uid="uid://ctb171q31rd0o"]
 
 [ext_resource type="Script" uid="uid://6otek8mbdoos" path="res://Scripts/Selection/area_selection_view.gd" id="1_5ilq3"]
 [ext_resource type="Script" uid="uid://bwoncme0mrpxd" path="res://Scripts/circle_2d.gd" id="1_n6ppu"]
+[ext_resource type="Shader" uid="uid://kmhpk7lvp4dd" path="res://Shaders/area_selection_view.gdshader" id="2_gr22n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5ilq3"]
 radius = 200.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q18md"]
+shader = ExtResource("2_gr22n")
+shader_parameter/radius = 200.0
+shader_parameter/fill_color = Color(0.293312, 0.577887, 0.999098, 0.25)
+shader_parameter/ring_color = Color(0.363087, 0.756371, 1, 1)
+shader_parameter/ring_width = 3.0
+shader_parameter/ring_feather = 2.0
+shader_parameter/edge_feather = 8.0
+shader_parameter/sweep_speed = 0.6
+shader_parameter/sweep_freq = 8.0
+shader_parameter/sweep_intensity = 0.35
+shader_parameter/noise_scale = 0.05
+shader_parameter/noise_amp = 6.0
+shader_parameter/noise_speed = 0.5
+shader_parameter/ray_noise_scale = 1.6
+shader_parameter/ray_noise_speed = 0.35
+shader_parameter/ray_distort_amp = 0.9
+shader_parameter/ray_thick_var = 0.45
+shader_parameter/ray_edge_bias = 0.35
+shader_parameter/glow_tint = Vector3(1, 0.7, 0.35)
+shader_parameter/glow_power = 1.6
+shader_parameter/glow_rim_boost = 1.4
+shader_parameter/glow_ray_boost = 1.0
 
 [node name="CircleAreaSelectionView" type="Node2D"]
 script = ExtResource("1_5ilq3")
@@ -12,12 +37,15 @@ script = ExtResource("1_5ilq3")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_5ilq3")
 
 [node name="Circle2D" type="Polygon2D" parent="."]
-color = Color(0.168627, 0.556863, 0.670588, 0.784314)
-antialiased = true
+z_index = 20
+material = SubResource("ShaderMaterial_q18md")
+texture_offset = Vector2(0.5, 0.5)
 polygon = PackedVector2Array(200, 0, 198.423, 25.0666, 193.717, 49.738, 185.955, 73.6249, 175.261, 96.3507, 161.803, 117.557, 145.794, 136.909, 127.485, 154.103, 107.165, 168.866, 85.1559, 180.965, 61.8034, 190.211, 37.4763, 196.457, 12.5581, 199.605, -12.5581, 199.605, -37.4763, 196.457, -61.8034, 190.211, -85.1559, 180.965, -107.165, 168.866, -127.485, 154.103, -145.794, 136.909, -161.803, 117.557, -175.261, 96.3507, -185.955, 73.6249, -193.717, 49.738, -198.423, 25.0666, -200, 2.44921e-14, -198.423, -25.0666, -193.717, -49.738, -185.955, -73.6249, -175.261, -96.3507, -161.803, -117.557, -145.794, -136.909, -127.485, -154.103, -107.165, -168.866, -85.1559, -180.965, -61.8034, -190.211, -37.4763, -196.457, -12.5581, -199.605, 12.5581, -199.605, 37.4763, -196.457, 61.8034, -190.211, 85.1559, -180.965, 107.165, -168.866, 127.485, -154.103, 145.794, -136.909, 161.803, -117.557, 175.261, -96.3507, 185.955, -73.6249, 193.717, -49.738, 198.423, -25.0666)
+uv = PackedVector2Array(1, 0.5, 0.996057, 0.562667, 0.984292, 0.624345, 0.964888, 0.684062, 0.938153, 0.740877, 0.904508, 0.793893, 0.864484, 0.842274, 0.818712, 0.885257, 0.767913, 0.922164, 0.71289, 0.952414, 0.654508, 0.975528, 0.593691, 0.991144, 0.531395, 0.999013, 0.468605, 0.999013, 0.406309, 0.991144, 0.345491, 0.975528, 0.28711, 0.952414, 0.232087, 0.922164, 0.181288, 0.885257, 0.135516, 0.842274, 0.0954915, 0.793893, 0.0618466, 0.740877, 0.0351118, 0.684062, 0.0157084, 0.624345, 0.00394264, 0.562667, 0, 0.5, 0.00394264, 0.437333, 0.0157084, 0.375655, 0.0351118, 0.315938, 0.0618466, 0.259123, 0.0954915, 0.206107, 0.135516, 0.157726, 0.181288, 0.114743, 0.232087, 0.077836, 0.28711, 0.0475865, 0.345491, 0.0244717, 0.406309, 0.00885639, 0.468605, 0.000986636, 0.531395, 0.000986636, 0.593691, 0.00885639, 0.654508, 0.0244717, 0.71289, 0.0475865, 0.767913, 0.077836, 0.818712, 0.114743, 0.864484, 0.157726, 0.904508, 0.206107, 0.938153, 0.259123, 0.964888, 0.315938, 0.984292, 0.375655, 0.996057, 0.437333)
 script = ExtResource("1_n6ppu")
 radius = 200.0
 segments = 50

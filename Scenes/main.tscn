@@ -1,61 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bdmn1auii1xpm"]
+[gd_scene load_steps=5 format=3 uid="uid://bdmn1auii1xpm"]
 
 [ext_resource type="Script" uid="uid://cltu2midcamgv" path="res://Scripts/main.gd" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://doe3cvt021dfn" path="res://Scripts/game_world.gd" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dmkj4psn3atng" path="res://Scenes/battle.tscn" id="3_lquwl"]
-[ext_resource type="Script" uid="uid://dav6yh8q88yup" path="res://Scripts/Meta/hero_data.gd" id="4_kry3j"]
-[ext_resource type="Resource" uid="uid://bbg02utc33i84" path="res://Resources/Heroes/test_hero.tres" id="5_21xkr"]
-[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="6_hptm8"]
-[ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="7_d1ilt"]
-[ext_resource type="Texture2D" uid="uid://cqtlfwgbqhvmn" path="res://Sprites/UI/Plceholders_tempt/Cash_Artw.png" id="8_6iyac"]
-[ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="9_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://hrc2ui71xelu" path="res://Sprites/UI/Plceholders_tempt/fantasy card/fantasy playboard decoration 2.png" id="10_jkdf5"]
 
-[sub_resource type="Resource" id="Resource_wsu2k"]
-script = ExtResource("9_fdnlq")
-Header = "K Card"
-Description = ""
-Artwork = ExtResource("8_6iyac")
-metadata/_custom_type_script = "uid://bxkotdmlu11v"
-
-[sub_resource type="Resource" id="Resource_k12tt"]
-script = ExtResource("6_hptm8")
-card_style = SubResource("Resource_wsu2k")
-rarity = "Common"
-cost = 0
-targeting_range = 0.0
-card_effects = Array[ExtResource("7_d1ilt")]([])
-metadata/_custom_type_script = "uid://kaflyex0gc61"
-
-[sub_resource type="Resource" id="Resource_h1bgf"]
-script = ExtResource("4_kry3j")
-name = "Kristin"
-starting_cards = Array[ExtResource("6_hptm8")]([SubResource("Resource_k12tt"), SubResource("Resource_k12tt"), SubResource("Resource_k12tt"), SubResource("Resource_k12tt"), SubResource("Resource_k12tt")])
-unlocked_cards = Array[ExtResource("6_hptm8")]([])
-metadata/_custom_type_script = "uid://dav6yh8q88yup"
-
-[sub_resource type="Resource" id="Resource_b3802"]
-script = ExtResource("9_fdnlq")
-Header = "copter"
-Description = ""
-Artwork = ExtResource("10_jkdf5")
-metadata/_custom_type_script = "uid://bxkotdmlu11v"
-
-[sub_resource type="Resource" id="Resource_fevyy"]
-script = ExtResource("6_hptm8")
-card_style = SubResource("Resource_b3802")
-rarity = "Common"
-cost = 0
-targeting_range = 0.0
-card_effects = Array[ExtResource("7_d1ilt")]([])
-metadata/_custom_type_script = "uid://kaflyex0gc61"
-
-[sub_resource type="Resource" id="Resource_hibaj"]
-script = ExtResource("4_kry3j")
-name = "tgy"
-starting_cards = Array[ExtResource("6_hptm8")]([SubResource("Resource_fevyy"), SubResource("Resource_fevyy"), SubResource("Resource_fevyy"), SubResource("Resource_fevyy")])
-unlocked_cards = Array[ExtResource("6_hptm8")]([])
-metadata/_custom_type_script = "uid://dav6yh8q88yup"
+[sub_resource type="Environment" id="Environment_8gbba"]
+glow_enabled = true
 
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
@@ -64,7 +14,9 @@ script = ExtResource("1_h2yge")
 script = ExtResource("2_1bvp3")
 
 [node name="Battle" parent="World" instance=ExtResource("3_lquwl")]
-heroes = Array[ExtResource("4_kry3j")]([ExtResource("5_21xkr"), SubResource("Resource_h1bgf"), SubResource("Resource_hibaj")])
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_8gbba")
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
