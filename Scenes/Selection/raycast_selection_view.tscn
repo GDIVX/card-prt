@@ -30,10 +30,9 @@ shader_parameter/color1 = Color(1, 1, 1, 1)
 shader_parameter/color2 = Color(0, 0, 1, 0.352941)
 shader_parameter/opacity = 1.0
 
-[node name="RaycastSelectionView" type="Node2D" node_paths=PackedStringArray("line", "raycast")]
+[node name="RaycastSelectionView" type="Node2D" node_paths=PackedStringArray("line")]
 script = ExtResource("1_myedt")
 line = NodePath("Line2D")
-raycast = NodePath("RayCast2D")
 main_gradient = SubResource("Gradient_pyjtr")
 second_gradient = SubResource("Gradient_uqk87")
 sampling_curve = SubResource("Curve_pyjtr")
@@ -43,5 +42,3 @@ metadata/_custom_type_script = "uid://dyt1qs26meaiw"
 material = SubResource("ShaderMaterial_uqk87")
 points = PackedVector2Array(152, -79, 337, -79)
 texture_mode = 1
-
-[node name="RayCast2D" type="RayCast2D" parent="."]

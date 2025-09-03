@@ -52,3 +52,9 @@ static func _get_team(node: Node) -> Team:
 		if sibling is Team:
 			return sibling
 	return null
+
+
+static func _has_required_children(node : Node , requirements : Array[NodePath]) -> bool:
+	for path in requirements:
+		if not node.has_node(path): return false
+	return true

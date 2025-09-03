@@ -29,6 +29,7 @@ func start_selection(context: CardContext, spec: SelectionSpec) -> void:
 func stop__selection() -> void:
 	_cleanup_visual()
 	_active = false
+	#TODO: Add optional reason and broadcast it
 	selection_canceled.emit()
 
 

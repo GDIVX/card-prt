@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=16 format=3 uid="uid://dmkj4psn3atng"]
 
 [ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://Scripts/battle.gd" id="1_oxf17"]
 [ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/Card Gameplay/card_gameplay_system.tscn" id="1_w7k78"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dkhkwq7tpa5v7" path="res://Scenes/Selection/selection_controller.tscn" id="9_qeyqd"]
 [ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/Entities/unit.tscn" id="9_upb72"]
 [ext_resource type="Texture2D" uid="uid://cwotd5srwx0jd" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy genreci action button.png" id="10_k7mbx"]
+[ext_resource type="PackedScene" uid="uid://sc44qjvo5m7k" path="res://Scenes/Widgets/health_bar.tscn" id="11_heh15"]
+[ext_resource type="PackedScene" uid="uid://yxqq5vrhs2cy" path="res://Scenes/Entities/health.tscn" id="12_xkp4y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
 font = ExtResource("4_1otgo")
@@ -74,6 +76,18 @@ resources = Dictionary[String, int]({
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 position = Vector2(0, -100)
 
+[node name="BorderN" parent="Map/Bounds" index="0"]
+collision_layer = 8
+
+[node name="BorderS" parent="Map/Bounds" index="1"]
+collision_layer = 8
+
+[node name="BorderE" parent="Map/Bounds" index="2"]
+collision_layer = 8
+
+[node name="BorderW" parent="Map/Bounds" index="3"]
+collision_layer = 8
+
 [node name="Unit" parent="Map" instance=ExtResource("9_upb72")]
 position = Vector2(173, -218)
 
@@ -85,6 +99,16 @@ texture = ExtResource("10_k7mbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/Sprite2D/StaticBody2D"]
 shape = SubResource("RectangleShape2D_upb72")
+
+[node name="Health" parent="Map/Sprite2D/StaticBody2D" instance=ExtResource("12_xkp4y")]
+max_health = 5
+
+[node name="HealthBar" parent="Map/Sprite2D" node_paths=PackedStringArray("health_object") instance=ExtResource("11_heh15")]
+anchors_preset = -1
+anchor_bottom = 1.22
+offset_top = 502.0
+offset_bottom = 485.74
+health_object = NodePath("../StaticBody2D/Health")
 
 [node name="SelectionController" parent="." instance=ExtResource("9_qeyqd")]
 

@@ -30,3 +30,8 @@ enum SelectionMode
 @export var repeats : int = 1
 ## The maximum distance away from the caster [TacticalUnit] that is valid for selection. Ignore mouse input that is further that this.
 @export var max_range: float = 600.0 
+
+@export_category("Entities")
+@export var required_nodes : Array[NodePath] = [
+    "Health",
+]

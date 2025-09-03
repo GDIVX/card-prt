@@ -2,26 +2,36 @@ class_name RaycastSelectionView
 extends SelectionView
 
 @export var line: Line2D
-@export var raycast: RayCast2D
 
 @export var main_gradient: Gradient
 @export var second_gradient: Gradient
 
 @export var sampling_curve: Curve
 
+var raycast: RayCast2D
 
 func set_spec(spec: SelectionSpec, context: CardContext) -> void:
 	super.set_spec(spec, context)
-	raycast.add_exception(context.unit)
-	raycast.add_exception(context.unit.get_node("Hitbox"))
+	raycast = context.unit.raycast
+	raycast.enabled = true
+
 
 func _physics_process(_delta: float) -> void:
-	var mouse := get_global_mouse_position()
 
 	# Line endpoints
-	line.points[0] = _context.unit.global_position
-	raycast.target_position = mouse
 
+	# Define the ray segment from caster toward mouse, clamped by max_range
+	var from := _context.unit.global_position
+	var mouse := _context.battle.get_global_mouse_position()
+	var dir := mouse - from
+	if dir.length() > _spec.max_range:
+		dir = dir.normalized() * _spec.max_range
+	var to := from + dir
+
+	raycast.global_position = from
+	raycast.target_position = raycast.to_local(to)
+
+	line.points[0] = from
 	if raycast.is_colliding():
 		line.points[1] = raycast.get_collision_point()
 		#skip distance coloring and color by team
@@ -33,7 +43,7 @@ func _physics_process(_delta: float) -> void:
 		var color_second := second_gradient.sample(sample)
 		set_shader_colors(color_main , color_second)
 	else:
-		line.points[1] = mouse
+		line.points[1] = to
 
 		# Distance → normalized sample (guard against zero range)
 		var max_r : float= max(0.0001, _spec.max_range)

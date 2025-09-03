@@ -7,13 +7,7 @@ func _select(context: CardContext, spec: SelectionSpec, controller: SelectionCon
 	if spec.max_targets == 0:
 		return []
 
-	# Define the ray segment from caster toward mouse, clamped by max_range
-	var from := context.unit.global_position if context.unit else Vector2.ZERO
-	var mouse := context.battle.get_global_mouse_position()
-	var dir := mouse - from
-	if dir.length() > spec.max_range:
-		dir = dir.normalized() * spec.max_range
-	var to := from + dir
+
 
 	if not context.unit:
 		push_error("Context is missing a unit")
@@ -21,10 +15,6 @@ func _select(context: CardContext, spec: SelectionSpec, controller: SelectionCon
 	
 	# Create ray, set it up and fire
 	var ray := context.unit.raycast
-	ray.target_position = to
-	ray.collision_mask = collision_mask
-	ray.exclude_parent = true
-	ray.enabled = true
 	ray.force_raycast_update()
 	
 	if not ray.is_colliding():
@@ -38,11 +28,15 @@ func _select(context: CardContext, spec: SelectionSpec, controller: SelectionCon
 	ray.enabled = false # stop the raycast for performance 
 
 	var is_valid_team = _matches_team_mask(context.unit , collider as Node , spec.relation_mask)
-	if is_valid_team:
-		return [collider as Node]
+	if not is_valid_team:
+		controller.stop__selection()
+		print("Stopped selection due to invalid team")
+		return []
 	
-	# stop the selection - treat this as if you didn't find a target 
-	controller.stop__selection()
-	print("Stopped selection due to invalid target collision")
-	return []
+	if not _has_required_children(collider as Node, spec.required_nodes):
+		controller.stop__selection()
+		print("Stopped selection due to failing to find all required nodes")
+		return []
+	
+	return [collider]
 	

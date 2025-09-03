@@ -10,7 +10,6 @@ func _ready() -> void:
 	if not "radius" in shape: return    
 
 	circle.radius = shape_select.shape.radius 
-	circle.calculate_circle()
 		
 
 func _process(delta: float) -> void:

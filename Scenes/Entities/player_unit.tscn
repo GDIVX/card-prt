@@ -46,10 +46,6 @@ smoothing_curve = SubResource("Curve_dwi70")
 collision_layer = 4
 collision_mask = 0
 
-[node name="ClickAndDragMovement" type="Node" parent="CharacterDrag" index="2"]
-script = ExtResource("3_6lqko")
-metadata/_custom_type_script = "uid://dyfpgk65mqpln"
-
 [node name="Team" parent="." index="9"]
 faction = 0
 
