@@ -27,8 +27,9 @@ enum DamageType{
 
 func apply(_card: Card, targets: Array) -> void:
     for target in targets:
+        if not target.has_node("Health"): continue
         var health :Health = target.get_node("Health")
-        if not health: continue
+        
 
         match damage_type:
             DamageType.NORMAL:

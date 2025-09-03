@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="HeroData" load_steps=5 format=3 uid="uid://bbg02utc33i84"]
+[gd_resource type="Resource" script_class="HeroData" load_steps=6 format=3 uid="uid://bbg02utc33i84"]
 
 [ext_resource type="Script" uid="uid://dav6yh8q88yup" path="res://Scripts/Meta/hero_data.gd" id="1_y56dy"]
 [ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="2_0b3fd"]
-[ext_resource type="Resource" uid="uid://80uiy7281xd7" path="res://Resources/Cards/card_test.tres" id="3_tfaik"]
+[ext_resource type="Resource" uid="uid://80uiy7281xd7" path="res://Resources/Cards/test_attack.tres" id="3_mev3q"]
+[ext_resource type="Resource" uid="uid://bn11eak8bdgc6" path="res://Resources/Cards/test_defense.tres" id="4_tfaik"]
 [ext_resource type="PackedScene" uid="uid://bliyfogowi74a" path="res://Scenes/Entities/player_unit.tscn" id="7_35b88"]
 
 [resource]
 script = ExtResource("1_y56dy")
 unit_scene = ExtResource("7_35b88")
 name = "Testron"
-starting_cards = Array[ExtResource("2_0b3fd")]([ExtResource("3_tfaik"), ExtResource("3_tfaik"), ExtResource("3_tfaik")])
+starting_cards = Array[ExtResource("2_0b3fd")]([ExtResource("3_mev3q"), ExtResource("3_mev3q"), ExtResource("4_tfaik"), ExtResource("4_tfaik")])
 unlocked_cards = Array[ExtResource("2_0b3fd")]([])
 metadata/_custom_type_script = "uid://dav6yh8q88yup"

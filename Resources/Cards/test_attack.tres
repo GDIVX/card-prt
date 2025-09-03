@@ -1,0 +1,50 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=13 format=3 uid="uid://80uiy7281xd7"]
+
+[ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="1_bofkc"]
+[ext_resource type="Script" uid="uid://dr77wcucp3bmn" path="res://Scripts/Cards/Effects/deal_damage_effect.gd" id="2_lb7hk"]
+[ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://Sprites/UI/Plceholders_tempt/knight.png" id="3_401c5"]
+[ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="4_1lylf"]
+[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="5_bcf7w"]
+[ext_resource type="Script" uid="uid://hq6poehfo3mx" path="res://Scripts/Selection/selection_spec.gd" id="6_f4odl"]
+[ext_resource type="Script" uid="uid://c301ur022dni0" path="res://Scripts/Selection/raycast_selection.gd" id="7_nhimw"]
+[ext_resource type="PackedScene" uid="uid://hn3fpnvd8sbh" path="res://Scenes/Selection/raycast_selection_view.tscn" id="8_j3n6i"]
+
+[sub_resource type="Resource" id="Resource_78aya"]
+script = ExtResource("2_lb7hk")
+damage_value = 1
+damage_type = 0
+metadata/_custom_type_script = "uid://dr77wcucp3bmn"
+
+[sub_resource type="Resource" id="Resource_4uo8f"]
+script = ExtResource("4_1lylf")
+Header = "Test Attack"
+Description = "Dose damage"
+Artwork = ExtResource("3_401c5")
+metadata/_custom_type_script = "uid://bxkotdmlu11v"
+
+[sub_resource type="Resource" id="Resource_d0uci"]
+script = ExtResource("7_nhimw")
+collision_mask = 1
+metadata/_custom_type_script = "uid://c301ur022dni0"
+
+[sub_resource type="Resource" id="Resource_odagn"]
+script = ExtResource("6_f4odl")
+relation_mask = 3
+mode = 0
+strategy = SubResource("Resource_d0uci")
+visualScene = ExtResource("8_j3n6i")
+max_targets = 1
+min_targets = 1
+repeats = 3
+max_range = 600.0
+required_nodes = Array[NodePath]([NodePath("Health")])
+metadata/_custom_type_script = "uid://hq6poehfo3mx"
+
+[resource]
+script = ExtResource("5_bcf7w")
+card_style = SubResource("Resource_4uo8f")
+rarity = "Common"
+cost = 1
+selection = SubResource("Resource_odagn")
+card_effects = Array[ExtResource("1_bofkc")]([SubResource("Resource_78aya")])
+metadata/_custom_type_script = "uid://kaflyex0gc61"

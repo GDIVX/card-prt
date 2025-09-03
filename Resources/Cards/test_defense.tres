@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=12 format=3 uid="uid://bn11eak8bdgc6"]
+
+[ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="1_y8ovt"]
+[ext_resource type="Script" uid="uid://ccjhdh0f3x2hu" path="res://Scripts/Cards/Effects/gain_defense_effect.gd" id="2_hmv5b"]
+[ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="4_iaw1c"]
+[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="5_nea2w"]
+[ext_resource type="Script" uid="uid://hq6poehfo3mx" path="res://Scripts/Selection/selection_spec.gd" id="6_w6xr2"]
+[ext_resource type="Script" uid="uid://bg0dqlc2gg5lf" path="res://Scripts/Selection/self_selection.gd" id="6_y8ovt"]
+[ext_resource type="PackedScene" uid="uid://ddiyc3nsur0u6" path="res://Scenes/Selection/selection_view.tscn" id="7_yhfms"]
+
+[sub_resource type="Resource" id="Resource_gcil5"]
+script = ExtResource("2_hmv5b")
+defense_gained = 1
+metadata/_custom_type_script = "uid://ccjhdh0f3x2hu"
+
+[sub_resource type="Resource" id="Resource_4uo8f"]
+script = ExtResource("4_iaw1c")
+Header = "Test Defense"
+Description = "Gain defense"
+metadata/_custom_type_script = "uid://bxkotdmlu11v"
+
+[sub_resource type="Resource" id="Resource_iaw1c"]
+script = ExtResource("6_y8ovt")
+metadata/_custom_type_script = "uid://bg0dqlc2gg5lf"
+
+[sub_resource type="Resource" id="Resource_nea2w"]
+script = ExtResource("6_w6xr2")
+relation_mask = 0
+mode = 1
+strategy = SubResource("Resource_iaw1c")
+visualScene = ExtResource("7_yhfms")
+max_targets = 1
+min_targets = 1
+repeats = 1
+max_range = 600.0
+required_nodes = Array[NodePath]([NodePath("Health")])
+metadata/_custom_type_script = "uid://hq6poehfo3mx"
+
+[resource]
+script = ExtResource("5_nea2w")
+card_style = SubResource("Resource_4uo8f")
+rarity = "Common"
+cost = 1
+selection = SubResource("Resource_nea2w")
+card_effects = Array[ExtResource("1_y8ovt")]([SubResource("Resource_gcil5")])
+metadata/_custom_type_script = "uid://kaflyex0gc61"
