@@ -16,7 +16,6 @@ extends TextureProgressBar
 
 
 func _on_health_health_changed(current_value:int) -> void:
-	# TODO: blink shader would be nice
 	
 	_show_health_widget(current_value)
 	var max_health := health_object.max_health
@@ -51,7 +50,6 @@ func _hide_health_widget() -> void:
 
 
 func _on_health_defense_changed(current_value:int) -> void:
-	# TODO: blink shader would be nice
 
 	if not _defense_counter:
 		_defense_counter = $DefenseCounter

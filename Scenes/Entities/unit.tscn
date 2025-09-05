@@ -1,6 +1,7 @@
-[gd_scene load_steps=58 format=3 uid="uid://dtr5kbqy68nck"]
+[gd_scene load_steps=64 format=3 uid="uid://dtr5kbqy68nck"]
 
 [ext_resource type="Script" uid="uid://buadw7jswgygx" path="res://Scripts/Entities/character.gd" id="1_3g3so"]
+[ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://Shaders/unit.gdshader" id="2_02qqi"]
 [ext_resource type="Texture2D" uid="uid://dul0dbdyui3ur" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack01.png" id="2_a65fh"]
 [ext_resource type="Texture2D" uid="uid://qyh5bj76w6gw" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack02.png" id="3_02qqi"]
 [ext_resource type="Texture2D" uid="uid://fddoxajnr1ec" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Attack03.png" id="4_qko8k"]
@@ -10,12 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://57rkkx77pjd7" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy skull.png" id="8_le1k4"]
 [ext_resource type="Texture2D" uid="uid://dd0tt2sy2bnc3" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier with shadows/Soldier-Walk.png" id="9_o5din"]
 [ext_resource type="PackedScene" uid="uid://yxqq5vrhs2cy" path="res://Scenes/Entities/health.tscn" id="10_bymjo"]
+[ext_resource type="Script" uid="uid://cepxy0vx2gh6q" path="res://Scripts/Entities/unit_sprite.gd" id="11_02qqi"]
 [ext_resource type="PackedScene" uid="uid://sc44qjvo5m7k" path="res://Scenes/Widgets/health_bar.tscn" id="11_7pkn3"]
 [ext_resource type="Script" uid="uid://d22grvoyem0me" path="res://Scripts/Entities/team.gd" id="12_8sanv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lkv7d"]
 radius = 44.46
 height = 118.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qko8k"]
+shader = ExtResource("2_02qqi")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kq8q"]
 atlas = ExtResource("2_a65fh")
@@ -364,6 +371,43 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_02qqi"]
+resource_name = "flash"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/blink_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qko8k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/blink_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_57jnb"]
+_data = {
+&"RESET": SubResource("Animation_qko8k"),
+&"flash": SubResource("Animation_02qqi")
+}
+
 [node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("health", "raycast", "nav_agent")]
 disable_mode = 1
 motion_mode = 1
@@ -382,9 +426,17 @@ hit_from_inside = true
 position = Vector2(3, 1)
 shape = SubResource("CapsuleShape2D_lkv7d")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="UnitSprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("animation_player")]
+material = SubResource("ShaderMaterial_qko8k")
 sprite_frames = SubResource("SpriteFrames_owm7s")
 animation = &"new_animation"
+script = ExtResource("11_02qqi")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UnitSprite"]
+libraries = {
+&"": SubResource("AnimationLibrary_57jnb")
+}
 
 [node name="EntityGui" type="Control" parent="."]
 layout_mode = 3
@@ -400,6 +452,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 1
 offset_top = 0.0
 health_object = NodePath("../../Health")
+fill_tween_duration = 1.0
 fill_tween_trans = 5
 fill_tween_ease = 1
 
@@ -420,3 +473,4 @@ faction = 2
 
 [connection signal="defense_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_defense_changed"]
 [connection signal="health_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_health_changed"]
+[connection signal="received_damage" from="Health" to="UnitSprite" method="_on_health_received_damage"]

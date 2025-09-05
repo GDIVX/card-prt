@@ -28,25 +28,22 @@ enum DamageType{
 func apply(_card: Card, targets: Array) -> void:
     for target in targets:
         if not target.has_node("Health"): continue
+
         var health :Health = target.get_node("Health")
-        
 
         match damage_type:
             DamageType.NORMAL:
                 var overflow_damage : int = max(damage_value - health.defense , 0)
-                health.defense = max(health.defense - damage_value , 0)
-                health.current_health = max(health.current_health - overflow_damage , 0)
+                health.deal_damage(overflow_damage, damage_value)
             DamageType.PIERCE:
-                health.current_health = max(health.current_health - damage_value , 0)
+                health.deal_damage(damage_value,0)
             DamageType.SUNDER:
-                health.defense = max(health.defense - damage_type , 0)
+                health.deal_damage(0,damage_value)
             DamageType.BLUNT:
                 var raw_damage: int = damage_value * 2 if health.defense > 0 else damage_type
                 var overflow_damage : int = max(raw_damage - health.defense , 0)
-                health.defense = max(health.defense - raw_damage , 0)
-                health.current_health = max(health.current_health - overflow_damage , 0)
+                health.deal_damage(overflow_damage,raw_damage)
             DamageType.SLASH:
                 var raw_damage: int = damage_value * 2 if health.defense == 0 else damage_type
                 var overflow_damage : int = max(raw_damage - health.defense , 0)
-                health.defense = max(health.defense - raw_damage , 0)
-                health.current_health = max(health.current_health - overflow_damage , 0)
+                health.deal_damage(overflow_damage,raw_damage)
