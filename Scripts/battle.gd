@@ -5,6 +5,7 @@ class_name Battle extends Node2D
 @export var card_gameplay_system: CardGameplaySystem
 @export var game_resources_system: GameResourcesSystem
 @export var selection : SelectionController
+@export var map : NavigationRegion2D
 
 @export var heroes_data:Array[HeroData]
 

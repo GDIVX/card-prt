@@ -26,4 +26,6 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 viewport/hdr_2d=true
+2d/snap/snap_2d_vertices_to_pixel=true

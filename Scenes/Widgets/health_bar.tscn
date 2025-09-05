@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://mxrfq1negel6" path="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/ShieldLargeT2.png" id="6_ydxhk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dm6ib"]
+line_spacing = 0.0
 
 [node name="HealthBar" type="TextureProgressBar"]
 anchors_preset = 12
@@ -26,6 +27,25 @@ texture_over = ExtResource("2_p1cfu")
 texture_progress = ExtResource("3_rdj5c")
 script = ExtResource("4_wxnkl")
 
+[node name="DefenseCounter" parent="." instance=ExtResource("5_h867y")]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = -28.5
+offset_right = 19.0
+offset_bottom = -3.5
+grow_vertical = 2
+
+[node name="TextureRect" parent="DefenseCounter" index="0"]
+texture = ExtResource("6_ydxhk")
+
+[node name="Label" parent="DefenseCounter/TextureRect" index="0"]
+offset_left = 3.0
+offset_right = 3.0
+text = "5"
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -37,29 +57,5 @@ text = "100/100"
 label_settings = SubResource("LabelSettings_dm6ib")
 horizontal_alignment = 1
 vertical_alignment = 3
-
-[node name="DefenseCounter" parent="." instance=ExtResource("5_h867y")]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -25.0
-offset_right = 25.0
-offset_bottom = 25.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="TextureRect" parent="DefenseCounter" index="0"]
-texture = ExtResource("6_ydxhk")
-
-[node name="Label" parent="DefenseCounter/TextureRect" index="0"]
-offset_left = 20.0
-offset_top = 16.0
-offset_right = -14.0
-offset_bottom = -15.0
-text = "5"
 
 [editable path="DefenseCounter"]

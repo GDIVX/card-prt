@@ -21,14 +21,14 @@ font_size = 30
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upb72"]
 size = Vector2(260, 132)
 
-[node name="Battle" type="Node2D" node_paths=PackedStringArray("card_gameplay_system", "game_resources_system", "selection")]
+[node name="Battle" type="Node2D" node_paths=PackedStringArray("card_gameplay_system", "game_resources_system", "selection", "map")]
 script = ExtResource("1_oxf17")
 card_gameplay_system = NodePath("GUI/CardGameplaySystem")
 game_resources_system = NodePath("GameResourcesSystem")
 selection = NodePath("SelectionController")
+map = NodePath("Map")
 heroes_data = Array[ExtResource("2_lrv64")]([ExtResource("3_qeyqd")])
-spawn_position_center = Vector2(530, 320)
-spawn_radius = 600.0
+spawn_radius = 200.0
 
 [node name="GUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("mana_counter")]
 script = ExtResource("3_f6xt6")
@@ -73,8 +73,15 @@ resources = Dictionary[String, int]({
 "mana": 3
 })
 
+[node name="Unit" parent="." instance=ExtResource("9_upb72")]
+position = Vector2(173, -318)
+
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 position = Vector2(0, -100)
+
+[node name="Bounds" parent="Map" index="0"]
+position = Vector2(2.5, 65)
+scale = Vector2(0.422396, 0.598148)
 
 [node name="BorderN" parent="Map/Bounds" index="0"]
 collision_layer = 8
@@ -87,9 +94,6 @@ collision_layer = 8
 
 [node name="BorderW" parent="Map/Bounds" index="3"]
 collision_layer = 8
-
-[node name="Unit" parent="Map" instance=ExtResource("9_upb72")]
-position = Vector2(173, -218)
 
 [node name="Sprite2D" type="Sprite2D" parent="Map"]
 position = Vector2(0, 100)
@@ -113,7 +117,6 @@ health_object = NodePath("../StaticBody2D/Health")
 [node name="SelectionController" parent="." instance=ExtResource("9_qeyqd")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.76, 0.76)
 
 [connection signal="card_created_with_key" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_created_with_key"]
 [connection signal="card_discarded" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_discarded"]
