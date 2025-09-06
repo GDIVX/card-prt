@@ -73,7 +73,7 @@ func _finish_once():
 		if not selection_view.is_empty():
 			# Freeze the last view since it is handled 
 			var back_view: Node = selection_view.back() as Node
-			back_view.set_process(false)
+			back_view.process_mode = Node.PROCESS_MODE_DISABLED
 		# Add new view 
 		_spawn_visual()
 		return
