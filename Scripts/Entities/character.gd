@@ -5,6 +5,7 @@ class_name  TacticalUnit extends CharacterBody2D
 @export_category("Nodes")
 @export var health : Health
 @export var raycast : RayCast2D 
+@export var knockback : KnockbackReceiver
 
 @export_category("ClickAndDragMovement")
 @export var pixels_moved_per_movement: float = 450.0
@@ -12,7 +13,12 @@ class_name  TacticalUnit extends CharacterBody2D
 @export var nav_agent : NavigationAgent2D
 
 
+
+
 func _physics_process(_delta: float) -> void:
+
+	if health.is_dead: return
+
 	if nav_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -27,3 +33,5 @@ func _physics_process(_delta: float) -> void:
 	
 	velocity = to_next.normalized() * speed
 	move_and_slide()
+
+

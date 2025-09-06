@@ -4,6 +4,7 @@
         "clampf",
         "elif",
         "Hitbox",
+        "Knockback",
         "lerp",
         "onready",
         "tweens"

@@ -11,7 +11,7 @@ var is_dead: bool
 signal received_damage(to_health:int, to_defense:int)
 signal health_changed(current_value:int)
 signal defense_changed(current_value:int)
-signal entity_died(node: Node)
+signal entity_died
 
 
 
@@ -24,7 +24,7 @@ var current_health: int:
 
 
 		if current_health == 0:
-			entity_died.emit(self)
+			entity_died.emit()
 
 
 @export var defense: int:

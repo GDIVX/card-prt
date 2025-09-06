@@ -6,6 +6,9 @@ class_name DealDamageEffect extends CardEffect
 ## How should the damage be applied on an entity
 @export var damage_type : DamageType
 
+## Knockback force magnitude
+@export var knockback : float
+
 enum DamageType{
      ## Unmodified damage. Will try to damage defense, and then health.
     NORMAL,
@@ -25,8 +28,13 @@ enum DamageType{
     SLASH, 
 }
 
-func apply(_card: Card, targets: Array) -> void:
+func apply(card: Card, targets: Array) -> void:
     for target in targets:
+
+        #handle knockback
+        handle_knockback(target as Node2D, card.context.unit)
+
+        #handle health
         if not target.has_node("Health"): continue
 
         var health :Health = target.get_node("Health")
@@ -47,3 +55,15 @@ func apply(_card: Card, targets: Array) -> void:
                 var raw_damage: int = damage_value * 2 if health.defense == 0 else damage_type
                 var overflow_damage : int = max(raw_damage - health.defense , 0)
                 health.deal_damage(overflow_damage,raw_damage)
+
+
+func handle_knockback(target : Node2D, from : Node2D) -> void:
+    if target == null : return
+    if knockback <= 0: return
+    if not target.has_node("KnockbackReceiver"): return
+
+    var receiver : KnockbackReceiver = target.get_node("KnockbackReceiver")
+
+    var direction = from.global_position.direction_to(target.global_position)
+    var force = direction * knockback
+    receiver.force = force

@@ -74,7 +74,10 @@ resources = Dictionary[String, int]({
 })
 
 [node name="Unit" parent="." instance=ExtResource("9_upb72")]
-position = Vector2(173, -318)
+position = Vector2(5, -184)
+
+[node name="Team" parent="Unit" index="7"]
+faction = 1
 
 [node name="Map" parent="." instance=ExtResource("6_f6xt6")]
 position = Vector2(0, -100)
@@ -128,4 +131,5 @@ health_object = NodePath("../StaticBody2D/Health")
 
 [editable path="GUI/CardGameplaySystem"]
 [editable path="GUI/CardGameplaySystem/Counter"]
+[editable path="Unit"]
 [editable path="Map"]
