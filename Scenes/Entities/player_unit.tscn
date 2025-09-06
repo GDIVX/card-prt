@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bliyfogowi74a"]
+[gd_scene load_steps=10 format=3 uid="uid://bliyfogowi74a"]
 
 [ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/Entities/unit.tscn" id="1_dwi70"]
 [ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://Scenes/Entities/character_drag.tscn" id="2_sqtjf"]
@@ -6,20 +6,33 @@
 [ext_resource type="Script" uid="uid://dyfpgk65mqpln" path="res://Scripts/Entities/click_and_drag_movement.gd" id="3_6lqko"]
 [ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://Scripts/Utilities/obserable_points.gd" id="3_qvrb7"]
 [ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/Widgets/counter.tscn" id="6_qhlhk"]
+[ext_resource type="Shader" uid="uid://nq2bayapq6vb" path="res://Shaders/raycast_selection_view.gdshader" id="7_cp8bf"]
 
 [sub_resource type="Curve" id="Curve_dwi70"]
 _data = [Vector2(0, 0), 0.0, 1.5, 0, 0, Vector2(1, 1), 2.60427e-07, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v52jf"]
+resource_local_to_scene = true
+shader = ExtResource("7_cp8bf")
+shader_parameter/frequency = 0.3
+shader_parameter/amplitude = 1000.0
+shader_parameter/speed = 5.0
+shader_parameter/direction = -1.0
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(0, 0, 0, 0.2)
+shader_parameter/opacity = 0.8
+
 [node name="PlayerUnit" node_paths=PackedStringArray("movement_points") instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
 movement_points = NodePath("MovementPoints")
-show_movement_distance_limit = true
 
-[node name="ClickAndDragMovement" type="Node" parent="." index="0" node_paths=PackedStringArray("movement_points", "drag")]
+[node name="ClickAndDragMovement" type="Node" parent="." index="0" node_paths=PackedStringArray("movement_points", "drag", "path_line", "unit")]
 script = ExtResource("3_6lqko")
 movement_points = NodePath("../MovementPoints")
 drag = NodePath("../CharacterDrag")
+path_line = NodePath("../CharacterDrag/NavigationPathLine")
+unit = NodePath("..")
 metadata/_custom_type_script = "uid://dyfpgk65mqpln"
 
 [node name="MovementPoints" type="Node" parent="." index="1"]
@@ -32,9 +45,6 @@ layout_mode = 1
 offset_right = 15.0
 offset_bottom = 15.0
 mouse_filter = 2
-
-[node name="NavigationAgent2D" parent="." index="6"]
-debug_enabled = false
 
 [node name="CharacterDrag" parent="." index="7" instance=ExtResource("2_sqtjf")]
 smoothness_speed = 5.0
@@ -50,7 +60,13 @@ position = Vector2(1, 1.5)
 [node name="Handle" parent="CharacterDrag" index="1"]
 scale = Vector2(0.5, 0.5)
 
-[node name="Team" parent="." index="9"]
+[node name="NavigationPathLine" parent="CharacterDrag" index="2"]
+material = SubResource("ShaderMaterial_v52jf")
+
+[node name="NavigationAgent2D" parent="." index="8"]
+debug_enabled = false
+
+[node name="Team" parent="." index="10"]
 faction = 0
 
 [connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]

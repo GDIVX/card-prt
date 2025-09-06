@@ -354,6 +354,7 @@ script = ExtResource("1_3g3so")
 health = NodePath("Health")
 raycast = NodePath("RayCast2D")
 pixels_moved_per_movement = 250.0
+speed = 500.0
 nav_agent = NodePath("NavigationAgent2D")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -372,7 +373,7 @@ force_multiplier = 2.0
 material = SubResource("ShaderMaterial_qko8k")
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_owm7s")
-animation = &"hurt_side"
+animation = &"idle_side"
 autoplay = "idle_side"
 script = ExtResource("11_02qqi")
 animation_player = NodePath("AnimationPlayer")

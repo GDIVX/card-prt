@@ -2,32 +2,51 @@ class_name PlayerUnit extends TacticalUnit
 
 @export var movement_points : ObservableNumber
 
-@export_category("Editor")
-@export var show_movement_distance_limit: bool = true
+var remaining_movement_length : float :
+	get:
+		return pixels_moved_per_movement * movement_points.value
 
-var _debug_draw_active := false
 
 func _ready() -> void:
 	nav_agent.target_position = global_position
 	velocity = Vector2.ZERO
 
 
-func _on_character_drag_started_dragging(_start_position: Vector2) -> void:
-	# start_position is already global from your drag signal
-	_debug_draw_active = show_movement_distance_limit
-	queue_redraw()
-
-
 func _on_character_drag_stopped_dragging(end_position: Vector2) -> void:
-	# Stop showing the ring immediately
-	if _debug_draw_active:
-		_debug_draw_active = false
-		queue_redraw()
-
 	velocity = Vector2.ZERO
 
-	if pixels_moved_per_movement <= 0: return
-	if global_position.distance_to(end_position) > pixels_moved_per_movement: return
+	var path_len := remaining_movement_length
+	if path_len <= 0: return
+
+	# Limit the path to path_len. Still allow the agent to move even if
+	# moving to end_position is too far. Instead, find the furthest valid
+	# point along the navigation path within path_len and pathfind to it.
+	var map: RID = get_world_2d().navigation_map
+	var world_path: PackedVector2Array = NavigationServer2D.map_get_path(map, global_position, end_position, true)
+
+	var clamped_target := global_position
+	if world_path.size() >= 1:
+		# Ensure the path starts at our current position for accumulation.
+		if world_path[0] != global_position:
+			world_path.insert(0, global_position)
+
+		var acc := 0.0
+		for i in range(1, world_path.size()):
+			var a := world_path[i - 1]
+			var b := world_path[i]
+			var seg_len := a.distance_to(b)
+			if acc + seg_len <= path_len:
+				acc += seg_len
+				clamped_target = b
+			else:
+				var remain := path_len - acc
+				var t := 0.0
+				if seg_len > 0.0:
+					t = clamp(remain / seg_len, 0.0, 1.0)
+				clamped_target = a.lerp(b, t)
+				break
+
+	end_position = clamped_target
 
 	nav_agent.target_position = end_position
 	movement_points.value -=1
@@ -40,12 +59,11 @@ func _on_character_drag_stopped_dragging(end_position: Vector2) -> void:
 
 
 
-func _draw() -> void:
-	# Only draw when explicitly active (not at game start)
-	if not _debug_draw_active or pixels_moved_per_movement <= 0.0:
-		return
+# func _draw() -> void:
+# 	# Only draw when explicitly active (not at game start)
+# 	if not _debug_draw_active or pixels_moved_per_movement <= 0.0:
+# 		return
 
-	var local_center := to_local(global_position)
-	draw_arc(local_center, pixels_moved_per_movement, 0.0, TAU, 64, Color.BLUE)
-
+# 	var local_center := to_local(global_position)
+# 	draw_arc(local_center, pixels_moved_per_movement, 0.0, TAU, 64, Color.BLUE)
 
