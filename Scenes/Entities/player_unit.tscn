@@ -63,9 +63,6 @@ scale = Vector2(0.5, 0.5)
 [node name="NavigationPathLine" parent="CharacterDrag" index="2"]
 material = SubResource("ShaderMaterial_v52jf")
 
-[node name="NavigationAgent2D" parent="." index="8"]
-debug_enabled = false
-
 [node name="Team" parent="." index="10"]
 faction = 0
 

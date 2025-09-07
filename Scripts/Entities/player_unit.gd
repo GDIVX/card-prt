@@ -48,22 +48,7 @@ func _on_character_drag_stopped_dragging(end_position: Vector2) -> void:
 
 	end_position = clamped_target
 
+	movement_points.value -= roundi(global_position.distance_to(end_position) / pixels_moved_per_movement)
 	nav_agent.target_position = end_position
-	movement_points.value -=1
 	
-
-
-
-	
-
-
-
-
-# func _draw() -> void:
-# 	# Only draw when explicitly active (not at game start)
-# 	if not _debug_draw_active or pixels_moved_per_movement <= 0.0:
-# 		return
-
-# 	var local_center := to_local(global_position)
-# 	draw_arc(local_center, pixels_moved_per_movement, 0.0, TAU, 64, Color.BLUE)
 

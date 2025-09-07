@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://d22grvoyem0me" path="res://Scripts/Entities/team.gd" id="12_8sanv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr7ts"]
-size = Vector2(32, 48)
+size = Vector2(30, 30)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qko8k"]
 shader = ExtResource("2_02qqi")
@@ -408,11 +408,11 @@ fill_tween_ease = 1
 fill_color_healthy = Color(1.2, 0, 0, 1)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-target_desired_distance = 15.0
-path_max_distance = 600.0
+path_desired_distance = 30.0
+target_desired_distance = 20.0
+avoidance_enabled = true
 radius = 50.0
-debug_enabled = true
-debug_path_custom_color = Color(0.080776, 0.616057, 0.938655, 1)
+max_speed = 600.0
 
 [node name="Health" parent="." instance=ExtResource("10_bymjo")]
 max_health = 20
@@ -422,6 +422,7 @@ defense = 5
 script = ExtResource("12_8sanv")
 faction = 2
 
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="defense_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_defense_changed"]
 [connection signal="entity_died" from="Health" to="UnitSprite" method="_on_health_entity_died"]
 [connection signal="health_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_health_changed"]

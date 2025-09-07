@@ -31,7 +31,12 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		return
 	
-	velocity = to_next.normalized() * speed
+	var intended_velocity = to_next.normalized() * speed
+	nav_agent.velocity = intended_velocity
+
+
+
+
+func _on_navigation_agent_2d_velocity_computed(safe_velocity:Vector2) -> void:
+	velocity = safe_velocity
 	move_and_slide()
-
-
