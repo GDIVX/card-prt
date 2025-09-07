@@ -28,10 +28,13 @@ func create_card(data: CardData) -> Card:
 
 func remove_card(card: Card) -> void:
 	if card in cards:
-		card.card_transform_animator.animate_to(card_despawn_position, card.rotation).tween.finished.connect(func ():
-			card.queue_free()
-		)
+		# Play the despawn animation, then free the card when it ends
+		var duration := 1.0
+		card.card_transform_animator._is_despawning = true
+		card.card_transform_animator.animate_to(card_despawn_position, card.rotation_degrees, duration)
+		await get_tree().create_timer(duration).timeout
 		cards.erase(card)
+		card.queue_free()
 		fan.arrange_cards(cards)
 	else:
 		push_error("Card not found in hand.")

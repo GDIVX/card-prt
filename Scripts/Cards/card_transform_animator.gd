@@ -22,6 +22,9 @@ var root: Node2D:
 
 var tween: Tween
 
+# Prevents auto-return to anchor during intentional despawn animations
+var _is_despawning: bool = false
+
 func _ready() -> void:
 
 	anchor_position = root.position
@@ -40,7 +43,7 @@ func snap_to_anchor() -> void:
 
 ## Move the root object without moving the anchor. 
 ## Remember to call move_to_anchor() to recall the card to its resting state
-func animate_to(target_position: Vector2, target_rotation_degrees: float, duration: float = 1) -> CardTransformAnimator:
+func animate_to(target_position: Vector2, target_rotation_degrees: float, duration: float = 1) -> void:
 	if root == null:
 		push_error("Root node is missing")
 
@@ -51,8 +54,9 @@ func animate_to(target_position: Vector2, target_rotation_degrees: float, durati
 
 	tween.parallel().tween_property(root, "rotation_degrees", target_rotation_degrees, duration)\
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+
+	await tween.finished
 	
-	return self
 
 
 func reset_tween():
@@ -61,5 +65,8 @@ func reset_tween():
 	tween = get_tree().create_tween()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	# Move the card back to its anchor position when it exits the screen
+	# Move the card back to its anchor position when it exits the screen,
+	# unless we're intentionally animating it out (despawning)
+	if _is_despawning:
+		return
 	move_to_anchor(0.5)

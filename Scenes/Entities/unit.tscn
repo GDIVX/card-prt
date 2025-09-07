@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dtr5kbqy68nck"]
+[gd_scene load_steps=56 format=3 uid="uid://dtr5kbqy68nck"]
 
 [ext_resource type="Script" uid="uid://buadw7jswgygx" path="res://Scripts/Entities/character.gd" id="1_3g3so"]
 [ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://Shaders/unit.gdshader" id="2_02qqi"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dw88weyeb3scn" path="res://Sprites/Hana Caraka - Base Character [sample]/death.png" id="3_3g3so"]
 [ext_resource type="Texture2D" uid="uid://chj4gcqqg1xt2" path="res://Sprites/Hana Caraka - Base Character [sample]/idle.png" id="3_vm1mm"]
 [ext_resource type="Texture2D" uid="uid://d317cnxfbx7oe" path="res://Sprites/Hana Caraka - Base Character [sample]/hurt.png" id="4_a65fh"]
-[ext_resource type="PackedScene" uid="uid://ceg25eck35aqn" path="res://Scenes/VSX/hit_fx.tscn" id="5_kr7ts"]
 [ext_resource type="Texture2D" uid="uid://s7qukrrgu27b" path="res://Sprites/Hana Caraka - Base Character [sample]/run.png" id="6_02qqi"]
 [ext_resource type="Texture2D" uid="uid://t6nwpxl1v63i" path="res://Sprites/Hana Caraka - Base Character [sample]/walk.png" id="7_qko8k"]
 [ext_resource type="PackedScene" uid="uid://yxqq5vrhs2cy" path="res://Scenes/Entities/health.tscn" id="10_bymjo"]
@@ -345,6 +344,43 @@ _data = {
 &"RESET": SubResource("Animation_qko8k")
 }
 
+[sub_resource type="Gradient" id="Gradient_4tnmk"]
+offsets = PackedFloat32Array(0, 0.143885, 1)
+colors = PackedColorArray(1.5, 0, 0, 1, 1.5, 0.504, 0.168, 1, 1.5, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4rdp3"]
+gradient = SubResource("Gradient_4tnmk")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_ul3kg"]
+_data = [Vector2(0, 0), 0.0, 2.75766, 0, 0, Vector2(1, 0), -2.42569, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ckqa5"]
+curve = SubResource("Curve_ul3kg")
+
+[sub_resource type="Curve" id="Curve_ncx6i"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 2.42876), 0.0, 0.0, 0, 0, Vector2(1, 1.51997), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_vmyb8"]
+curve = SubResource("Curve_ncx6i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3g3so"]
+resource_local_to_scene = true
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 80.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 20, 0)
+scale_min = 0.5
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_ckqa5")
+scale_over_velocity_max = 50.0
+scale_over_velocity_curve = SubResource("CurveTexture_vmyb8")
+color_ramp = SubResource("GradientTexture1D_4rdp3")
+
 [node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("health", "raycast", "nav_agent")]
 disable_mode = 1
 motion_mode = 1
@@ -384,9 +420,15 @@ libraries = {
 }
 autoplay = "RESET"
 
-[node name="HitFX" parent="UnitSprite" instance=ExtResource("5_kr7ts")]
+[node name="HitFX" type="GPUParticles2D" parent="UnitSprite"]
 emitting = false
 lifetime = 0.15
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.1
+trail_sections = 2
+trail_section_subdivisions = 2
+process_material = SubResource("ParticleProcessMaterial_3g3so")
 
 [node name="EntityGui" type="Control" parent="."]
 layout_mode = 3
