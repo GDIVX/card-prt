@@ -8,3 +8,10 @@ func apply(_card: Card, targets: Array) -> void:
         var health :Health = target.get_node("Health")
 
         health.defense += defense_gained
+
+func describe(_context: CardContext) -> DescriptionSpec:
+    var spec := DescriptionSpec.new()
+    spec.add(DescriptionSpec.text("Gain "))
+    spec.add(DescriptionSpec.param("defense", func(_ctx): return defense_gained))
+    spec.add(DescriptionSpec.text(" defense."))
+    return spec

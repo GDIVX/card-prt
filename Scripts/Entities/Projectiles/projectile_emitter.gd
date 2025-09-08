@@ -9,29 +9,28 @@ extends Node2D
 ## fire(projectile: PackedScene, at: Vector2) -> void
 ## Spawns (or reuses) a Projectile, rotates toward `at`, and emits it.
 
-func fire(projectile: PackedScene, at: Vector2) -> void:
+func fire(projectile: Projectile, at: Vector2) -> void:
 	if projectile == null:
-		push_warning("ProjectileEmitter.fire: projectile PackedScene is null.")
+		push_warning("ProjectileEmitter.fire: projectile is null.")
 		return
 
-	var p: Projectile = projectile.instantiate()
 
 	#signals
-	p.connect("enable_state_changed" , _on_projectile_enabled_state_changed)
+	projectile.connect("enable_state_changed" , _on_projectile_enabled_state_changed)
 
 	# Position & aim
 
 	var dir := at - global_position
 	var angle := dir.angle()
-	p.global_rotation = angle
+	projectile.global_rotation = angle
 	#use polar cords to find the position for the projectile
 	var x : float = cos(angle)
 	var y: float = sin(angle)
-	p.position = Vector2(x,y) * displacement_radius
+	projectile.position = Vector2(x,y) * displacement_radius
 
-	add_child(p)
-	if not p.auto_emit:
-		p.emit()
+	add_child(projectile)
+	if not projectile.auto_emit:
+		projectile.emit()
 
 
 func _on_projectile_enabled_state_changed(value : bool, projectile: Projectile):

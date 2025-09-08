@@ -2,7 +2,6 @@
 @icon("res://Sprites/IconGodotNode/node_2D/icon_bullet.png")
 class_name Projectile extends CharacterBody2D
 
-@export var speed_curve: Curve
 @export var lifespan := 1.0
 @export var disable_on_collision_with_body := true
 @export var auto_emit := false  
@@ -43,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	if not enabled : return
 	_age += delta
 	var t := 1.0 if lifespan <= 0.0 else clampf(_age / lifespan, 0.0, 1.0)
+	var speed_curve := projectile_material.speed_curve
 	speed = speed_curve.sample(t) if speed_curve else speed
 	velocity = direction * speed * delta
 

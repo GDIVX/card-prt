@@ -1,18 +1,46 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=14 format=3 uid="uid://80uiy7281xd7"]
+[gd_resource type="Resource" script_class="CardData" load_steps=20 format=3 uid="uid://80uiy7281xd7"]
 
 [ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="1_bofkc"]
+[ext_resource type="Script" uid="uid://c0umi5wu1if7i" path="res://Scripts/Entities/damage.gd" id="2_401c5"]
 [ext_resource type="PackedScene" uid="uid://cr38ixmlp08kw" path="res://Scenes/Entities/Projectiles/player_arrorw.tscn" id="2_lb7hk"]
 [ext_resource type="Script" uid="uid://8ksv4hg2eoyp" path="res://Scripts/Cards/Effects/fire_projectile_effect.gd" id="3_1lylf"]
 [ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://Sprites/UI/Plceholders_tempt/knight.png" id="3_401c5"]
+[ext_resource type="Script" uid="uid://bdeejdadrvlgn" path="res://Scripts/Entities/Projectiles/projectile_material.gd" id="3_bcf7w"]
 [ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="4_1lylf"]
 [ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="5_bcf7w"]
 [ext_resource type="Script" uid="uid://hq6poehfo3mx" path="res://Scripts/Selection/selection_spec.gd" id="6_f4odl"]
 [ext_resource type="Script" uid="uid://c301ur022dni0" path="res://Scripts/Selection/raycast_selection.gd" id="7_nhimw"]
 [ext_resource type="PackedScene" uid="uid://hn3fpnvd8sbh" path="res://Scenes/Selection/raycast_selection_view.tscn" id="8_j3n6i"]
 
+[sub_resource type="Resource" id="Resource_1lylf"]
+script = ExtResource("2_401c5")
+damage_value = 6
+damage_type = 0
+metadata/_custom_type_script = "uid://c0umi5wu1if7i"
+
+[sub_resource type="Curve" id="Curve_f4odl"]
+_limits = [0.0, 600.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 1677.8, 0, 0, Vector2(1, 600), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_nhimw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_j3n6i"]
+script = ExtResource("3_bcf7w")
+speed_curve = SubResource("Curve_f4odl")
+spread = 15.0
+spread_curve = SubResource("Curve_nhimw")
+metadata/_custom_type_script = "uid://bdeejdadrvlgn"
+
 [sub_resource type="Resource" id="Resource_f4odl"]
 script = ExtResource("3_1lylf")
 projectile_scene = ExtResource("2_lb7hk")
+damage = SubResource("Resource_1lylf")
+projectile_material = SubResource("Resource_j3n6i")
+knockback = 10.0
+collision_mask = 12
 metadata/_custom_type_script = "uid://8ksv4hg2eoyp"
 
 [sub_resource type="Resource" id="Resource_4uo8f"]
@@ -35,7 +63,7 @@ strategy = SubResource("Resource_d0uci")
 visualScene = ExtResource("8_j3n6i")
 max_targets = 1
 min_targets = 1
-repeats = 1
+repeats = 3
 max_range = 300.0
 required_nodes = Array[NodePath]([NodePath("Health")])
 metadata/_custom_type_script = "uid://hq6poehfo3mx"

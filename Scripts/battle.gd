@@ -90,6 +90,11 @@ func _on_card_gameplay_system_card_created_with_key(key:String, card:Card) -> vo
 	context.selection_spec = card.data.selection.duplicate(true)
 	card.context = context
 
+	# After context is set, render dynamic description from effects
+	var rendered := CardFormatter.render_for_card(card, context)
+	card.card_view.description = rendered
+	card.card_view.display_card()
+
 	card.pending_play.connect(_on_card_pending_play)
 
 	
