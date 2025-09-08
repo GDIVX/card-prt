@@ -139,6 +139,7 @@ func  _selection_cleanup() -> void:
 	_selection_active = false
 	_toggle_cards_playable_when_affordable()
 	_pending_card = null
+	selection.all_targets.clear()
 
 func _on_card_gameplay_system_card_discarded(card:Card) -> void:
 	card.pending_play.disconnect(_on_card_pending_play)

@@ -8,11 +8,11 @@ signal selection_completed(results: Array)
 signal selection_canceled
 
 
+var all_targets :Array = []
 var _active := false
 var _spec: SelectionSpec
 var _context: CardContext
 var _repeats_processed :int = 0
-var _all_targets :Array = []
 var selection_view: Array[Node] = []
 
 
@@ -66,7 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _finish_once():
 	var targets := _spec.strategy._select(_context, _spec , self)
 	if not _active : return
-	_all_targets.append_array(targets)
+	all_targets.append_array(targets)
 	_repeats_processed += 1
 
 	if _repeats_processed < _spec.repeats:
@@ -82,7 +82,7 @@ func _finish_once():
 	_active = false
 	#If the specs ask for a minimum targets count, count a small array as invalid and cancel 
 	if targets.size() >= _spec.min_targets:
-		selection_completed.emit(_all_targets)
+		selection_completed.emit(all_targets)
 	else:
 		selection_canceled.emit()
 

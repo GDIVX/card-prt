@@ -8,9 +8,8 @@ extends Node2D
 ## Public API:
 ## fire(projectile: PackedScene, at: Vector2) -> void
 ## Spawns (or reuses) a Projectile, rotates toward `at`, and emits it.
-func fire(projectile: PackedScene, at: Vector2) -> void:
-	#TODO: Investiage bug: calling this function n times would instantiate n+1 projectiles. The intended behaviour is to spawn only one at each call
 
+func fire(projectile: PackedScene, at: Vector2) -> void:
 	if projectile == null:
 		push_warning("ProjectileEmitter.fire: projectile PackedScene is null.")
 		return
@@ -31,13 +30,13 @@ func fire(projectile: PackedScene, at: Vector2) -> void:
 	p.position = Vector2(x,y) * displacement_radius
 
 	add_child(p)
-	p.emit()
+	if not p.auto_emit:
+		p.emit()
 
 
 func _on_projectile_enabled_state_changed(value : bool, projectile: Projectile):
 	if not value:
 		projectile.queue_free()
-
 
 
 

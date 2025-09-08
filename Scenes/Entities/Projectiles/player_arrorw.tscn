@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dr038uwrkp6xg" path="res://Scripts/VFX/hit_fx.gd" id="4_jjput"]
 
 [sub_resource type="Curve" id="Curve_nn54p"]
-_data = [Vector2(0, 1), 0.0, -1.8549, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Resource" id="Resource_0mdu3"]
