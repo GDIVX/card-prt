@@ -85,9 +85,6 @@ collision_layer = 11
 [node name="CollisionShape2D" parent="HurtBox" index="0"]
 shape = SubResource("RectangleShape2D_v52jf")
 
-[node name="ProjectileEmitter" parent="." index="12"]
-displacement_radius = 35.0
-
 [connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]
 [connection signal="before_started_dragging" from="CharacterDrag" to="ClickAndDragMovement" method="_on_character_drag_before_started_dragging"]
 [connection signal="started_dragging" from="CharacterDrag" to="." method="_on_character_drag_started_dragging"]

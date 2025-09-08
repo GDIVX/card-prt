@@ -1,14 +1,21 @@
-[gd_scene load_steps=25 format=3 uid="uid://cr38ixmlp08kw"]
+[gd_scene load_steps=28 format=3 uid="uid://cr38ixmlp08kw"]
 
 [ext_resource type="PackedScene" uid="uid://btjvu0c063mxk" path="res://Scenes/Entities/Projectiles/projectile.tscn" id="1_gqcj1"]
 [ext_resource type="Script" uid="uid://c0umi5wu1if7i" path="res://Scripts/Entities/damage.gd" id="2_4t5fk"]
+[ext_resource type="Script" uid="uid://cyg1bc161cuf1" path="res://Scripts/Entities/Projectiles/player_arrorw.gd" id="2_jjput"]
 [ext_resource type="PackedScene" uid="uid://ceg25eck35aqn" path="res://Scenes/VSX/hit_fx.tscn" id="3_cix6j"]
+[ext_resource type="Script" uid="uid://bdeejdadrvlgn" path="res://Scripts/Entities/Projectiles/projectile_material.gd" id="3_nn54p"]
 [ext_resource type="Script" uid="uid://dr038uwrkp6xg" path="res://Scripts/VFX/hit_fx.gd" id="4_jjput"]
 
-[sub_resource type="Curve" id="Curve_gqcj1"]
-_limits = [0.0, 800.0, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 2337.52, 0, 0, Vector2(1, 800), 0.0, 0.0, 0, 0]
+[sub_resource type="Curve" id="Curve_nn54p"]
+_data = [Vector2(0, 1), 0.0, -1.8549, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="Resource" id="Resource_0mdu3"]
+script = ExtResource("3_nn54p")
+spread = 5.0
+spread_curve = SubResource("Curve_nn54p")
+metadata/_custom_type_script = "uid://bdeejdadrvlgn"
 
 [sub_resource type="Resource" id="Resource_cix6j"]
 script = ExtResource("2_4t5fk")
@@ -109,11 +116,11 @@ color_ramp = SubResource("GradientTexture1D_0mdu3")
 alpha_curve = SubResource("CurveTexture_jjput")
 
 [node name="PlayerArrorw" instance=ExtResource("1_gqcj1")]
-speed_curve = SubResource("Curve_gqcj1")
-lifespan = 5.0
+script = ExtResource("2_jjput")
+projectile_material = SubResource("Resource_0mdu3")
 
 [node name="HitBox" parent="." index="1"]
-collision_mask = 4
+collision_mask = 12
 input_pickable = false
 damage = SubResource("Resource_cix6j")
 

@@ -6,6 +6,7 @@ class_name Projectile extends CharacterBody2D
 @export var lifespan := 1.0
 @export var disable_on_collision_with_body := true
 @export var auto_emit := false  
+@export var projectile_material : ProjectileMaterial
 
 var speed = 0.0
 var direction = Vector2.RIGHT
@@ -25,6 +26,9 @@ func _ready() -> void:
 func emit() -> void:
 	direction = Vector2.RIGHT.rotated(global_rotation)
 	_age = 0.0
+
+	#material modifiers
+	_apply_spread()
 
 	enable(true)
 	await get_tree().create_timer(lifespan).timeout
@@ -55,3 +59,38 @@ func enable(value : bool) -> void:
 
 func _on_hit_box_area_entered(_area: Area2D) -> void:
 	pass
+
+func _apply_spread() -> void:
+	var spread := projectile_material.spread
+	if spread <= 0.0:
+		return
+	var spread_rad := deg_to_rad(spread)
+	var curve := projectile_material.spread_curve 
+	
+	# Sample a deviation magnitude in [0,1] shaped by the curve (if provided),
+	# then rotate the forward direction by a signed angle within +/-spread.
+	var angle := 0.0
+	if curve:
+		var norm := 0.0
+		var accepted := false
+		var i := 0
+		# Fast rejection sampling with a small cap to avoid long loops
+		while i < 8:
+			var x := randf()
+			var y := randf()
+			var p := clampf(curve.sample_baked(x), 0.0, 1.0)
+			if y <= p:
+				norm = x
+				accepted = true
+				break
+			i += 1
+		if not accepted:
+			# Fallback to uniform if nothing accepted in limited tries
+			norm = randf()
+		var sign := -1.0 if randf() < 0.5 else 1.0
+		angle = sign * (norm * spread_rad)
+	else:
+		# Uniform spread when no curve provided
+		angle = randf_range(-spread_rad, spread_rad)
+
+	direction = direction.rotated(angle)
