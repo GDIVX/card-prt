@@ -1,8 +1,13 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bk33as3v8egl1"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://bk33as3v8egl1"]
 
-[ext_resource type="FontFile" uid="uid://gfci41uvpimu" path="res://Themes/Fonts/Roboto-Black.ttf" id="1_3js1v"]
+[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://Themes/Fonts/Roboto-Medium.ttf" id="1_jfid1"]
+[ext_resource type="FontFile" uid="uid://dkcps26yw0si8" path="res://Themes/Fonts/Roboto-Thin.ttf" id="2_bthfx"]
 
 [resource]
-default_base_scale = 1.0
-default_font = ExtResource("1_3js1v")
-default_font_size = 14
+resource_local_to_scene = true
+default_font = ExtResource("2_bthfx")
+default_font_size = 16
+Label/constants/outline_size = 6
+Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("1_jfid1")
+RichTextLabel/font_sizes/normal_font_size = 16

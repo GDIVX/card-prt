@@ -326,19 +326,19 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02qqi"]
 size = Vector2(40, 48)
 
-[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("health", "raycast", "knockback", "projectile_emitter", "nav_agent")]
+[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("raycast", "knockback", "projectile_emitter", "nav_agent", "health")]
 disable_mode = 1
 motion_mode = 1
 platform_floor_layers = 4294967294
 platform_wall_layers = 2
 script = ExtResource("1_3g3so")
-health = NodePath("Health")
 raycast = NodePath("RayCast2D")
 knockback = NodePath("KnockbackReceiver")
 projectile_emitter = NodePath("ProjectileEmitter")
 pixels_moved_per_movement = 250.0
 speed = 500.0
 nav_agent = NodePath("NavigationAgent2D")
+health = NodePath("Health")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = false
@@ -356,7 +356,7 @@ force_multiplier = 2.0
 material = SubResource("ShaderMaterial_qko8k")
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_owm7s")
-animation = &"idle_side"
+animation = &"die_side"
 autoplay = "idle_side"
 script = ExtResource("11_02qqi")
 animation_player = NodePath("AnimationPlayer")
@@ -420,6 +420,5 @@ metadata/_custom_type_script = "uid://bqye0k023i403"
 
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="defense_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_defense_changed"]
-[connection signal="entity_died" from="Health" to="UnitSprite" method="_on_health_entity_died"]
 [connection signal="health_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_health_changed"]
 [connection signal="received_damage" from="Health" to="UnitSprite" method="_on_health_received_damage"]

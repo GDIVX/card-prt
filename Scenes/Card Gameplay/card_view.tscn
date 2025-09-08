@@ -1,24 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1hixpwyg6q0"]
+[gd_scene load_steps=10 format=3 uid="uid://b1hixpwyg6q0"]
 
+[ext_resource type="Theme" uid="uid://bk33as3v8egl1" path="res://Themes/card_theme.tres" id="1_a4ipo"]
 [ext_resource type="Script" uid="uid://c7j3wgceyxvob" path="res://Scripts/Cards/card_view.gd" id="1_xamp4"]
 [ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://Sprites/UI/Plceholders_tempt/knight.png" id="2_d6b8v"]
 [ext_resource type="Texture2D" uid="uid://dm3yen1lc4oua" path="res://Sprites/UI/Plceholders_tempt/CardFront.png" id="3_j67o0"]
-[ext_resource type="FontFile" uid="uid://gfci41uvpimu" path="res://Themes/Fonts/Roboto-Black.ttf" id="4_4u580"]
 [ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://Themes/Fonts/Roboto-Medium.ttf" id="5_d6b8v"]
 [ext_resource type="Texture2D" uid="uid://hsnkgmdurnai" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/vampire golden frame.png" id="6_acxyf"]
 [ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="7_1qmrt"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_yvxpl"]
-line_spacing = 0.0
-font = ExtResource("4_4u580")
+[sub_resource type="LabelSettings" id="LabelSettings_1iibl"]
+resource_local_to_scene = true
+font = ExtResource("5_d6b8v")
 font_size = 20
-shadow_color = Color(0, 0, 0, 0.439216)
-
-[sub_resource type="Theme" id="Theme_xamp4"]
-default_font = ExtResource("5_d6b8v")
-default_font_size = 16
+outline_size = 5
+outline_color = Color(0, 0, 0, 0.784314)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sj14m"]
+resource_local_to_scene = true
 font = ExtResource("7_1qmrt")
 font_size = 30
 
@@ -30,6 +28,7 @@ anchor_bottom = 0.54
 offset_right = 0.0159912
 offset_bottom = 0.0799866
 mouse_filter = 1
+theme = ExtResource("1_a4ipo")
 script = ExtResource("1_xamp4")
 _header_label = NodePath("CardFrame/Header")
 _description_label = NodePath("CardFrame/Description")
@@ -80,7 +79,7 @@ offset_bottom = 1.64999
 grow_horizontal = 2
 grow_vertical = 2
 text = "Header"
-label_settings = SubResource("LabelSettings_yvxpl")
+label_settings = SubResource("LabelSettings_1iibl")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -98,7 +97,6 @@ offset_bottom = -1.70001
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
-theme = SubResource("Theme_xamp4")
 bbcode_enabled = true
 text = "oh wow! New line!
 

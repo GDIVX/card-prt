@@ -3,7 +3,6 @@
 class_name  TacticalUnit extends CharacterBody2D
 
 @export_category("Nodes")
-@export var health : Health
 @export var raycast : RayCast2D 
 @export var knockback : KnockbackReceiver
 @export var projectile_emitter : ProjectileEmitter
@@ -13,7 +12,8 @@ class_name  TacticalUnit extends CharacterBody2D
 @export var speed : float = 600.0
 @export var nav_agent : NavigationAgent2D
 
-
+@export_category("Health")
+@export var health : Health
 
 
 func _physics_process(_delta: float) -> void:
@@ -41,3 +41,5 @@ func _physics_process(_delta: float) -> void:
 func _on_navigation_agent_2d_velocity_computed(safe_velocity:Vector2) -> void:
 	velocity = safe_velocity
 	move_and_slide()
+
+

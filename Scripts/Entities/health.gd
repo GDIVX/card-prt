@@ -8,7 +8,7 @@ extends Node
 
 var is_dead: bool
 
-signal received_damage(to_health:int, to_defense:int)
+signal received_damage(to_health:int, to_defense:int, health: Health)
 signal health_changed(current_value:int)
 signal defense_changed(current_value:int)
 signal entity_died
@@ -42,4 +42,4 @@ func _ready() -> void:
 func deal_damage(to_health: int, to_defense: int) -> void:
 	current_health = max(current_health - to_health, 0)
 	defense = max(defense - to_defense, 0)
-	received_damage.emit(to_health,to_defense)
+	received_damage.emit(to_health,to_defense ,self)

@@ -31,8 +31,7 @@ var _original_position: Vector2
 func _ready() -> void:
 	_original_scale = self.scale
 	_original_position = self.position
-	_header_label.label_settings = _header_label.label_settings.duplicate()
-	_cost_label.label_settings = _cost_label.label_settings.duplicate()  
+
 
 
 

@@ -165,5 +165,3 @@ func _withdraw_from_draw(key: String) -> CardData:
 		else:
 			push_error("Draw and discard piles are empty for key '%s'." % key)
 	return card_data
-
-
