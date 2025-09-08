@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://btjvu0c063mxk"]
+
+[ext_resource type="Script" uid="uid://dv2qh1oieymtr" path="res://Scripts/Entities/Projectiles/projectile.gd" id="1_yr2qt"]
+[ext_resource type="Script" uid="uid://b4bduqsr66iqs" path="res://Scripts/Entities/hit_box.gd" id="2_tl4hk"]
+[ext_resource type="Texture2D" uid="uid://cuhywkmv5hkbi" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(32x32).png" id="2_yr2qt"]
+[ext_resource type="Script" uid="uid://c0umi5wu1if7i" path="res://Scripts/Entities/damage.gd" id="3_d4467"]
+
+[sub_resource type="Curve" id="Curve_l3pcu"]
+_limits = [0.0, 600.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 1315.23, 0, 0, Vector2(1, 600), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3pcu"]
+size = Vector2(16, 10)
+
+[sub_resource type="Resource" id="Resource_e1077"]
+script = ExtResource("3_d4467")
+damage_value = 1
+damage_type = 0
+metadata/_custom_type_script = "uid://c0umi5wu1if7i"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4467"]
+size = Vector2(32, 16)
+
+[node name="Projectile" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_yr2qt")
+speed_curve = SubResource("Curve_l3pcu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l3pcu")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 8
+script = ExtResource("2_tl4hk")
+damage = SubResource("Resource_e1077")
+metadata/_custom_type_script = "uid://b4bduqsr66iqs"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_d4467")
+debug_color = Color(0.7, 0, 0.0406381, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1.2, 1, 1, 1)
+texture = ExtResource("2_yr2qt")
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

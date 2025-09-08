@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="CardData" load_steps=13 format=3 uid="uid://80uiy7281xd7"]
+[gd_resource type="Resource" script_class="CardData" load_steps=14 format=3 uid="uid://80uiy7281xd7"]
 
 [ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="1_bofkc"]
-[ext_resource type="Script" uid="uid://dr77wcucp3bmn" path="res://Scripts/Cards/Effects/deal_damage_effect.gd" id="2_lb7hk"]
+[ext_resource type="PackedScene" uid="uid://cr38ixmlp08kw" path="res://Scenes/Entities/Projectiles/player_arrorw.tscn" id="2_lb7hk"]
+[ext_resource type="Script" uid="uid://8ksv4hg2eoyp" path="res://Scripts/Cards/Effects/fire_projectile_effect.gd" id="3_1lylf"]
 [ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://Sprites/UI/Plceholders_tempt/knight.png" id="3_401c5"]
 [ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="4_1lylf"]
 [ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="5_bcf7w"]
@@ -9,12 +10,10 @@
 [ext_resource type="Script" uid="uid://c301ur022dni0" path="res://Scripts/Selection/raycast_selection.gd" id="7_nhimw"]
 [ext_resource type="PackedScene" uid="uid://hn3fpnvd8sbh" path="res://Scenes/Selection/raycast_selection_view.tscn" id="8_j3n6i"]
 
-[sub_resource type="Resource" id="Resource_78aya"]
-script = ExtResource("2_lb7hk")
-damage_value = 1
-damage_type = 0
-knockback = 50.0
-metadata/_custom_type_script = "uid://dr77wcucp3bmn"
+[sub_resource type="Resource" id="Resource_f4odl"]
+script = ExtResource("3_1lylf")
+projectile_scene = ExtResource("2_lb7hk")
+metadata/_custom_type_script = "uid://8ksv4hg2eoyp"
 
 [sub_resource type="Resource" id="Resource_4uo8f"]
 script = ExtResource("4_1lylf")
@@ -47,5 +46,5 @@ card_style = SubResource("Resource_4uo8f")
 rarity = "Common"
 cost = 1
 selection = SubResource("Resource_odagn")
-card_effects = Array[ExtResource("1_bofkc")]([SubResource("Resource_78aya")])
+card_effects = Array[ExtResource("1_bofkc")]([SubResource("Resource_f4odl")])
 metadata/_custom_type_script = "uid://kaflyex0gc61"

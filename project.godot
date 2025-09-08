@@ -17,8 +17,10 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [layer_names]
 
 2d_physics/layer_1="Entities"
-2d_physics/layer_2="Cards"
-2d_physics/layer_3="Input"
+2d_physics/layer_2="player_hurtbox"
+2d_physics/layer_3="enemy_hurtbox"
+2d_physics/layer_4="any_hurrtbox"
+2d_physics/layer_5="hitbox"
 
 [physics]
 

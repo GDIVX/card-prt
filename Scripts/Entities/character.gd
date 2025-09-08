@@ -6,6 +6,7 @@ class_name  TacticalUnit extends CharacterBody2D
 @export var health : Health
 @export var raycast : RayCast2D 
 @export var knockback : KnockbackReceiver
+@export var projectile_emitter : ProjectileEmitter
 
 @export_category("ClickAndDragMovement")
 @export var pixels_moved_per_movement: float = 450.0

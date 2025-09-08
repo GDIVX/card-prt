@@ -48,7 +48,8 @@ func _on_character_drag_stopped_dragging(end_position: Vector2) -> void:
 
 	end_position = clamped_target
 
-	movement_points.value -= roundi(global_position.distance_to(end_position) / pixels_moved_per_movement)
+	var used_points :int = max(ceili(global_position.distance_to(end_position) / pixels_moved_per_movement) , 0)
+	movement_points.value -= used_points
 	nav_agent.target_position = end_position
 	
 

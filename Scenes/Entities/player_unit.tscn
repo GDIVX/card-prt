@@ -1,12 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://bliyfogowi74a"]
+[gd_scene load_steps=13 format=3 uid="uid://bliyfogowi74a"]
 
 [ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/Entities/unit.tscn" id="1_dwi70"]
 [ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://Scenes/Entities/character_drag.tscn" id="2_sqtjf"]
 [ext_resource type="Script" uid="uid://cm5dq5aj3u6qt" path="res://Scripts/Entities/player_unit.gd" id="2_tlcot"]
 [ext_resource type="Script" uid="uid://dyfpgk65mqpln" path="res://Scripts/Entities/click_and_drag_movement.gd" id="3_6lqko"]
 [ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://Scripts/Utilities/obserable_points.gd" id="3_qvrb7"]
+[ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://Shaders/unit.gdshader" id="5_v52jf"]
 [ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/Widgets/counter.tscn" id="6_qhlhk"]
 [ext_resource type="Shader" uid="uid://nq2bayapq6vb" path="res://Shaders/raycast_selection_view.gdshader" id="7_cp8bf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8fa7"]
+resource_local_to_scene = true
+shader = ExtResource("5_v52jf")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="Curve" id="Curve_dwi70"]
 _data = [Vector2(0, 0), 0.0, 1.5, 0, 0, Vector2(1, 1), 2.60427e-07, 0.0, 0, 0]
@@ -22,6 +29,9 @@ shader_parameter/direction = -1.0
 shader_parameter/color1 = Color(1, 1, 1, 1)
 shader_parameter/color2 = Color(0, 0, 0, 0.2)
 shader_parameter/opacity = 0.8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v52jf"]
+size = Vector2(30, 30)
 
 [node name="PlayerUnit" node_paths=PackedStringArray("movement_points") instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
@@ -39,6 +49,9 @@ metadata/_custom_type_script = "uid://dyfpgk65mqpln"
 script = ExtResource("3_qvrb7")
 value = 3
 metadata/_custom_type_script = "uid://bmeybtk0sncvn"
+
+[node name="UnitSprite" parent="." index="5"]
+material = SubResource("ShaderMaterial_d8fa7")
 
 [node name="Counter" parent="EntityGui" index="1" instance=ExtResource("6_qhlhk")]
 layout_mode = 1
@@ -65,6 +78,15 @@ material = SubResource("ShaderMaterial_v52jf")
 
 [node name="Team" parent="." index="10"]
 faction = 0
+
+[node name="HurtBox" parent="." index="11"]
+collision_layer = 11
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+shape = SubResource("RectangleShape2D_v52jf")
+
+[node name="ProjectileEmitter" parent="." index="12"]
+displacement_radius = 35.0
 
 [connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]
 [connection signal="before_started_dragging" from="CharacterDrag" to="ClickAndDragMovement" method="_on_character_drag_before_started_dragging"]
