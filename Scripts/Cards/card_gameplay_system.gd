@@ -131,7 +131,10 @@ func draw_hand() -> void:
 	for key in hand_draw_amounts.keys():
 		var current_count = 0
 		for card in hand.cards:
-			if card.get_meta(META_DECK_KEY) == key:
+			# Ignore cards that are currently despawning (being discarded)
+			# so drawing can overlap with discard animations.
+			if card.get_meta(META_DECK_KEY) == key \
+			and (not card.card_transform_animator or not card.card_transform_animator._is_despawning):
 				current_count += 1
 
 		var needed = max(hand_draw_amounts[key] - current_count, 0)
