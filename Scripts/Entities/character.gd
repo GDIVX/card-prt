@@ -6,6 +6,7 @@ class_name  TacticalUnit extends CharacterBody2D
 @export var raycast : RayCast2D 
 @export var knockback : KnockbackReceiver
 @export var projectile_emitter : ProjectileEmitter
+@export var team : Team
 
 @export_category("ClickAndDragMovement")
 @export var pixels_moved_per_movement: float = 450.0
@@ -15,10 +16,20 @@ class_name  TacticalUnit extends CharacterBody2D
 @export_category("Health")
 @export var health : Health
 
+enum PlayState{
+	RUNNING,
+	SLEEPING,
+	DEAD
+}
+
+var play_state : PlayState = PlayState.SLEEPING
+
+func _ready():
+	health.entity_died.connect( func (): play_state = PlayState.DEAD)
 
 func _physics_process(_delta: float) -> void:
 
-	if health.is_dead: return
+	if not play_state == PlayState.RUNNING: return
 
 	if nav_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
