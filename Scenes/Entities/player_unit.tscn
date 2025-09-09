@@ -36,6 +36,7 @@ size = Vector2(30, 30)
 [node name="PlayerUnit" node_paths=PackedStringArray("movement_points") instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
 movement_points = NodePath("MovementPoints")
+movement_points_per_turn = 2
 
 [node name="ClickAndDragMovement" type="Node" parent="." index="0" node_paths=PackedStringArray("movement_points", "drag", "path_line", "unit")]
 script = ExtResource("3_6lqko")
@@ -87,7 +88,6 @@ shape = SubResource("RectangleShape2D_v52jf")
 
 [connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]
 [connection signal="before_started_dragging" from="CharacterDrag" to="ClickAndDragMovement" method="_on_character_drag_before_started_dragging"]
-[connection signal="started_dragging" from="CharacterDrag" to="." method="_on_character_drag_started_dragging"]
-[connection signal="stopped_dragging" from="CharacterDrag" to="." method="_on_character_drag_stopped_dragging"]
+[connection signal="stopped_dragging" from="CharacterDrag" to="." method="move_to"]
 
 [editable path="CharacterDrag"]

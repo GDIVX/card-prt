@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dmkj4psn3atng"]
+[gd_scene load_steps=17 format=3 uid="uid://dmkj4psn3atng"]
 
 [ext_resource type="Script" uid="uid://05uh46f4q8f7" path="res://scripts/battle.gd" id="1_oxf17"]
 [ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://scenes/Card Gameplay/card_gameplay_system.tscn" id="1_w7k78"]
@@ -9,11 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dpvypy8bivlq4" path="res://scenes/map.tscn" id="6_f6xt6"]
 [ext_resource type="Script" uid="uid://bl3doxao2w0oi" path="res://scripts/game_resources_system.gd" id="6_ww2ai"]
 [ext_resource type="PackedScene" uid="uid://dkhkwq7tpa5v7" path="res://scenes/Selection/selection_controller.tscn" id="9_qeyqd"]
-[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://scenes/Entities/unit.tscn" id="9_upb72"]
-[ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://shaders/unit.gdshader" id="9_vd41i"]
 [ext_resource type="Texture2D" uid="uid://cwotd5srwx0jd" path="res://sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy genreci action button.png" id="10_k7mbx"]
 [ext_resource type="PackedScene" uid="uid://sc44qjvo5m7k" path="res://scenes/Widgets/health_bar.tscn" id="11_heh15"]
 [ext_resource type="PackedScene" uid="uid://yxqq5vrhs2cy" path="res://scenes/Entities/health.tscn" id="12_xkp4y"]
+[ext_resource type="Script" uid="uid://dww61jelbsbfj" path="res://scripts/turns_manager.gd" id="13_6ni85"]
 [ext_resource type="Script" uid="uid://xl6cbc35etfb" path="res://scripts/Entities/units_group.gd" id="13_vd41i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
@@ -23,20 +22,20 @@ font_size = 30
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upb72"]
 size = Vector2(260, 132)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nne6o"]
-resource_local_to_scene = true
-shader = ExtResource("9_vd41i")
-shader_parameter/blink_color = Color(1, 1, 1, 1)
-shader_parameter/blink_intensity = 0.0
-
-[node name="Battle" type="Node2D" node_paths=PackedStringArray("card_gameplay_system", "game_resources_system", "selection", "map")]
+[node name="Battle" type="Node2D" node_paths=PackedStringArray("card_gameplay_system", "game_resources_system", "selection", "map", "turn_manager", "groups_per_faction")]
 script = ExtResource("1_oxf17")
 card_gameplay_system = NodePath("GUI/CardGameplaySystem")
 game_resources_system = NodePath("GameResourcesSystem")
 selection = NodePath("SelectionController")
 map = NodePath("Map")
+turn_manager = NodePath("TurnsManager")
 heroes_data = Array[ExtResource("2_lrv64")]([ExtResource("3_qeyqd")])
 spawn_radius = 200.0
+groups_per_faction = {
+0: NodePath("TurnsManager/PlayerGroup"),
+1: NodePath("TurnsManager/EnemyGroup"),
+2: NodePath("TurnsManager/NeutralGroup")
+}
 
 [node name="GUI" type="CanvasLayer" parent="." node_paths=PackedStringArray("mana_counter")]
 script = ExtResource("3_f6xt6")
@@ -67,13 +66,9 @@ label_settings = SubResource("LabelSettings_pd5xk")
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Button3" type="Button" parent="GUI/VBoxContainer"]
+[node name="EndTurnBtn" type="Button" parent="GUI/VBoxContainer"]
 layout_mode = 2
-text = "Draw Hand"
-
-[node name="Button2" type="Button" parent="GUI/VBoxContainer"]
-layout_mode = 2
-text = "Discard Hand"
+text = "End Turn"
 
 [node name="GameResourcesSystem" type="Node" parent="."]
 script = ExtResource("6_ww2ai")
@@ -123,47 +118,29 @@ health_object = NodePath("../StaticBody2D/Health")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="UnitsGroup" type="Node" parent="."]
+[node name="TurnsManager" type="Node" parent="."]
+script = ExtResource("13_6ni85")
+
+[node name="PlayerGroup" type="Node" parent="TurnsManager"]
 script = ExtResource("13_vd41i")
 
-[node name="Unit" parent="UnitsGroup" instance=ExtResource("9_upb72")]
-position = Vector2(5, -184)
-
-[node name="UnitSprite" parent="UnitsGroup/Unit" index="3"]
-material = SubResource("ShaderMaterial_nne6o")
-
-[node name="Team" parent="UnitsGroup/Unit" index="7"]
+[node name="EnemyGroup" type="Node" parent="TurnsManager"]
+script = ExtResource("13_vd41i")
 faction = 1
 
-[node name="Unit2" parent="UnitsGroup" instance=ExtResource("9_upb72")]
-position = Vector2(-269, -11)
-
-[node name="UnitSprite" parent="UnitsGroup/Unit2" index="3"]
-material = SubResource("ShaderMaterial_nne6o")
-
-[node name="Team" parent="UnitsGroup/Unit2" index="7"]
-faction = 1
-
-[node name="Unit3" parent="UnitsGroup" instance=ExtResource("9_upb72")]
-position = Vector2(270, -205)
-
-[node name="UnitSprite" parent="UnitsGroup/Unit3" index="3"]
-material = SubResource("ShaderMaterial_nne6o")
-
-[node name="Team" parent="UnitsGroup/Unit3" index="7"]
-faction = 1
+[node name="NeutralGroup" type="Node" parent="TurnsManager"]
+script = ExtResource("13_vd41i")
+faction = 2
 
 [connection signal="card_created_with_key" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_created_with_key"]
 [connection signal="card_discarded" from="GUI/CardGameplaySystem" to="." method="_on_card_gameplay_system_card_discarded"]
 [connection signal="card_created" from="GUI/CardGameplaySystem/Hand" to="." method="_on_hand_card_created"]
-[connection signal="pressed" from="GUI/VBoxContainer/Button3" to="GUI/CardGameplaySystem" method="draw_hand"]
-[connection signal="pressed" from="GUI/VBoxContainer/Button2" to="GUI/CardGameplaySystem" method="discard_hand"]
+[connection signal="pressed" from="GUI/VBoxContainer/EndTurnBtn" to="TurnsManager/PlayerGroup" method="end_turn"]
 [connection signal="resource_value_changed" from="GameResourcesSystem" to="." method="_on_game_resources_system_resource_value_changed"]
 [connection signal="resource_value_changed" from="GameResourcesSystem" to="GUI" method="_on_game_resources_system_resource_value_changed"]
+[connection signal="turn_ended" from="TurnsManager/PlayerGroup" to="GUI/CardGameplaySystem" method="discard_hand"]
+[connection signal="turn_started" from="TurnsManager/PlayerGroup" to="GUI/CardGameplaySystem" method="draw_hand"]
 
 [editable path="GUI/CardGameplaySystem"]
 [editable path="GUI/CardGameplaySystem/Counter"]
 [editable path="Map"]
-[editable path="UnitsGroup/Unit"]
-[editable path="UnitsGroup/Unit2"]
-[editable path="UnitsGroup/Unit3"]

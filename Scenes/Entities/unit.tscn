@@ -326,7 +326,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02qqi"]
 size = Vector2(40, 48)
 
-[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("raycast", "knockback", "projectile_emitter", "nav_agent", "health")]
+[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("raycast", "knockback", "projectile_emitter", "team", "nav_agent", "health")]
 disable_mode = 1
 motion_mode = 1
 platform_floor_layers = 4294967294
@@ -335,6 +335,7 @@ script = ExtResource("1_3g3so")
 raycast = NodePath("RayCast2D")
 knockback = NodePath("KnockbackReceiver")
 projectile_emitter = NodePath("ProjectileEmitter")
+team = NodePath("Team")
 pixels_moved_per_movement = 250.0
 speed = 500.0
 nav_agent = NodePath("NavigationAgent2D")

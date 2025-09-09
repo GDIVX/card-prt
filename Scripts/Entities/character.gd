@@ -16,8 +16,12 @@ class_name  TacticalUnit extends CharacterBody2D
 @export_category("Health")
 @export var health : Health
 
+signal turn_started
+signal turn_ended
+
+
 enum PlayState{
-	RUNNING,
+	ACTIVE,
 	SLEEPING,
 	DEAD
 }
@@ -29,7 +33,8 @@ func _ready():
 
 func _physics_process(_delta: float) -> void:
 
-	if not play_state == PlayState.RUNNING: return
+	if not play_state == PlayState.ACTIVE:
+		return
 
 	if nav_agent.is_navigation_finished():
 		velocity = Vector2.ZERO
@@ -54,3 +59,13 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity:Vector2) -> void:
 	move_and_slide()
 
 
+func start_turn() -> void:
+	if play_state == PlayState.DEAD: return
+	play_state = PlayState.ACTIVE
+	turn_started.emit()
+
+
+func end_turn() -> void:
+	if play_state == PlayState.DEAD: return
+	play_state = PlayState.SLEEPING
+	turn_ended.emit()

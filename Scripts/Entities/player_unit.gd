@@ -1,6 +1,7 @@
 class_name PlayerUnit extends TacticalUnit
 
 @export var movement_points : ObservableNumber
+@export var movement_points_per_turn : int = 2
 
 var remaining_movement_length : float :
 	get:
@@ -11,8 +12,17 @@ func _ready() -> void:
 	nav_agent.target_position = global_position
 	velocity = Vector2.ZERO
 
+	movement_points.value_changed.connect(func (p):
+		if not play_state == PlayState.ACTIVE: return
+		if p <= 0:
+			await nav_agent.navigation_finished
+			end_turn())
 
-func _on_character_drag_stopped_dragging(end_position: Vector2) -> void:
+
+func move_to(end_position: Vector2) -> void:
+
+	if not play_state == PlayState.ACTIVE: return
+
 	velocity = Vector2.ZERO
 
 	var path_len := remaining_movement_length
@@ -53,3 +63,11 @@ func _on_character_drag_stopped_dragging(end_position: Vector2) -> void:
 	nav_agent.target_position = end_position
 	
 
+func start_turn() -> void:
+	super()
+	movement_points.value = movement_points_per_turn
+
+
+func end_turn() -> void:
+	super()
+	movement_points.value = 0

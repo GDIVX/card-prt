@@ -6,6 +6,7 @@ class_name Battle extends Node2D
 @export var game_resources_system: GameResourcesSystem
 @export var selection : SelectionController
 @export var map : NavigationRegion2D
+@export var turn_manager : TurnsManager
 
 @export var heroes_data:Array[HeroData]
 
@@ -13,10 +14,13 @@ class_name Battle extends Node2D
 @export var spawn_position_center : Vector2
 @export var spawn_radius: float
 
-var player_units: Dictionary[String, PlayerUnit]
+@export_category("Units Groups")
+@export var groups_per_faction : Dictionary[Team.Faction , UnitsGroup]
 
 var _selection_active: bool = false
 var _pending_card: Card = null
+
+var player_units: Dictionary[String, PlayerUnit]
 
 
 func _ready() -> void:
@@ -33,7 +37,8 @@ func _ready() -> void:
 	if heroes_data and heroes_data.size() > 0:
 		for hero in heroes_data:
 			create_hero(hero, _get_spawn_position())
-	card_gameplay_system.draw_hand()
+	
+	turn_manager.next_turn()
 
 
 func _get_spawn_position() -> Vector2:
@@ -46,16 +51,26 @@ func _get_spawn_position() -> Vector2:
 
 func create_hero(hero_data: HeroData, spawn_point : Vector2) -> PlayerUnit:
 	_create_hero_deck(hero_data)
-	var unit: PlayerUnit = hero_data.unit_scene.instantiate() as PlayerUnit
-	if not unit:
-		push_error("Hero " + hero_data.name + " lack a [PlayerUnit] scene")
-		return null
-	
-	unit.position = spawn_point
+
+	var unit: PlayerUnit = create_unit(hero_data.unit_scene, spawn_point , Team.Faction.PLAYER)
 	player_units[hero_data.name] = unit
-	add_child(unit)
 	return unit
 	
+
+func create_unit(scene: PackedScene , global_spawn_point : Vector2, faction : Team.Faction) -> TacticalUnit:
+	var unit : TacticalUnit = scene.instantiate() as TacticalUnit
+	if not unit:
+		push_error("Failed to create unit")
+		return null
+	
+	unit.global_position = global_spawn_point
+
+	if groups_per_faction.keys().has(faction): 
+		var group := groups_per_faction[faction]
+		group.add_unit(unit)
+	return unit
+
+
 
 
 func _create_hero_deck(hero_data: HeroData) -> void:
