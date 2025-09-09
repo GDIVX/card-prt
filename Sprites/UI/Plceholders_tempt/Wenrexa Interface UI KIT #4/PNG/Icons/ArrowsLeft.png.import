@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs06jxwqvuub7"
-path="res://.godot/imported/ArrowsLeft.png-e76ca868030cc24ae60e53e767491c40.ctex"
+path="res://.godot/imported/ArrowsLeft.png-0ca116a981a4375d20d75b9ad9c892c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/Icons/ArrowsLeft.png"
-dest_files=["res://.godot/imported/ArrowsLeft.png-e76ca868030cc24ae60e53e767491c40.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/Icons/ArrowsLeft.png"
+dest_files=["res://.godot/imported/ArrowsLeft.png-0ca116a981a4375d20d75b9ad9c892c1.ctex"]
 
 [params]
 

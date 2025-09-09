@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://2wu2w2301t8v"]
 
-[ext_resource type="Script" uid="uid://dll0wjvpsj7a7" path="res://Scripts/GUI/combat_gui.gd" id="1_n5m23"]
-[ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://Scenes/Card Gameplay/card_gameplay_system.tscn" id="2_m6o0h"]
-[ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="3_8kag3"]
+[ext_resource type="Script" uid="uid://dll0wjvpsj7a7" path="res://scripts/GUI/combat_gui.gd" id="1_n5m23"]
+[ext_resource type="PackedScene" uid="uid://66jr8s2fprv4" path="res://scenes/Card Gameplay/card_gameplay_system.tscn" id="2_m6o0h"]
+[ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://themes/Fonts/Roboto-Bold.ttf" id="3_8kag3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pd5xk"]
 font = ExtResource("3_8kag3")

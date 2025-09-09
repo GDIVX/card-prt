@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs8mumtv4s7vm"
-path="res://.godot/imported/controller_xbox_adaptive.svg-dbbb0b9eb060535b54740f79726b29f8.ctex"
+path="res://.godot/imported/controller_xbox_adaptive.svg-116fde2b19bd16c0d4cabaa0d7b831ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Xbox Series/Vector/controller_xbox_adaptive.svg"
-dest_files=["res://.godot/imported/controller_xbox_adaptive.svg-dbbb0b9eb060535b54740f79726b29f8.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Xbox Series/Vector/controller_xbox_adaptive.svg"
+dest_files=["res://.godot/imported/controller_xbox_adaptive.svg-116fde2b19bd16c0d4cabaa0d7b831ab.ctex"]
 
 [params]
 

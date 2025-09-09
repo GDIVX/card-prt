@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csrdijfjr3h4t"
-path="res://.godot/imported/flair_arrows_left.png-47561d1e59635b7841658743facbade6.ctex"
+path="res://.godot/imported/flair_arrows_left.png-98dbe0136444ec64012f39205c9db227.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Flairs/Default/flair_arrows_left.png"
-dest_files=["res://.godot/imported/flair_arrows_left.png-47561d1e59635b7841658743facbade6.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Flairs/Default/flair_arrows_left.png"
+dest_files=["res://.godot/imported/flair_arrows_left.png-98dbe0136444ec64012f39205c9db227.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4y8nfl283dli"
-path="res://.godot/imported/playstation4_touchpad_swipe_right.png-8363930fd78b3c8989fbd3f90a402924.ctex"
+path="res://.godot/imported/playstation4_touchpad_swipe_right.png-100c82eb6fcf3e4fe98c3473a3f8dc71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Default/playstation4_touchpad_swipe_right.png"
-dest_files=["res://.godot/imported/playstation4_touchpad_swipe_right.png-8363930fd78b3c8989fbd3f90a402924.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Default/playstation4_touchpad_swipe_right.png"
+dest_files=["res://.godot/imported/playstation4_touchpad_swipe_right.png-100c82eb6fcf3e4fe98c3473a3f8dc71.ctex"]
 
 [params]
 

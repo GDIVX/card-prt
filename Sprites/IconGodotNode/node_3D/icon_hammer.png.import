@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cin3wfcygmvtx"
-path="res://.godot/imported/icon_hammer.png-f1f7bd7bf188e663ac2066659c23dc87.ctex"
+path="res://.godot/imported/icon_hammer.png-bda10117c1bc35b9fcb00b4bf4473bf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_3D/icon_hammer.png"
-dest_files=["res://.godot/imported/icon_hammer.png-f1f7bd7bf188e663ac2066659c23dc87.ctex"]
+source_file="res://sprites/IconGodotNode/node_3D/icon_hammer.png"
+dest_files=["res://.godot/imported/icon_hammer.png-bda10117c1bc35b9fcb00b4bf4473bf0.ctex"]
 
 [params]
 

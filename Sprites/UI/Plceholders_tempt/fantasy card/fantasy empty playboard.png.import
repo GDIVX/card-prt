@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pjpk6nvtvgeo"
-path="res://.godot/imported/fantasy empty playboard.png-a53af787e393cce72c52fcc8bcaff585.ctex"
+path="res://.godot/imported/fantasy empty playboard.png-bae2687f4464d00e08c81a282dc535f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/fantasy empty playboard.png"
-dest_files=["res://.godot/imported/fantasy empty playboard.png-a53af787e393cce72c52fcc8bcaff585.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/fantasy empty playboard.png"
+dest_files=["res://.godot/imported/fantasy empty playboard.png-bae2687f4464d00e08c81a282dc535f9.ctex"]
 
 [params]
 

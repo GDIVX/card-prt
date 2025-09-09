@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj35vn77boy60"
-path="res://.godot/imported/scifi iron frame.png-83896095cd0a2e9766aca44c74e78744.ctex"
+path="res://.godot/imported/scifi iron frame.png-34b5a1d901c4b99f28d99e00f94f689b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/scifi iron frame.png"
-dest_files=["res://.godot/imported/scifi iron frame.png-83896095cd0a2e9766aca44c74e78744.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/icons/scifi iron frame.png"
+dest_files=["res://.godot/imported/scifi iron frame.png-34b5a1d901c4b99f28d99e00f94f689b.ctex"]
 
 [params]
 

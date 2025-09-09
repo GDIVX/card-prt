@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ba8gtfxblttnq"
-path="res://.godot/imported/kenney_input_generic.otf-7ac69502b7a18077b8f6a5446ef2832c.fontdata"
+path="res://.godot/imported/kenney_input_generic.otf-e15467683c560b62a129d2d70aa2d103.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Generic/Fonts/kenney_input_generic.otf"
-dest_files=["res://.godot/imported/kenney_input_generic.otf-7ac69502b7a18077b8f6a5446ef2832c.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Generic/Fonts/kenney_input_generic.otf"
+dest_files=["res://.godot/imported/kenney_input_generic.otf-e15467683c560b62a129d2d70aa2d103.fontdata"]
 
 [params]
 

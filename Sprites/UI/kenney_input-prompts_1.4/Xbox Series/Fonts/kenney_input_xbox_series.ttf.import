@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ufcm7keh02en"
-path="res://.godot/imported/kenney_input_xbox_series.ttf-d245561d3115bc00627866dbecb3813a.fontdata"
+path="res://.godot/imported/kenney_input_xbox_series.ttf-5fc052e3afe3ce45fd93ca4f991a4094.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Xbox Series/Fonts/kenney_input_xbox_series.ttf"
-dest_files=["res://.godot/imported/kenney_input_xbox_series.ttf-d245561d3115bc00627866dbecb3813a.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Xbox Series/Fonts/kenney_input_xbox_series.ttf"
+dest_files=["res://.godot/imported/kenney_input_xbox_series.ttf-5fc052e3afe3ce45fd93ca4f991a4094.fontdata"]
 
 [params]
 

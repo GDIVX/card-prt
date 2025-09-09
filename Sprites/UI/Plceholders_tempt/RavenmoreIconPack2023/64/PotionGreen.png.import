@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwcubfddlkmd5"
-path="res://.godot/imported/PotionGreen.png-9a36a5d73166d5575562e6a5c895d115.ctex"
+path="res://.godot/imported/PotionGreen.png-114ff1c41acef658668d17c45f3662a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/PotionGreen.png"
-dest_files=["res://.godot/imported/PotionGreen.png-9a36a5d73166d5575562e6a5c895d115.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/PotionGreen.png"
+dest_files=["res://.godot/imported/PotionGreen.png-114ff1c41acef658668d17c45f3662a7.ctex"]
 
 [params]
 

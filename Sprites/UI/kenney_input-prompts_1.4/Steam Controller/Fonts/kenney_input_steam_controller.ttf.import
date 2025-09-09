@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cung286uqwdd6"
-path="res://.godot/imported/kenney_input_steam_controller.ttf-b01e034e1a10de37096aadb08529d725.fontdata"
+path="res://.godot/imported/kenney_input_steam_controller.ttf-f10e2abb86d6a3050a4110fa4a54f513.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Steam Controller/Fonts/kenney_input_steam_controller.ttf"
-dest_files=["res://.godot/imported/kenney_input_steam_controller.ttf-b01e034e1a10de37096aadb08529d725.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Steam Controller/Fonts/kenney_input_steam_controller.ttf"
+dest_files=["res://.godot/imported/kenney_input_steam_controller.ttf-f10e2abb86d6a3050a4110fa4a54f513.fontdata"]
 
 [params]
 

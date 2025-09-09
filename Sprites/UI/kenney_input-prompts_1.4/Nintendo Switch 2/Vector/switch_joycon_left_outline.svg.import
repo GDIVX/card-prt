@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://begn7dxpfbrkk"
-path="res://.godot/imported/switch_joycon_left_outline.svg-314422c1f5b6bb7ae3529ce31ff15a75.ctex"
+path="res://.godot/imported/switch_joycon_left_outline.svg-b755197e6d5f559b9cab5ddf871e3c48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Vector/switch_joycon_left_outline.svg"
-dest_files=["res://.godot/imported/switch_joycon_left_outline.svg-314422c1f5b6bb7ae3529ce31ff15a75.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Vector/switch_joycon_left_outline.svg"
+dest_files=["res://.godot/imported/switch_joycon_left_outline.svg-b755197e6d5f559b9cab5ddf871e3c48.ctex"]
 
 [params]
 

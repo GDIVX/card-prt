@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c557tgp3vfhus"
-path="res://.godot/imported/Icon36.png-fb431aa7043eb2b0401bfb6006688cf1.ctex"
+path="res://.godot/imported/Icon36.png-f9fa376f109087fa9ae4592a00801fc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/Icons/Icon36.png"
-dest_files=["res://.godot/imported/Icon36.png-fb431aa7043eb2b0401bfb6006688cf1.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/Icons/Icon36.png"
+dest_files=["res://.godot/imported/Icon36.png-f9fa376f109087fa9ae4592a00801fc8.ctex"]
 
 [params]
 

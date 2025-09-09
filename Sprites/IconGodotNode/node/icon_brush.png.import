@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://y6vcapqcn7hj"
-path="res://.godot/imported/icon_brush.png-b5d22db3773bca46d4d62d0c96c6406b.ctex"
+path="res://.godot/imported/icon_brush.png-ebf75de5087b4d157c8d94dfe50a8727.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node/icon_brush.png"
-dest_files=["res://.godot/imported/icon_brush.png-b5d22db3773bca46d4d62d0c96c6406b.ctex"]
+source_file="res://sprites/IconGodotNode/node/icon_brush.png"
+dest_files=["res://.godot/imported/icon_brush.png-ebf75de5087b4d157c8d94dfe50a8727.ctex"]
 
 [params]
 

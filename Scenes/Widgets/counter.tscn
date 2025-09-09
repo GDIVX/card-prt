@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgibetgd24vje"]
 
-[ext_resource type="Script" uid="uid://drvifx8ajwcer" path="res://Scripts/GUI/counter.gd" id="1_odkjx"]
-[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://Themes/Fonts/Roboto-Medium.ttf" id="2_odkjx"]
+[ext_resource type="Script" uid="uid://drvifx8ajwcer" path="res://scripts/GUI/counter.gd" id="1_odkjx"]
+[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://themes/Fonts/Roboto-Medium.ttf" id="2_odkjx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sq1kt"]
 font = ExtResource("2_odkjx")

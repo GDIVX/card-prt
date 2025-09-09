@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjbidehpq2tx1"
-path="res://.godot/imported/mouse_move.png-c693e05a3761e9a65e7538ca67e3a598.ctex"
+path="res://.godot/imported/mouse_move.png-eb526f3912ee9aff54ee4af83fef8459.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Double/mouse_move.png"
-dest_files=["res://.godot/imported/mouse_move.png-c693e05a3761e9a65e7538ca67e3a598.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Double/mouse_move.png"
+dest_files=["res://.godot/imported/mouse_move.png-eb526f3912ee9aff54ee4af83fef8459.ctex"]
 
 [params]
 

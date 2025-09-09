@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csfxddrgsx7fc"
-path="res://.godot/imported/touch_swipe_two_vertical.png-61484dd6f9bada734882c07a11dc0e99.ctex"
+path="res://.godot/imported/touch_swipe_two_vertical.png-777939fbd8f5647c7e7167e753ef98a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Touch/Default/touch_swipe_two_vertical.png"
-dest_files=["res://.godot/imported/touch_swipe_two_vertical.png-61484dd6f9bada734882c07a11dc0e99.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Touch/Default/touch_swipe_two_vertical.png"
+dest_files=["res://.godot/imported/touch_swipe_two_vertical.png-777939fbd8f5647c7e7167e753ef98a4.ctex"]
 
 [params]
 

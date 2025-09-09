@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://btjvu0c063mxk"]
 
-[ext_resource type="Script" uid="uid://dv2qh1oieymtr" path="res://Scripts/Entities/Projectiles/projectile.gd" id="1_yr2qt"]
-[ext_resource type="Script" uid="uid://b4bduqsr66iqs" path="res://Scripts/Entities/hit_box.gd" id="2_tl4hk"]
-[ext_resource type="Texture2D" uid="uid://cuhywkmv5hkbi" path="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(32x32).png" id="2_yr2qt"]
-[ext_resource type="Script" uid="uid://c0umi5wu1if7i" path="res://Scripts/Entities/damage.gd" id="3_d4467"]
+[ext_resource type="Script" uid="uid://dv2qh1oieymtr" path="res://scripts/Entities/Projectiles/projectile.gd" id="1_yr2qt"]
+[ext_resource type="Script" uid="uid://b4bduqsr66iqs" path="res://scripts/Entities/hit_box.gd" id="2_tl4hk"]
+[ext_resource type="Texture2D" uid="uid://cuhywkmv5hkbi" path="res://sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Arrow(Projectile)/Arrow01(32x32).png" id="2_yr2qt"]
+[ext_resource type="Script" uid="uid://c0umi5wu1if7i" path="res://scripts/Entities/damage.gd" id="3_d4467"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3pcu"]
 size = Vector2(16, 10)

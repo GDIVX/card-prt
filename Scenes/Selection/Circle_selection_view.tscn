@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://uxx8jh4wo8qq"]
 
-[ext_resource type="Script" uid="uid://bwoncme0mrpxd" path="res://Scripts/circle_2d.gd" id="1_4lm5f"]
-[ext_resource type="Script" uid="uid://6otek8mbdoos" path="res://Scripts/Selection/area_selection_view.gd" id="1_faqfa"]
+[ext_resource type="Script" uid="uid://bwoncme0mrpxd" path="res://scripts/circle_2d.gd" id="1_4lm5f"]
+[ext_resource type="Script" uid="uid://6otek8mbdoos" path="res://scripts/Selection/area_selection_view.gd" id="1_faqfa"]
 
 [node name="CircleAreaSelectionView" type="Node2D"]
 script = ExtResource("1_faqfa")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmq4ge78e670c"
-path="res://.godot/imported/generic_stick.png-903dfc66f6247fab68c2190bf2066f5c.ctex"
+path="res://.godot/imported/generic_stick.png-1828e28c7599d622ebe717b84a94c130.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Generic/Default/generic_stick.png"
-dest_files=["res://.godot/imported/generic_stick.png-903dfc66f6247fab68c2190bf2066f5c.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Generic/Default/generic_stick.png"
+dest_files=["res://.godot/imported/generic_stick.png-1828e28c7599d622ebe717b84a94c130.ctex"]
 
 [params]
 

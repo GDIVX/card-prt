@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://b1hixpwyg6q0"]
 
-[ext_resource type="Theme" uid="uid://bk33as3v8egl1" path="res://Themes/card_theme.tres" id="1_a4ipo"]
-[ext_resource type="Script" uid="uid://c7j3wgceyxvob" path="res://Scripts/Cards/card_view.gd" id="1_xamp4"]
-[ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://Sprites/UI/Plceholders_tempt/knight.png" id="2_d6b8v"]
-[ext_resource type="Texture2D" uid="uid://dm3yen1lc4oua" path="res://Sprites/UI/Plceholders_tempt/CardFront.png" id="3_j67o0"]
-[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://Themes/Fonts/Roboto-Medium.ttf" id="5_d6b8v"]
-[ext_resource type="Texture2D" uid="uid://hsnkgmdurnai" path="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/vampire golden frame.png" id="6_acxyf"]
-[ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://Themes/Fonts/Roboto-Bold.ttf" id="7_1qmrt"]
+[ext_resource type="Theme" uid="uid://bk33as3v8egl1" path="res://themes/card_theme.tres" id="1_a4ipo"]
+[ext_resource type="Script" uid="uid://c7j3wgceyxvob" path="res://scripts/Cards/card_view.gd" id="1_xamp4"]
+[ext_resource type="Texture2D" uid="uid://brh4034tg8ppp" path="res://sprites/UI/Plceholders_tempt/knight.png" id="2_d6b8v"]
+[ext_resource type="Texture2D" uid="uid://dm3yen1lc4oua" path="res://sprites/UI/Plceholders_tempt/CardFront.png" id="3_j67o0"]
+[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://themes/Fonts/Roboto-Medium.ttf" id="5_d6b8v"]
+[ext_resource type="Texture2D" uid="uid://hsnkgmdurnai" path="res://sprites/UI/Plceholders_tempt/fantasy card/icons/vampire golden frame.png" id="6_acxyf"]
+[ext_resource type="FontFile" uid="uid://c25axhhl6vhr8" path="res://themes/Fonts/Roboto-Bold.ttf" id="7_1qmrt"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1iibl"]
 resource_local_to_scene = true

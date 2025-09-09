@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://rxxgwatvq7nt"
-path="res://.godot/imported/icon_camera_grid.png-e43cb5e80af1869d3fdea4204c02e905.ctex"
+path="res://.godot/imported/icon_camera_grid.png-c369c33f155665ad227434ab687fc2f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_2D/icon_camera_grid.png"
-dest_files=["res://.godot/imported/icon_camera_grid.png-e43cb5e80af1869d3fdea4204c02e905.ctex"]
+source_file="res://sprites/IconGodotNode/node_2D/icon_camera_grid.png"
+dest_files=["res://.godot/imported/icon_camera_grid.png-c369c33f155665ad227434ab687fc2f7.ctex"]
 
 [params]
 

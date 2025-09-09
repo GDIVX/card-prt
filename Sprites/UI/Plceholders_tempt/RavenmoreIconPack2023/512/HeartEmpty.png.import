@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4n6yomu7tdki"
-path="res://.godot/imported/HeartEmpty.png-38bc4f92b2d7c34d546fbec58fe5a372.ctex"
+path="res://.godot/imported/HeartEmpty.png-3c8d4c66f0eb33cae1d4fa335a2d9625.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/HeartEmpty.png"
-dest_files=["res://.godot/imported/HeartEmpty.png-38bc4f92b2d7c34d546fbec58fe5a372.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/HeartEmpty.png"
+dest_files=["res://.godot/imported/HeartEmpty.png-3c8d4c66f0eb33cae1d4fa335a2d9625.ctex"]
 
 [params]
 

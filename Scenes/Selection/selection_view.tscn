@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddiyc3nsur0u6"]
 
-[ext_resource type="Script" uid="uid://dyt1qs26meaiw" path="res://Scripts/Selection/selection_view.gd" id="1_ywhv8"]
+[ext_resource type="Script" uid="uid://dyt1qs26meaiw" path="res://scripts/Selection/selection_view.gd" id="1_ywhv8"]
 
 [node name="SelectionView" type="Node2D"]
 script = ExtResource("1_ywhv8")

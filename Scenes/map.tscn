@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpvypy8bivlq4"]
 
-[ext_resource type="Script" uid="uid://qk1pwmoguo57" path="res://Scripts/map.gd" id="1_26yhd"]
-[ext_resource type="Texture2D" uid="uid://pjpk6nvtvgeo" path="res://Sprites/UI/Plceholders_tempt/fantasy card/fantasy empty playboard.png" id="1_ci6au"]
+[ext_resource type="Script" uid="uid://qk1pwmoguo57" path="res://scripts/map.gd" id="1_26yhd"]
+[ext_resource type="Texture2D" uid="uid://pjpk6nvtvgeo" path="res://sprites/UI/Plceholders_tempt/fantasy card/fantasy empty playboard.png" id="1_ci6au"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ci6au"]
 vertices = PackedVector2Array(604.023, -296.031, 605.969, 499.023, -596, 501.969, -596, -299.961)

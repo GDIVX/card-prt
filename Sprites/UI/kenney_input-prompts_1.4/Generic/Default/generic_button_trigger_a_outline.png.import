@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mylepa2l0fc3"
-path="res://.godot/imported/generic_button_trigger_a_outline.png-c850b1a88409b2b9a562a0d2b46f75f0.ctex"
+path="res://.godot/imported/generic_button_trigger_a_outline.png-66cce47fef323ac63139ab11099cc24f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Generic/Default/generic_button_trigger_a_outline.png"
-dest_files=["res://.godot/imported/generic_button_trigger_a_outline.png-c850b1a88409b2b9a562a0d2b46f75f0.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Generic/Default/generic_button_trigger_a_outline.png"
+dest_files=["res://.godot/imported/generic_button_trigger_a_outline.png-66cce47fef323ac63139ab11099cc24f.ctex"]
 
 [params]
 

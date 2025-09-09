@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj3csd1gsc3rw"
-path="res://.godot/imported/icon_human_controller.png-9821192862dd69daed10cd51c66b910b.ctex"
+path="res://.godot/imported/icon_human_controller.png-00fda058c968107f1c88f673475fd2eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/control/icon_human_controller.png"
-dest_files=["res://.godot/imported/icon_human_controller.png-9821192862dd69daed10cd51c66b910b.ctex"]
+source_file="res://sprites/IconGodotNode/control/icon_human_controller.png"
+dest_files=["res://.godot/imported/icon_human_controller.png-00fda058c968107f1c88f673475fd2eb.ctex"]
 
 [params]
 

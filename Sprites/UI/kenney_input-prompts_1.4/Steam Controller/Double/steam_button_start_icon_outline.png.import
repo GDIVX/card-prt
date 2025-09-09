@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn3o6qpjuhgh"
-path="res://.godot/imported/steam_button_start_icon_outline.png-595217e05a805ed73e488827b62a3a8b.ctex"
+path="res://.godot/imported/steam_button_start_icon_outline.png-c7864bd2bf6e5384e9adc6bd2cd7179f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Steam Controller/Double/steam_button_start_icon_outline.png"
-dest_files=["res://.godot/imported/steam_button_start_icon_outline.png-595217e05a805ed73e488827b62a3a8b.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Steam Controller/Double/steam_button_start_icon_outline.png"
+dest_files=["res://.godot/imported/steam_button_start_icon_outline.png-c7864bd2bf6e5384e9adc6bd2cd7179f.ctex"]
 
 [params]
 

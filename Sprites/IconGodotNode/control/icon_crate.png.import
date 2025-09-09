@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tepdy5ttypad"
-path="res://.godot/imported/icon_crate.png-7eecfed34d3edb15744075aa1444b143.ctex"
+path="res://.godot/imported/icon_crate.png-b7d51a3ac3b8d7f4b7b687e143ca5f24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/control/icon_crate.png"
-dest_files=["res://.godot/imported/icon_crate.png-7eecfed34d3edb15744075aa1444b143.ctex"]
+source_file="res://sprites/IconGodotNode/control/icon_crate.png"
+dest_files=["res://.godot/imported/icon_crate.png-b7d51a3ac3b8d7f4b7b687e143ca5f24.ctex"]
 
 [params]
 

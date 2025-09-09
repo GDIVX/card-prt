@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://de1ljvcenylg"
-path="res://.godot/imported/generic_stick_horizontal.svg-d9a2bd147446cfb35a86293937397e57.ctex"
+path="res://.godot/imported/generic_stick_horizontal.svg-accdb923edc790a119e9853cfe135f2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Generic/Vector/generic_stick_horizontal.svg"
-dest_files=["res://.godot/imported/generic_stick_horizontal.svg-d9a2bd147446cfb35a86293937397e57.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Generic/Vector/generic_stick_horizontal.svg"
+dest_files=["res://.godot/imported/generic_stick_horizontal.svg-accdb923edc790a119e9853cfe135f2e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dheyn5j0103jj"
-path="res://.godot/imported/icon_area_meteo.png-499c42c6c2bfe9c89af79ebf13f305d2.ctex"
+path="res://.godot/imported/icon_area_meteo.png-e97ab8f26063a969db2348f010d6abf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/control/icon_area_meteo.png"
-dest_files=["res://.godot/imported/icon_area_meteo.png-499c42c6c2bfe9c89af79ebf13f305d2.ctex"]
+source_file="res://sprites/IconGodotNode/control/icon_area_meteo.png"
+dest_files=["res://.godot/imported/icon_area_meteo.png-e97ab8f26063a969db2348f010d6abf8.ctex"]
 
 [params]
 

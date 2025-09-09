@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djaklq7tqsbuf"
-path="res://.godot/imported/touch_zoom_out.png-4584f9330520c717be2c250453e9fdb1.ctex"
+path="res://.godot/imported/touch_zoom_out.png-7b38d674233d1522746f7dce9638182d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Touch/Default/touch_zoom_out.png"
-dest_files=["res://.godot/imported/touch_zoom_out.png-4584f9330520c717be2c250453e9fdb1.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Touch/Default/touch_zoom_out.png"
+dest_files=["res://.godot/imported/touch_zoom_out.png-7b38d674233d1522746f7dce9638182d.ctex"]
 
 [params]
 

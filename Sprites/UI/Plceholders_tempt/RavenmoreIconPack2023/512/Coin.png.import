@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbt8j2gtnfgdl"
-path="res://.godot/imported/Coin.png-8ef3debe13ece1b26c503a2a6373bae9.ctex"
+path="res://.godot/imported/Coin.png-b5693209fbb971da03fb81e1a78cd58f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/Coin.png"
-dest_files=["res://.godot/imported/Coin.png-8ef3debe13ece1b26c503a2a6373bae9.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/Coin.png"
+dest_files=["res://.godot/imported/Coin.png-b5693209fbb971da03fb81e1a78cd58f.ctex"]
 
 [params]
 

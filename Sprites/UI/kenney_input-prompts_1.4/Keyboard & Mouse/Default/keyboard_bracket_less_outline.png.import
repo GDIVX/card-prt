@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hk1mk75nhe3r"
-path="res://.godot/imported/keyboard_bracket_less_outline.png-0de424b7fad12802640698dc99ecf313.ctex"
+path="res://.godot/imported/keyboard_bracket_less_outline.png-7b4d34b3ec0b29c4215f0ba9318127ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_bracket_less_outline.png"
-dest_files=["res://.godot/imported/keyboard_bracket_less_outline.png-0de424b7fad12802640698dc99ecf313.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_bracket_less_outline.png"
+dest_files=["res://.godot/imported/keyboard_bracket_less_outline.png-7b4d34b3ec0b29c4215f0ba9318127ae.ctex"]
 
 [params]
 

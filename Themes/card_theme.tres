@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://bk33as3v8egl1"]
 
-[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://Themes/Fonts/Roboto-Medium.ttf" id="1_jfid1"]
-[ext_resource type="FontFile" uid="uid://dkcps26yw0si8" path="res://Themes/Fonts/Roboto-Thin.ttf" id="2_bthfx"]
+[ext_resource type="FontFile" uid="uid://bsl1uvk3no6jm" path="res://themes/Fonts/Roboto-Medium.ttf" id="1_jfid1"]
+[ext_resource type="FontFile" uid="uid://dkcps26yw0si8" path="res://themes/Fonts/Roboto-Thin.ttf" id="2_bthfx"]
 
 [resource]
 resource_local_to_scene = true

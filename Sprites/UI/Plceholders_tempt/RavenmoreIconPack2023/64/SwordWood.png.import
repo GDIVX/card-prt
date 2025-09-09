@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmrg5yg6ermws"
-path="res://.godot/imported/SwordWood.png-807b88bdd952a485d1f8cbf2a69ac949.ctex"
+path="res://.godot/imported/SwordWood.png-89b1fa395cf053a84170d625f2d5fca0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/SwordWood.png"
-dest_files=["res://.godot/imported/SwordWood.png-807b88bdd952a485d1f8cbf2a69ac949.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/SwordWood.png"
+dest_files=["res://.godot/imported/SwordWood.png-89b1fa395cf053a84170d625f2d5fca0.ctex"]
 
 [params]
 

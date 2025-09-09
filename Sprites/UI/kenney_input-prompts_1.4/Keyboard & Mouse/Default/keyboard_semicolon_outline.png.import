@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgm5ec21v1geg"
-path="res://.godot/imported/keyboard_semicolon_outline.png-1b5026283bb77177373f20242ea11feb.ctex"
+path="res://.godot/imported/keyboard_semicolon_outline.png-e87d8517b28444897ddd3bd3f9ce32f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_semicolon_outline.png"
-dest_files=["res://.godot/imported/keyboard_semicolon_outline.png-1b5026283bb77177373f20242ea11feb.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_semicolon_outline.png"
+dest_files=["res://.godot/imported/keyboard_semicolon_outline.png-e87d8517b28444897ddd3bd3f9ce32f0.ctex"]
 
 [params]
 

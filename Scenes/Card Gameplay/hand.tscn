@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://cd3mdwykfe6t1"]
 
-[ext_resource type="Script" uid="uid://csdra7o8sg8tq" path="res://Scripts/Cards/hand.gd" id="1_u7o8q"]
-[ext_resource type="PackedScene" uid="uid://c6g81h6yam6go" path="res://Scenes/Card Gameplay/card.tscn" id="2_jrln0"]
-[ext_resource type="Script" uid="uid://ced1g4ui0fedw" path="res://Scripts/GUI/fan_contiener.gd" id="2_vumah"]
+[ext_resource type="Script" uid="uid://csdra7o8sg8tq" path="res://scripts/Cards/hand.gd" id="1_u7o8q"]
+[ext_resource type="PackedScene" uid="uid://c6g81h6yam6go" path="res://scenes/Card Gameplay/card.tscn" id="2_jrln0"]
+[ext_resource type="Script" uid="uid://ced1g4ui0fedw" path="res://scripts/GUI/fan_contiener.gd" id="2_vumah"]
 
 [sub_resource type="Curve" id="Curve_u7o8q"]
 _limits = [-1.0, 1.0, 0.0, 1.0]

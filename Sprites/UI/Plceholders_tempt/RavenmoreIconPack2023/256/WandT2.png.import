@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0ioqpxuoemok"
-path="res://.godot/imported/WandT2.png-0a445823334a47b710e84fdd25807a6a.ctex"
+path="res://.godot/imported/WandT2.png-7aad7359b8c1f5940dd7a72b576b2f41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/WandT2.png"
-dest_files=["res://.godot/imported/WandT2.png-0a445823334a47b710e84fdd25807a6a.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/WandT2.png"
+dest_files=["res://.godot/imported/WandT2.png-7aad7359b8c1f5940dd7a72b576b2f41.ctex"]
 
 [params]
 

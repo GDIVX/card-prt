@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1oifr2ckxps2"
-path="res://.godot/imported/keyboard_comma_outline.png-9cb4bd5b828400145be22f86069dd662.ctex"
+path="res://.godot/imported/keyboard_comma_outline.png-97f8bccb0fc03e122cd31f7aa5623e83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Double/keyboard_comma_outline.png"
-dest_files=["res://.godot/imported/keyboard_comma_outline.png-9cb4bd5b828400145be22f86069dd662.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Double/keyboard_comma_outline.png"
+dest_files=["res://.godot/imported/keyboard_comma_outline.png-97f8bccb0fc03e122cd31f7aa5623e83.ctex"]
 
 [params]
 

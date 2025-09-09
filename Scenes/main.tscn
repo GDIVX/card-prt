@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdmn1auii1xpm"]
 
-[ext_resource type="Script" uid="uid://cltu2midcamgv" path="res://Scripts/main.gd" id="1_h2yge"]
-[ext_resource type="Script" uid="uid://doe3cvt021dfn" path="res://Scripts/game_world.gd" id="2_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://dmkj4psn3atng" path="res://Scenes/battle.tscn" id="3_lquwl"]
+[ext_resource type="Script" uid="uid://cltu2midcamgv" path="res://scripts/main.gd" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://doe3cvt021dfn" path="res://scripts/game_world.gd" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dmkj4psn3atng" path="res://scenes/battle.tscn" id="3_lquwl"]
 
 [sub_resource type="Environment" id="Environment_8gbba"]
 background_mode = 3

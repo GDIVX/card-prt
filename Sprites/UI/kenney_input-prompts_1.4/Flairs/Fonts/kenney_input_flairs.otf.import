@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bwlie78t08i2c"
-path="res://.godot/imported/kenney_input_flairs.otf-167459466431c5014691647ca682b62e.fontdata"
+path="res://.godot/imported/kenney_input_flairs.otf-3b85f5e535ebea9810ac849fcbfd736b.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Flairs/Fonts/kenney_input_flairs.otf"
-dest_files=["res://.godot/imported/kenney_input_flairs.otf-167459466431c5014691647ca682b62e.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Flairs/Fonts/kenney_input_flairs.otf"
+dest_files=["res://.godot/imported/kenney_input_flairs.otf-3b85f5e535ebea9810ac849fcbfd736b.fontdata"]
 
 [params]
 

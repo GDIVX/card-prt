@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy3830h674t2u"
-path="res://.godot/imported/keyboard_arrow_up.svg-298ee714a8a918d2aedb578ff05a5816.ctex"
+path="res://.godot/imported/keyboard_arrow_up.svg-d15af70ef68b113cd31201b4981e401a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_arrow_up.svg"
-dest_files=["res://.godot/imported/keyboard_arrow_up.svg-298ee714a8a918d2aedb578ff05a5816.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/keyboard_arrow_up.svg"
+dest_files=["res://.godot/imported/keyboard_arrow_up.svg-d15af70ef68b113cd31201b4981e401a.ctex"]
 
 [params]
 

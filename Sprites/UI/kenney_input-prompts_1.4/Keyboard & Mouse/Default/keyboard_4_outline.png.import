@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8uxuc8m1rw65"
-path="res://.godot/imported/keyboard_4_outline.png-b4c129f463c52203646cb68500fef2a3.ctex"
+path="res://.godot/imported/keyboard_4_outline.png-e9861d5d7f6b2b08be7e892087ef1a79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_4_outline.png"
-dest_files=["res://.godot/imported/keyboard_4_outline.png-b4c129f463c52203646cb68500fef2a3.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Default/keyboard_4_outline.png"
+dest_files=["res://.godot/imported/keyboard_4_outline.png-e9861d5d7f6b2b08be7e892087ef1a79.ctex"]
 
 [params]
 

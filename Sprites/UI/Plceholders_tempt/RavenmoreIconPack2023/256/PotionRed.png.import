@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baughh428nyng"
-path="res://.godot/imported/PotionRed.png-ce97647a61e4a2ef67c3f8e8677bb021.ctex"
+path="res://.godot/imported/PotionRed.png-07bd0e6ec52ee9760bcc5c8f33d65350.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/PotionRed.png"
-dest_files=["res://.godot/imported/PotionRed.png-ce97647a61e4a2ef67c3f8e8677bb021.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/PotionRed.png"
+dest_files=["res://.godot/imported/PotionRed.png-07bd0e6ec52ee9760bcc5c8f33d65350.ctex"]
 
 [params]
 

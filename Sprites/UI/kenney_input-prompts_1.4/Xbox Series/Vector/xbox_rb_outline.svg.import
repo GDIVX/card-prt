@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1opy2wmcga76"
-path="res://.godot/imported/xbox_rb_outline.svg-9076ed634a595b4ec2cf51bc4ab1e73c.ctex"
+path="res://.godot/imported/xbox_rb_outline.svg-6fc72787c99a9cd0d12622840ee32da7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Xbox Series/Vector/xbox_rb_outline.svg"
-dest_files=["res://.godot/imported/xbox_rb_outline.svg-9076ed634a595b4ec2cf51bc4ab1e73c.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Xbox Series/Vector/xbox_rb_outline.svg"
+dest_files=["res://.godot/imported/xbox_rb_outline.svg-6fc72787c99a9cd0d12622840ee32da7.ctex"]
 
 [params]
 

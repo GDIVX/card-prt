@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nuh8x4k2scl1"
-path="res://.godot/imported/height.png-4915457be88e4bb7e8221f5b7c19c98b.ctex"
+path="res://.godot/imported/height.png-f32f33b1630bd0b27f928fa30203b6f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_3D/height.png"
-dest_files=["res://.godot/imported/height.png-4915457be88e4bb7e8221f5b7c19c98b.ctex"]
+source_file="res://sprites/IconGodotNode/node_3D/height.png"
+dest_files=["res://.godot/imported/height.png-f32f33b1630bd0b27f928fa30203b6f1.ctex"]
 
 [params]
 

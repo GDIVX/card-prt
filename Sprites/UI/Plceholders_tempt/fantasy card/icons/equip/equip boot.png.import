@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cw8ft1vjudym1"
-path="res://.godot/imported/equip boot.png-d8fc80a552c2f7b1e43e8908e0f58f7a.ctex"
+path="res://.godot/imported/equip boot.png-8f78a09273f14ea01f460c9587f42022.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/equip/equip boot.png"
-dest_files=["res://.godot/imported/equip boot.png-d8fc80a552c2f7b1e43e8908e0f58f7a.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/icons/equip/equip boot.png"
+dest_files=["res://.godot/imported/equip boot.png-8f78a09273f14ea01f460c9587f42022.ctex"]
 
 [params]
 

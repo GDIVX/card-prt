@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bd2xmascto5i5"
-path="res://.godot/imported/kenney_input_steam_deck.ttf-850ec73df598f2b88dc7c17bbc47ec5b.fontdata"
+path="res://.godot/imported/kenney_input_steam_deck.ttf-bd815befd540273b7787f3e538267877.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Steam Deck/Fonts/kenney_input_steam_deck.ttf"
-dest_files=["res://.godot/imported/kenney_input_steam_deck.ttf-850ec73df598f2b88dc7c17bbc47ec5b.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Steam Deck/Fonts/kenney_input_steam_deck.ttf"
+dest_files=["res://.godot/imported/kenney_input_steam_deck.ttf-bd815befd540273b7787f3e538267877.fontdata"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0q4kn1fe4kq6"
-path="res://.godot/imported/BarV9_ProgressBar.png-4c9e057e7666db3f5bfab3e2008d3597.ctex"
+path="res://.godot/imported/BarV9_ProgressBar.png-243b3b5648f1fe039af75d5562e39cbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/ProgressBar_09/BarV9_ProgressBar.png"
-dest_files=["res://.godot/imported/BarV9_ProgressBar.png-4c9e057e7666db3f5bfab3e2008d3597.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/ProgressBar_09/BarV9_ProgressBar.png"
+dest_files=["res://.godot/imported/BarV9_ProgressBar.png-243b3b5648f1fe039af75d5562e39cbf.ctex"]
 
 [params]
 

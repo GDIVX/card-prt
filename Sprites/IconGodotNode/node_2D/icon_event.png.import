@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ysv3vfsdx47w"
-path="res://.godot/imported/icon_event.png-52803f23776eec9a5e1721dc6ba2a5f3.ctex"
+path="res://.godot/imported/icon_event.png-18e9396cbc00179157341c0f5e4ee8fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_2D/icon_event.png"
-dest_files=["res://.godot/imported/icon_event.png-52803f23776eec9a5e1721dc6ba2a5f3.ctex"]
+source_file="res://sprites/IconGodotNode/node_2D/icon_event.png"
+dest_files=["res://.godot/imported/icon_event.png-18e9396cbc00179157341c0f5e4ee8fb.ctex"]
 
 [params]
 

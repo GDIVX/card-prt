@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6dop43klouhr"
-path="res://.godot/imported/icon_brain.png-55ffacd7550794e68b4cf994973ea374.ctex"
+path="res://.godot/imported/icon_brain.png-16d12295fc5c995c7902e7c2a815c09d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node/icon_brain.png"
-dest_files=["res://.godot/imported/icon_brain.png-55ffacd7550794e68b4cf994973ea374.ctex"]
+source_file="res://sprites/IconGodotNode/node/icon_brain.png"
+dest_files=["res://.godot/imported/icon_brain.png-16d12295fc5c995c7902e7c2a815c09d.ctex"]
 
 [params]
 

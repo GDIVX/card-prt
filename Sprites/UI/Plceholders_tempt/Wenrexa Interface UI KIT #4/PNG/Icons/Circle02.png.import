@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gf0dctlaeqff"
-path="res://.godot/imported/Circle02.png-97ad0e7d957fbde6c6b5b1c27ba529b9.ctex"
+path="res://.godot/imported/Circle02.png-09aa0b09dd1d39912475d8c0650e2432.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png"
-dest_files=["res://.godot/imported/Circle02.png-97ad0e7d957fbde6c6b5b1c27ba529b9.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/PNG/Icons/Circle02.png"
+dest_files=["res://.godot/imported/Circle02.png-09aa0b09dd1d39912475d8c0650e2432.ctex"]
 
 [params]
 

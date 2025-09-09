@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlq5jnxja53x4"
-path="res://.godot/imported/icon_projectile.png-e3ac779403dd7f92e805e073d4fe0c52.ctex"
+path="res://.godot/imported/icon_projectile.png-5699ad246785dfe894b299d34e7a22b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/control/icon_projectile.png"
-dest_files=["res://.godot/imported/icon_projectile.png-e3ac779403dd7f92e805e073d4fe0c52.ctex"]
+source_file="res://sprites/IconGodotNode/control/icon_projectile.png"
+dest_files=["res://.godot/imported/icon_projectile.png-5699ad246785dfe894b299d34e7a22b6.ctex"]
 
 [params]
 

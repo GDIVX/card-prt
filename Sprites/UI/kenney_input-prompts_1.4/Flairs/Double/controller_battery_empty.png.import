@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8b8nmw6plm65"
-path="res://.godot/imported/controller_battery_empty.png-0ae028677abf71fb8b0d2535fd15d145.ctex"
+path="res://.godot/imported/controller_battery_empty.png-8a786965a95a1c1bb2588f261a58c90e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Flairs/Double/controller_battery_empty.png"
-dest_files=["res://.godot/imported/controller_battery_empty.png-0ae028677abf71fb8b0d2535fd15d145.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Flairs/Double/controller_battery_empty.png"
+dest_files=["res://.godot/imported/controller_battery_empty.png-8a786965a95a1c1bb2588f261a58c90e.ctex"]
 
 [params]
 

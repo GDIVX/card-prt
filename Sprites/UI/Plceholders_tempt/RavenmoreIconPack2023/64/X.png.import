@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dpeyk3oqpa35f"
-path="res://.godot/imported/X.png-ec48dbe4937e9943c5032f5f797cb323.ctex"
+path="res://.godot/imported/X.png-4d28152b0ff2fa228e8898834e822f13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/X.png"
-dest_files=["res://.godot/imported/X.png-ec48dbe4937e9943c5032f5f797cb323.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/X.png"
+dest_files=["res://.godot/imported/X.png-4d28152b0ff2fa228e8898834e822f13.ctex"]
 
 [params]
 

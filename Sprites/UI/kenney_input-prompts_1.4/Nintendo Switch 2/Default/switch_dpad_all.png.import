@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddivjn5i637uk"
-path="res://.godot/imported/switch_dpad_all.png-a6876ff290facc3b0c5dc65a03c067ad.ctex"
+path="res://.godot/imported/switch_dpad_all.png-78bd98ba1c8e7ad3b16dd73456763f05.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Default/switch_dpad_all.png"
-dest_files=["res://.godot/imported/switch_dpad_all.png-a6876ff290facc3b0c5dc65a03c067ad.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Default/switch_dpad_all.png"
+dest_files=["res://.godot/imported/switch_dpad_all.png-78bd98ba1c8e7ad3b16dd73456763f05.ctex"]
 
 [params]
 

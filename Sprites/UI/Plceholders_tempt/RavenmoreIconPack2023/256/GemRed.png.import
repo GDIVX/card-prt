@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkb2ek24a7xmw"
-path="res://.godot/imported/GemRed.png-69cdb85bd15a111f1fafaa403a1884c8.ctex"
+path="res://.godot/imported/GemRed.png-10709fafca16a26bd9030fa7da7d168a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/GemRed.png"
-dest_files=["res://.godot/imported/GemRed.png-69cdb85bd15a111f1fafaa403a1884c8.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/GemRed.png"
+dest_files=["res://.godot/imported/GemRed.png-10709fafca16a26bd9030fa7da7d168a.ctex"]
 
 [params]
 

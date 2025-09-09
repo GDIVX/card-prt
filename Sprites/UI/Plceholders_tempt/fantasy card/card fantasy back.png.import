@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d35oqquaipu6u"
-path="res://.godot/imported/card fantasy back.png-bf426fdce66b89790de8bf6bc8a2795e.ctex"
+path="res://.godot/imported/card fantasy back.png-5c67d7af3debe101b3878f6d5e905228.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/card fantasy back.png"
-dest_files=["res://.godot/imported/card fantasy back.png-bf426fdce66b89790de8bf6bc8a2795e.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/card fantasy back.png"
+dest_files=["res://.godot/imported/card fantasy back.png-5c67d7af3debe101b3878f6d5e905228.ctex"]
 
 [params]
 

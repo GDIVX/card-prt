@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sa0axduvfquj"
-path="res://.godot/imported/keyboard-&-mouse_sheet_double.png-85c251a17fc3594adc5371c23dce6fd8.ctex"
+path="res://.godot/imported/keyboard-&-mouse_sheet_double.png-086cbe3456af8a231ef8834f1257d3ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/keyboard-&-mouse_sheet_double.png"
-dest_files=["res://.godot/imported/keyboard-&-mouse_sheet_double.png-85c251a17fc3594adc5371c23dce6fd8.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/keyboard-&-mouse_sheet_double.png"
+dest_files=["res://.godot/imported/keyboard-&-mouse_sheet_double.png-086cbe3456af8a231ef8834f1257d3ea.ctex"]
 
 [params]
 

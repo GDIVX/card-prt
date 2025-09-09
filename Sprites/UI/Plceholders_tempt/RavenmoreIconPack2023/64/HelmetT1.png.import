@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csfuld8y5r7ed"
-path="res://.godot/imported/HelmetT1.png-9ca3aebff7be2f02a8f9b6eec6a7a522.ctex"
+path="res://.godot/imported/HelmetT1.png-18ba117f693c707dba0227d32c3a60c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/HelmetT1.png"
-dest_files=["res://.godot/imported/HelmetT1.png-9ca3aebff7be2f02a8f9b6eec6a7a522.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/HelmetT1.png"
+dest_files=["res://.godot/imported/HelmetT1.png-18ba117f693c707dba0227d32c3a60c0.ctex"]
 
 [params]
 

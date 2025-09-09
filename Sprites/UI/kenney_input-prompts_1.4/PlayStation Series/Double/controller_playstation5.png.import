@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5vaiqqctmcdf"
-path="res://.godot/imported/controller_playstation5.png-8228b7defdbd496bc469ce7befbc5afd.ctex"
+path="res://.godot/imported/controller_playstation5.png-0a86e3a4f05fa08bd2a97ef7e740f23a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Double/controller_playstation5.png"
-dest_files=["res://.godot/imported/controller_playstation5.png-8228b7defdbd496bc469ce7befbc5afd.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Double/controller_playstation5.png"
+dest_files=["res://.godot/imported/controller_playstation5.png-0a86e3a4f05fa08bd2a97ef7e740f23a.ctex"]
 
 [params]
 

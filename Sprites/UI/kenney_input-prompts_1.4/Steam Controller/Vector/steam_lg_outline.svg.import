@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wfo8t1hpjaj6"
-path="res://.godot/imported/steam_lg_outline.svg-dedec6b62f4cfe614c30312c60405398.ctex"
+path="res://.godot/imported/steam_lg_outline.svg-af589ea3fafa1c141f1c056bcceced27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Steam Controller/Vector/steam_lg_outline.svg"
-dest_files=["res://.godot/imported/steam_lg_outline.svg-dedec6b62f4cfe614c30312c60405398.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Steam Controller/Vector/steam_lg_outline.svg"
+dest_files=["res://.godot/imported/steam_lg_outline.svg-af589ea3fafa1c141f1c056bcceced27.ctex"]
 
 [params]
 

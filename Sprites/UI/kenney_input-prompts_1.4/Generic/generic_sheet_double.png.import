@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://droh1doyro3dw"
-path="res://.godot/imported/generic_sheet_double.png-98cd46062be89a1fab600c140c8d4418.ctex"
+path="res://.godot/imported/generic_sheet_double.png-982791396e6ccbf6238c0e0bd8d09001.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Generic/generic_sheet_double.png"
-dest_files=["res://.godot/imported/generic_sheet_double.png-98cd46062be89a1fab600c140c8d4418.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Generic/generic_sheet_double.png"
+dest_files=["res://.godot/imported/generic_sheet_double.png-982791396e6ccbf6238c0e0bd8d09001.ctex"]
 
 [params]
 

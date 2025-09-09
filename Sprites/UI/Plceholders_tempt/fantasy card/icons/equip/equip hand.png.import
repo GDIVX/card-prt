@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dl0y4xj6oqvsj"
-path="res://.godot/imported/equip hand.png-fc1e93e154cb647edd1d10f84f1e05a4.ctex"
+path="res://.godot/imported/equip hand.png-e108d76b2d2e4cbd8e943e6125ffc433.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/equip/equip hand.png"
-dest_files=["res://.godot/imported/equip hand.png-fc1e93e154cb647edd1d10f84f1e05a4.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/icons/equip/equip hand.png"
+dest_files=["res://.godot/imported/equip hand.png-e108d76b2d2e4cbd8e943e6125ffc433.ctex"]
 
 [params]
 

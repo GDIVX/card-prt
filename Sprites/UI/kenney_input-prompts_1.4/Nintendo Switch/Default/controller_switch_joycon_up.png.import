@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci7crovbxveu7"
-path="res://.godot/imported/controller_switch_joycon_up.png-f638d11a922959e236df6f3e16e4fcc8.ctex"
+path="res://.godot/imported/controller_switch_joycon_up.png-5054f2db702e6e85cd59666b7c7af0f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Nintendo Switch/Default/controller_switch_joycon_up.png"
-dest_files=["res://.godot/imported/controller_switch_joycon_up.png-f638d11a922959e236df6f3e16e4fcc8.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Nintendo Switch/Default/controller_switch_joycon_up.png"
+dest_files=["res://.godot/imported/controller_switch_joycon_up.png-5054f2db702e6e85cd59666b7c7af0f0.ctex"]
 
 [params]
 

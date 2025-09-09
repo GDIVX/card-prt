@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b2kim8fviq37h"
-path="res://.godot/imported/steamdeck_trackpad_r_horizontal_outline.svg-3a00c3d28f6d40c33b046c8d9b488a17.ctex"
+path="res://.godot/imported/steamdeck_trackpad_r_horizontal_outline.svg-f406ed080ca26995bf3458d2ec74cf62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Steam Deck/Vector/steamdeck_trackpad_r_horizontal_outline.svg"
-dest_files=["res://.godot/imported/steamdeck_trackpad_r_horizontal_outline.svg-3a00c3d28f6d40c33b046c8d9b488a17.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Steam Deck/Vector/steamdeck_trackpad_r_horizontal_outline.svg"
+dest_files=["res://.godot/imported/steamdeck_trackpad_r_horizontal_outline.svg-f406ed080ca26995bf3458d2ec74cf62.ctex"]
 
 [params]
 

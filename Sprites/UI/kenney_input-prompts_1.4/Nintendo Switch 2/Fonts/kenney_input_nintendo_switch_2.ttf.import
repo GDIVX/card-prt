@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bqhajqsuhd1sx"
-path="res://.godot/imported/kenney_input_nintendo_switch_2.ttf-e9d2d7730e2e66c202df12e329efb909.fontdata"
+path="res://.godot/imported/kenney_input_nintendo_switch_2.ttf-3654d2eb73c67af792d0b528337475f5.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Fonts/kenney_input_nintendo_switch_2.ttf"
-dest_files=["res://.godot/imported/kenney_input_nintendo_switch_2.ttf-e9d2d7730e2e66c202df12e329efb909.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Fonts/kenney_input_nintendo_switch_2.ttf"
+dest_files=["res://.godot/imported/kenney_input_nintendo_switch_2.ttf-3654d2eb73c67af792d0b528337475f5.fontdata"]
 
 [params]
 

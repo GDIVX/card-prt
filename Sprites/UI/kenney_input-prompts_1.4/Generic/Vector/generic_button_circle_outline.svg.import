@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0caned0ls8ks"
-path="res://.godot/imported/generic_button_circle_outline.svg-d983f693cc2c5d8431889ef44cf5a93a.ctex"
+path="res://.godot/imported/generic_button_circle_outline.svg-5f03bfc9c27ee6cba7c2aea801b782b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Generic/Vector/generic_button_circle_outline.svg"
-dest_files=["res://.godot/imported/generic_button_circle_outline.svg-d983f693cc2c5d8431889ef44cf5a93a.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Generic/Vector/generic_button_circle_outline.svg"
+dest_files=["res://.godot/imported/generic_button_circle_outline.svg-5f03bfc9c27ee6cba7c2aea801b782b8.ctex"]
 
 [params]
 

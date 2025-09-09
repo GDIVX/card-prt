@@ -1,11 +1,11 @@
 [gd_scene load_steps=28 format=3 uid="uid://cr38ixmlp08kw"]
 
-[ext_resource type="PackedScene" uid="uid://btjvu0c063mxk" path="res://Scenes/Entities/Projectiles/projectile.tscn" id="1_gqcj1"]
-[ext_resource type="Script" uid="uid://c0umi5wu1if7i" path="res://Scripts/Entities/damage.gd" id="2_4t5fk"]
-[ext_resource type="Script" uid="uid://cyg1bc161cuf1" path="res://Scripts/Entities/Projectiles/player_arrorw.gd" id="2_jjput"]
-[ext_resource type="PackedScene" uid="uid://ceg25eck35aqn" path="res://Scenes/VSX/hit_fx.tscn" id="3_cix6j"]
-[ext_resource type="Script" uid="uid://bdeejdadrvlgn" path="res://Scripts/Entities/Projectiles/projectile_material.gd" id="3_nn54p"]
-[ext_resource type="Script" uid="uid://dr038uwrkp6xg" path="res://Scripts/VFX/hit_fx.gd" id="4_jjput"]
+[ext_resource type="PackedScene" uid="uid://btjvu0c063mxk" path="res://scenes/Entities/Projectiles/projectile.tscn" id="1_gqcj1"]
+[ext_resource type="Script" uid="uid://c0umi5wu1if7i" path="res://scripts/Entities/damage.gd" id="2_4t5fk"]
+[ext_resource type="Script" uid="uid://cyg1bc161cuf1" path="res://scripts/Entities/Projectiles/player_arrorw.gd" id="2_jjput"]
+[ext_resource type="PackedScene" uid="uid://ceg25eck35aqn" path="res://scenes/VSX/hit_fx.tscn" id="3_cix6j"]
+[ext_resource type="Script" uid="uid://bdeejdadrvlgn" path="res://scripts/Entities/Projectiles/projectile_material.gd" id="3_nn54p"]
+[ext_resource type="Script" uid="uid://dr038uwrkp6xg" path="res://scripts/VFX/hit_fx.gd" id="4_jjput"]
 
 [sub_resource type="Curve" id="Curve_nn54p"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c683fyuiicbp"
-path="res://.godot/imported/icon_transition.png-bb6f28f6af1f7e0aa4b51c73a8745775.ctex"
+path="res://.godot/imported/icon_transition.png-5839bf9216c54bcce42f35ed56b00e88.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/control/icon_transition.png"
-dest_files=["res://.godot/imported/icon_transition.png-bb6f28f6af1f7e0aa4b51c73a8745775.ctex"]
+source_file="res://sprites/IconGodotNode/control/icon_transition.png"
+dest_files=["res://.godot/imported/icon_transition.png-5839bf9216c54bcce42f35ed56b00e88.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsdlqihm74p47"
-path="res://.godot/imported/Backpack.png-ee829837cd4c624b0af59184e7b922a2.ctex"
+path="res://.godot/imported/Backpack.png-6021ebfdba7858895e150b9328be6e9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/Backpack.png"
-dest_files=["res://.godot/imported/Backpack.png-ee829837cd4c624b0af59184e7b922a2.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/Backpack.png"
+dest_files=["res://.godot/imported/Backpack.png-6021ebfdba7858895e150b9328be6e9e.ctex"]
 
 [params]
 

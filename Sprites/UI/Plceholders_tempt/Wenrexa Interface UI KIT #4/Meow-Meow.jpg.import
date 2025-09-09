@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dck641ee76vpu"
-path="res://.godot/imported/Meow-Meow.jpg-a00b8d4cdd9db091f23377981bae3c8a.ctex"
+path="res://.godot/imported/Meow-Meow.jpg-561f157aa04f8a0d71aac69a120a3a8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/Meow-Meow.jpg"
-dest_files=["res://.godot/imported/Meow-Meow.jpg-a00b8d4cdd9db091f23377981bae3c8a.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/Wenrexa Interface UI KIT #4/Meow-Meow.jpg"
+dest_files=["res://.godot/imported/Meow-Meow.jpg-561f157aa04f8a0d71aac69a120a3a8f.ctex"]
 
 [params]
 

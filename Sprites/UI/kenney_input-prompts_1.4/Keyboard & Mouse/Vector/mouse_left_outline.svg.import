@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6i1t0ydpbg7t"
-path="res://.godot/imported/mouse_left_outline.svg-6b0e0cd092331cec6701cfb9a110f11c.ctex"
+path="res://.godot/imported/mouse_left_outline.svg-d920604d64c8832142f98ee6193b5f6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/mouse_left_outline.svg"
-dest_files=["res://.godot/imported/mouse_left_outline.svg-6b0e0cd092331cec6701cfb9a110f11c.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Vector/mouse_left_outline.svg"
+dest_files=["res://.godot/imported/mouse_left_outline.svg-d920604d64c8832142f98ee6193b5f6f.ctex"]
 
 [params]
 

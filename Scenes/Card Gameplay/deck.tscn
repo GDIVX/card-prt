@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b50ea2eekeihk"]
 
-[ext_resource type="Script" uid="uid://5ne27t0y6aqg" path="res://Scripts/Cards/deck.gd" id="1_ukesx"]
+[ext_resource type="Script" uid="uid://5ne27t0y6aqg" path="res://scripts/Cards/deck.gd" id="1_ukesx"]
 
 [node name="Deck" type="Control"]
 layout_mode = 3

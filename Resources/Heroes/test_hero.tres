@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="HeroData" load_steps=6 format=3 uid="uid://bbg02utc33i84"]
 
-[ext_resource type="Script" uid="uid://dav6yh8q88yup" path="res://Scripts/Meta/hero_data.gd" id="1_y56dy"]
-[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="2_0b3fd"]
-[ext_resource type="Resource" uid="uid://80uiy7281xd7" path="res://Resources/Cards/test_attack.tres" id="3_mev3q"]
-[ext_resource type="Resource" uid="uid://bn11eak8bdgc6" path="res://Resources/Cards/test_defense.tres" id="4_tfaik"]
-[ext_resource type="PackedScene" uid="uid://bliyfogowi74a" path="res://Scenes/Entities/player_unit.tscn" id="7_35b88"]
+[ext_resource type="Script" uid="uid://dav6yh8q88yup" path="res://scripts/Meta/hero_data.gd" id="1_y56dy"]
+[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://scripts/Cards/card_data.gd" id="2_0b3fd"]
+[ext_resource type="Resource" uid="uid://80uiy7281xd7" path="res://resources/Cards/test_attack.tres" id="3_mev3q"]
+[ext_resource type="Resource" uid="uid://bn11eak8bdgc6" path="res://resources/Cards/test_defense.tres" id="4_tfaik"]
+[ext_resource type="PackedScene" uid="uid://bliyfogowi74a" path="res://scenes/Entities/player_unit.tscn" id="7_35b88"]
 
 [resource]
 script = ExtResource("1_y56dy")

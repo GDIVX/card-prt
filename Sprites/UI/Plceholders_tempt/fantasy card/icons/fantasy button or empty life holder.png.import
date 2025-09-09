@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d3angokb02o0x"
-path="res://.godot/imported/fantasy button or empty life holder.png-d99a3b000b9617c9318c37afd8fadb84.ctex"
+path="res://.godot/imported/fantasy button or empty life holder.png-b0c9fbe4bb65a7bca80f72d060ddaee6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy button or empty life holder.png"
-dest_files=["res://.godot/imported/fantasy button or empty life holder.png-d99a3b000b9617c9318c37afd8fadb84.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy button or empty life holder.png"
+dest_files=["res://.godot/imported/fantasy button or empty life holder.png-b0c9fbe4bb65a7bca80f72d060ddaee6.ctex"]
 
 [params]
 

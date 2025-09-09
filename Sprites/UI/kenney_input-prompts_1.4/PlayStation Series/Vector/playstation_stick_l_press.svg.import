@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dusxxc8863noa"
-path="res://.godot/imported/playstation_stick_l_press.svg-3a4adad86079116158988d7a496b8193.ctex"
+path="res://.godot/imported/playstation_stick_l_press.svg-dfe5936da543ef452abc497670e005ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Vector/playstation_stick_l_press.svg"
-dest_files=["res://.godot/imported/playstation_stick_l_press.svg-3a4adad86079116158988d7a496b8193.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Vector/playstation_stick_l_press.svg"
+dest_files=["res://.godot/imported/playstation_stick_l_press.svg-dfe5936da543ef452abc497670e005ea.ctex"]
 
 [params]
 

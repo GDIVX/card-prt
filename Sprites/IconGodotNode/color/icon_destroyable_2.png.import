@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh1gp33ygrlmu"
-path="res://.godot/imported/icon_destroyable_2.png-4bfb05a351ea70ec3f30f86a5a47288a.ctex"
+path="res://.godot/imported/icon_destroyable_2.png-384d830465508fb1a0d9c3bad8c9da52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/color/icon_destroyable_2.png"
-dest_files=["res://.godot/imported/icon_destroyable_2.png-4bfb05a351ea70ec3f30f86a5a47288a.ctex"]
+source_file="res://sprites/IconGodotNode/color/icon_destroyable_2.png"
+dest_files=["res://.godot/imported/icon_destroyable_2.png-384d830465508fb1a0d9c3bad8c9da52.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hsnkgmdurnai"
-path="res://.godot/imported/vampire golden frame.png-183bf17a1c379ee1a642122553b0ad02.ctex"
+path="res://.godot/imported/vampire golden frame.png-4b186c004ed48e1fe489966f9702afa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/vampire golden frame.png"
-dest_files=["res://.godot/imported/vampire golden frame.png-183bf17a1c379ee1a642122553b0ad02.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/icons/vampire golden frame.png"
+dest_files=["res://.godot/imported/vampire golden frame.png-4b186c004ed48e1fe489966f9702afa4.ctex"]
 
 [params]
 

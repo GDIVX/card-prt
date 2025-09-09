@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://doe1ojnqfn6wr"
-path="res://.godot/imported/kenney_input_playstation_series.ttf-9a774143f2911175c06e99a072030afa.fontdata"
+path="res://.godot/imported/kenney_input_playstation_series.ttf-811670dedbe739cbf4b9fbb54e313a84.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Fonts/kenney_input_playstation_series.ttf"
-dest_files=["res://.godot/imported/kenney_input_playstation_series.ttf-9a774143f2911175c06e99a072030afa.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/PlayStation Series/Fonts/kenney_input_playstation_series.ttf"
+dest_files=["res://.godot/imported/kenney_input_playstation_series.ttf-811670dedbe739cbf4b9fbb54e313a84.fontdata"]
 
 [params]
 

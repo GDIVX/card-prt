@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djyquorymr3yh"
-path="res://.godot/imported/Map.png-b34e6ddfc4d47ed4eaa4c0dfec89474e.ctex"
+path="res://.godot/imported/Map.png-6df691d97ab97f2372fdd07fb11d5a52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/Map.png"
-dest_files=["res://.godot/imported/Map.png-b34e6ddfc4d47ed4eaa4c0dfec89474e.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/256/Map.png"
+dest_files=["res://.godot/imported/Map.png-6df691d97ab97f2372fdd07fb11d5a52.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxfmbrl73i6ag"
-path="res://.godot/imported/FrameSquare.png-addf20d509cc929e09a851aade970f00.ctex"
+path="res://.godot/imported/FrameSquare.png-6a6c0f1da29b07f348ce2cf0d9e34f1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/128/FrameSquare.png"
-dest_files=["res://.godot/imported/FrameSquare.png-addf20d509cc929e09a851aade970f00.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/128/FrameSquare.png"
+dest_files=["res://.godot/imported/FrameSquare.png-6a6c0f1da29b07f348ce2cf0d9e34f1f.ctex"]
 
 [params]
 

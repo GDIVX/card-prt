@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ck8rebnc8b44p"
-path="res://.godot/imported/icon_damage_team.png-a0405fdf1effa3fc30d9f2bf9b8a8daf.ctex"
+path="res://.godot/imported/icon_damage_team.png-7d3f934ff2c3b15b1a1def1dd65977cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/color/icon_damage_team.png"
-dest_files=["res://.godot/imported/icon_damage_team.png-a0405fdf1effa3fc30d9f2bf9b8a8daf.ctex"]
+source_file="res://sprites/IconGodotNode/color/icon_damage_team.png"
+dest_files=["res://.godot/imported/icon_damage_team.png-7d3f934ff2c3b15b1a1def1dd65977cc.ctex"]
 
 [params]
 

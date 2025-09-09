@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx1waxpv3e1ff"
-path="res://.godot/imported/xbox-series_sheet_double.png-59f2e955a9293e53a6e22b6e61c8ed96.ctex"
+path="res://.godot/imported/xbox-series_sheet_double.png-a9b6d3d46adbe6a18b5d80372d690319.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Xbox Series/xbox-series_sheet_double.png"
-dest_files=["res://.godot/imported/xbox-series_sheet_double.png-59f2e955a9293e53a6e22b6e61c8ed96.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Xbox Series/xbox-series_sheet_double.png"
+dest_files=["res://.godot/imported/xbox-series_sheet_double.png-a9b6d3d46adbe6a18b5d80372d690319.ctex"]
 
 [params]
 

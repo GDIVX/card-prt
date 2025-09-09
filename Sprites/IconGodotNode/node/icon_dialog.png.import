@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1n1s6dtrcpfa"
-path="res://.godot/imported/icon_dialog.png-6a1fb163589979f06d48a979daf984d3.ctex"
+path="res://.godot/imported/icon_dialog.png-f6f851cdc9fd578211b273a067215f38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node/icon_dialog.png"
-dest_files=["res://.godot/imported/icon_dialog.png-6a1fb163589979f06d48a979daf984d3.ctex"]
+source_file="res://sprites/IconGodotNode/node/icon_dialog.png"
+dest_files=["res://.godot/imported/icon_dialog.png-f6f851cdc9fd578211b273a067215f38.ctex"]
 
 [params]
 

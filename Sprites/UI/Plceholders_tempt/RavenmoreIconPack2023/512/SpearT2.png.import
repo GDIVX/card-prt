@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0g6t0msaqpyj"
-path="res://.godot/imported/SpearT2.png-19237f8c6b7cc769f9868bb38cb7b303.ctex"
+path="res://.godot/imported/SpearT2.png-1c0c489c5fd386fe8bb3cd0abec868eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/SpearT2.png"
-dest_files=["res://.godot/imported/SpearT2.png-19237f8c6b7cc769f9868bb38cb7b303.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/SpearT2.png"
+dest_files=["res://.godot/imported/SpearT2.png-1c0c489c5fd386fe8bb3cd0abec868eb.ctex"]
 
 [params]
 

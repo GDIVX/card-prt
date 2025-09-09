@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mlm4pnvq3hb5"
-path="res://.godot/imported/Soldier-Attack02_Effect.png-5c4097d21a9b2dec54d7744af1cd0931.ctex"
+path="res://.godot/imported/Soldier-Attack02_Effect.png-ab3965d3cd54b81210862255dcea6c09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier(Split Effects)/Soldier-Attack02_Effect.png"
-dest_files=["res://.godot/imported/Soldier-Attack02_Effect.png-5c4097d21a9b2dec54d7744af1cd0931.ctex"]
+source_file="res://sprites/Tiny RPG Character Asset Pack v1.03b -Free Soldier&Orc/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier(Split Effects)/Soldier-Attack02_Effect.png"
+dest_files=["res://.godot/imported/Soldier-Attack02_Effect.png-ab3965d3cd54b81210862255dcea6c09.ctex"]
 
 [params]
 

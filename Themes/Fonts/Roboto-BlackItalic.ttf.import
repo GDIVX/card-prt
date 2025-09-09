@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ckmsrgu1mq8aw"
-path="res://.godot/imported/Roboto-BlackItalic.ttf-4c9aaca6cb753d2dcdd0365f05f66824.fontdata"
+path="res://.godot/imported/Roboto-BlackItalic.ttf-1e21ff8b333030d7350c5fcad4d8e6b5.fontdata"
 
 [deps]
 
-source_file="res://Themes/Fonts/Roboto-BlackItalic.ttf"
-dest_files=["res://.godot/imported/Roboto-BlackItalic.ttf-4c9aaca6cb753d2dcdd0365f05f66824.fontdata"]
+source_file="res://themes/Fonts/Roboto-BlackItalic.ttf"
+dest_files=["res://.godot/imported/Roboto-BlackItalic.ttf-1e21ff8b333030d7350c5fcad4d8e6b5.fontdata"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tlg45aswi68x"
-path="res://.godot/imported/icon_propeller.png-a85d75357bf5e8b114f4191d11868b42.ctex"
+path="res://.godot/imported/icon_propeller.png-63da9f7c8def26e57081f9d84f5807b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_3D/icon_propeller.png"
-dest_files=["res://.godot/imported/icon_propeller.png-a85d75357bf5e8b114f4191d11868b42.ctex"]
+source_file="res://sprites/IconGodotNode/node_3D/icon_propeller.png"
+dest_files=["res://.godot/imported/icon_propeller.png-63da9f7c8def26e57081f9d84f5807b7.ctex"]
 
 [params]
 

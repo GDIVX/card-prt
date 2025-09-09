@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btiiv8qkavmcw"
-path="res://.godot/imported/fantasy decorated frame.png-47cc0534ea2784b89548882e903d795b.ctex"
+path="res://.godot/imported/fantasy decorated frame.png-75826fd76f523c0cec860cf8940b65c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy decorated frame.png"
-dest_files=["res://.godot/imported/fantasy decorated frame.png-47cc0534ea2784b89548882e903d795b.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/fantasy card/icons/fantasy decorated frame.png"
+dest_files=["res://.godot/imported/fantasy decorated frame.png-75826fd76f523c0cec860cf8940b65c9.ctex"]
 
 [params]
 

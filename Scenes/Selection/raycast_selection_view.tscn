@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://hn3fpnvd8sbh"]
 
-[ext_resource type="Script" uid="uid://octuflg0mrq7" path="res://Scripts/Selection/raycast_selection_view.gd" id="1_myedt"]
-[ext_resource type="Shader" uid="uid://nq2bayapq6vb" path="res://Shaders/raycast_selection_view.gdshader" id="2_uqk87"]
+[ext_resource type="Script" uid="uid://octuflg0mrq7" path="res://scripts/Selection/raycast_selection_view.gd" id="1_myedt"]
+[ext_resource type="Shader" uid="uid://nq2bayapq6vb" path="res://shaders/raycast_selection_view.gdshader" id="2_uqk87"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o8323"]
 shader = ExtResource("2_uqk87")

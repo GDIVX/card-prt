@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj8qx7bp1lf3b"]
 
-[ext_resource type="Script" uid="uid://dyqmfpvwahxa6" path="res://Scripts/Cards/card_transform_animator.gd" id="1_h0wua"]
+[ext_resource type="Script" uid="uid://dyqmfpvwahxa6" path="res://scripts/Cards/card_transform_animator.gd" id="1_h0wua"]
 
 [node name="CardTransformAnimator" type="Node2D"]
 script = ExtResource("1_h0wua")

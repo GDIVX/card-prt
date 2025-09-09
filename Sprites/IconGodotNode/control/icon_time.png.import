@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dusigvcjq6uoj"
-path="res://.godot/imported/icon_time.png-b2b5de27757e2651a0be2552e3613b13.ctex"
+path="res://.godot/imported/icon_time.png-a085d5ddae93a0acc48f5f2649578ca3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/control/icon_time.png"
-dest_files=["res://.godot/imported/icon_time.png-b2b5de27757e2651a0be2552e3613b13.ctex"]
+source_file="res://sprites/IconGodotNode/control/icon_time.png"
+dest_files=["res://.godot/imported/icon_time.png-a085d5ddae93a0acc48f5f2649578ca3.ctex"]
 
 [params]
 

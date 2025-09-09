@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://isxayhsjm8wt"
-path="res://.godot/imported/icon_pot.png-51b9d09b63602413d2ec770b98629c34.ctex"
+path="res://.godot/imported/icon_pot.png-ec3b725c7de61bfbaefb1fdc668ae0b0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_3D/icon_pot.png"
-dest_files=["res://.godot/imported/icon_pot.png-51b9d09b63602413d2ec770b98629c34.ctex"]
+source_file="res://sprites/IconGodotNode/node_3D/icon_pot.png"
+dest_files=["res://.godot/imported/icon_pot.png-ec3b725c7de61bfbaefb1fdc668ae0b0.ctex"]
 
 [params]
 

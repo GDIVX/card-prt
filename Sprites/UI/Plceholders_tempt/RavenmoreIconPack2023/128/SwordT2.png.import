@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvuesp2acqxsj"
-path="res://.godot/imported/SwordT2.png-63c22d5add54046a8b66185753116d1e.ctex"
+path="res://.godot/imported/SwordT2.png-cc0eff2a37f83a91806086d057cfd078.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/128/SwordT2.png"
-dest_files=["res://.godot/imported/SwordT2.png-63c22d5add54046a8b66185753116d1e.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/128/SwordT2.png"
+dest_files=["res://.godot/imported/SwordT2.png-cc0eff2a37f83a91806086d057cfd078.ctex"]
 
 [params]
 

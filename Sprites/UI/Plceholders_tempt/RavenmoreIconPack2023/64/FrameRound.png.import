@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://gh0h4aw0y8qu"
-path="res://.godot/imported/FrameRound.png-94860e218e19d9462ce2792df0240910.ctex"
+path="res://.godot/imported/FrameRound.png-7fcf5afa6d9ed118e1640dbd2d34ce20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/FrameRound.png"
-dest_files=["res://.godot/imported/FrameRound.png-94860e218e19d9462ce2792df0240910.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/FrameRound.png"
+dest_files=["res://.godot/imported/FrameRound.png-7fcf5afa6d9ed118e1640dbd2d34ce20.ctex"]
 
 [params]
 

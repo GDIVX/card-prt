@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://e7te8h1rdjd5"
-path="res://.godot/imported/icon_visibility.png-b998045086eda35560db4ae6b8113872.ctex"
+path="res://.godot/imported/icon_visibility.png-95d31d6b29d7b19907f04a7a9d18a507.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_3D/icon_visibility.png"
-dest_files=["res://.godot/imported/icon_visibility.png-b998045086eda35560db4ae6b8113872.ctex"]
+source_file="res://sprites/IconGodotNode/node_3D/icon_visibility.png"
+dest_files=["res://.godot/imported/icon_visibility.png-95d31d6b29d7b19907f04a7a9d18a507.ctex"]
 
 [params]
 

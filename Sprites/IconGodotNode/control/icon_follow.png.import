@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xslh4j42t5l6"
-path="res://.godot/imported/icon_follow.png-884608a672c9b2b0487eeed55d3522fe.ctex"
+path="res://.godot/imported/icon_follow.png-d784c13df28ad01f82f94d408b2c5192.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/control/icon_follow.png"
-dest_files=["res://.godot/imported/icon_follow.png-884608a672c9b2b0487eeed55d3522fe.ctex"]
+source_file="res://sprites/IconGodotNode/control/icon_follow.png"
+dest_files=["res://.godot/imported/icon_follow.png-d784c13df28ad01f82f94d408b2c5192.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csfdgcb5fvuqe"
-path="res://.godot/imported/icon_trophy.png-13745c629008d592a78e1b40cbb68aaf.ctex"
+path="res://.godot/imported/icon_trophy.png-cb7de1532a47451936dba7ea4b0edcdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node_3D/icon_trophy.png"
-dest_files=["res://.godot/imported/icon_trophy.png-13745c629008d592a78e1b40cbb68aaf.ctex"]
+source_file="res://sprites/IconGodotNode/node_3D/icon_trophy.png"
+dest_files=["res://.godot/imported/icon_trophy.png-cb7de1532a47451936dba7ea4b0edcdb.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://db8uq3jc14r3e"
-path="res://.godot/imported/icon_interrogation.png-62f741d0a613f94e8d13020d1e398067.ctex"
+path="res://.godot/imported/icon_interrogation.png-e0f94994abff30229eccf7933cfc23da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node/icon_interrogation.png"
-dest_files=["res://.godot/imported/icon_interrogation.png-62f741d0a613f94e8d13020d1e398067.ctex"]
+source_file="res://sprites/IconGodotNode/node/icon_interrogation.png"
+dest_files=["res://.godot/imported/icon_interrogation.png-e0f94994abff30229eccf7933cfc23da.ctex"]
 
 [params]
 

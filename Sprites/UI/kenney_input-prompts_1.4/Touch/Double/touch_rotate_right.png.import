@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cgqqofswffqft"
-path="res://.godot/imported/touch_rotate_right.png-8dc3d7756aa22ab85d4c0df8de68c316.ctex"
+path="res://.godot/imported/touch_rotate_right.png-9982837397a0bb09ce21bdb6d81eedef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Touch/Double/touch_rotate_right.png"
-dest_files=["res://.godot/imported/touch_rotate_right.png-8dc3d7756aa22ab85d4c0df8de68c316.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Touch/Double/touch_rotate_right.png"
+dest_files=["res://.godot/imported/touch_rotate_right.png-9982837397a0bb09ce21bdb6d81eedef.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4oo2mcsxrgip"
-path="res://.godot/imported/switch_joycon_right_rotate.svg-544afa8a017a4c1f3599a657eb0e02f8.ctex"
+path="res://.godot/imported/switch_joycon_right_rotate.svg-27a952f1b7ea49755c951b289ebf4796.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Vector/switch_joycon_right_rotate.svg"
-dest_files=["res://.godot/imported/switch_joycon_right_rotate.svg-544afa8a017a4c1f3599a657eb0e02f8.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Nintendo Switch 2/Vector/switch_joycon_right_rotate.svg"
+dest_files=["res://.godot/imported/switch_joycon_right_rotate.svg-27a952f1b7ea49755c951b289ebf4796.ctex"]
 
 [params]
 

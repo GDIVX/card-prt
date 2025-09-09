@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daeu2x5kefuaa"
-path="res://.godot/imported/TomeGreen.png-f265309f728c767660382ebdd40e487e.ctex"
+path="res://.godot/imported/TomeGreen.png-4d0cebf37d0ed9e33861c7c8263f7cdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/TomeGreen.png"
-dest_files=["res://.godot/imported/TomeGreen.png-f265309f728c767660382ebdd40e487e.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/TomeGreen.png"
+dest_files=["res://.godot/imported/TomeGreen.png-4d0cebf37d0ed9e33861c7c8263f7cdb.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbfhdod2n07mh"
-path="res://.godot/imported/icon_beetle.png-8a826eebbe8f18938b28105b7d8e47a9.ctex"
+path="res://.godot/imported/icon_beetle.png-eb01a61ced66efb38ebcdb67319f5f21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node/icon_beetle.png"
-dest_files=["res://.godot/imported/icon_beetle.png-8a826eebbe8f18938b28105b7d8e47a9.ctex"]
+source_file="res://sprites/IconGodotNode/node/icon_beetle.png"
+dest_files=["res://.godot/imported/icon_beetle.png-eb01a61ced66efb38ebcdb67319f5f21.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b73obl37ux4fs"
-path="res://.godot/imported/DaggerT1.png-636f1e3dcc6d7a1a00c23d2d8981bda2.ctex"
+path="res://.godot/imported/DaggerT1.png-dcc62d3711e10a5eb4990d1c56aec320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/DaggerT1.png"
-dest_files=["res://.godot/imported/DaggerT1.png-636f1e3dcc6d7a1a00c23d2d8981bda2.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/512/DaggerT1.png"
+dest_files=["res://.godot/imported/DaggerT1.png-dcc62d3711e10a5eb4990d1c56aec320.ctex"]
 
 [params]
 

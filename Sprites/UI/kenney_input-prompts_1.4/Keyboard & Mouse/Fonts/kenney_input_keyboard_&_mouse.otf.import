@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://brtfpt1uwtrt5"
-path="res://.godot/imported/kenney_input_keyboard_&_mouse.otf-ee8b48ed1abc73cde03a69e36d068d9d.fontdata"
+path="res://.godot/imported/kenney_input_keyboard_&_mouse.otf-7de68ede1a633d7ce93587b381cb782b.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Fonts/kenney_input_keyboard_&_mouse.otf"
-dest_files=["res://.godot/imported/kenney_input_keyboard_&_mouse.otf-ee8b48ed1abc73cde03a69e36d068d9d.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Keyboard & Mouse/Fonts/kenney_input_keyboard_&_mouse.otf"
+dest_files=["res://.godot/imported/kenney_input_keyboard_&_mouse.otf-7de68ede1a633d7ce93587b381cb782b.fontdata"]
 
 [params]
 

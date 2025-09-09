@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://bliyfogowi74a"]
 
-[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://Scenes/Entities/unit.tscn" id="1_dwi70"]
-[ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://Scenes/Entities/character_drag.tscn" id="2_sqtjf"]
-[ext_resource type="Script" uid="uid://cm5dq5aj3u6qt" path="res://Scripts/Entities/player_unit.gd" id="2_tlcot"]
-[ext_resource type="Script" uid="uid://dyfpgk65mqpln" path="res://Scripts/Entities/click_and_drag_movement.gd" id="3_6lqko"]
-[ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://Scripts/Utilities/obserable_points.gd" id="3_qvrb7"]
-[ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://Shaders/unit.gdshader" id="5_v52jf"]
-[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://Scenes/Widgets/counter.tscn" id="6_qhlhk"]
-[ext_resource type="Shader" uid="uid://nq2bayapq6vb" path="res://Shaders/raycast_selection_view.gdshader" id="7_cp8bf"]
+[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://scenes/Entities/unit.tscn" id="1_dwi70"]
+[ext_resource type="PackedScene" uid="uid://cckiwwd1v4p6" path="res://scenes/Entities/character_drag.tscn" id="2_sqtjf"]
+[ext_resource type="Script" uid="uid://cm5dq5aj3u6qt" path="res://scripts/Entities/player_unit.gd" id="2_tlcot"]
+[ext_resource type="Script" uid="uid://dyfpgk65mqpln" path="res://scripts/Entities/click_and_drag_movement.gd" id="3_6lqko"]
+[ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://scripts/Utilities/obserable_points.gd" id="3_qvrb7"]
+[ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://shaders/unit.gdshader" id="5_v52jf"]
+[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://scenes/Widgets/counter.tscn" id="6_qhlhk"]
+[ext_resource type="Shader" uid="uid://nq2bayapq6vb" path="res://shaders/raycast_selection_view.gdshader" id="7_cp8bf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d8fa7"]
 resource_local_to_scene = true

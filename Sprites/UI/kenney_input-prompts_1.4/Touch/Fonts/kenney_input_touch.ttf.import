@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dhopwj34bkrrg"
-path="res://.godot/imported/kenney_input_touch.ttf-f6472ac7716677bb3c4990cd215b2e74.fontdata"
+path="res://.godot/imported/kenney_input_touch.ttf-e4f136443dbfe28878a158329131b886.fontdata"
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Touch/Fonts/kenney_input_touch.ttf"
-dest_files=["res://.godot/imported/kenney_input_touch.ttf-f6472ac7716677bb3c4990cd215b2e74.fontdata"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Touch/Fonts/kenney_input_touch.ttf"
+dest_files=["res://.godot/imported/kenney_input_touch.ttf-e4f136443dbfe28878a158329131b886.fontdata"]
 
 [params]
 

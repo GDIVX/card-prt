@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cud61obsxk2ba"
-path="res://.godot/imported/touch_two_double.png-5e0eeb8c693a3d38e46a84f4e5a8b637.ctex"
+path="res://.godot/imported/touch_two_double.png-a16de244c3a8ce8206c7e3cd9d72bd97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Touch/Double/touch_two_double.png"
-dest_files=["res://.godot/imported/touch_two_double.png-5e0eeb8c693a3d38e46a84f4e5a8b637.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Touch/Double/touch_two_double.png"
+dest_files=["res://.godot/imported/touch_two_double.png-a16de244c3a8ce8206c7e3cd9d72bd97.ctex"]
 
 [params]
 

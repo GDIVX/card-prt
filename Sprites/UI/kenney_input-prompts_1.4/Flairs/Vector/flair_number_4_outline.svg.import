@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0qjivase6u8l"
-path="res://.godot/imported/flair_number_4_outline.svg-7d6750bbc25dcaaa7de2d74c5048a5c7.ctex"
+path="res://.godot/imported/flair_number_4_outline.svg-77004049f28ca6e98a8e9365dea6fe8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Flairs/Vector/flair_number_4_outline.svg"
-dest_files=["res://.godot/imported/flair_number_4_outline.svg-7d6750bbc25dcaaa7de2d74c5048a5c7.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Flairs/Vector/flair_number_4_outline.svg"
+dest_files=["res://.godot/imported/flair_number_4_outline.svg-77004049f28ca6e98a8e9365dea6fe8f.ctex"]
 
 [params]
 

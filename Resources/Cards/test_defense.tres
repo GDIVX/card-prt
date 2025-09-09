@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="CardData" load_steps=12 format=3 uid="uid://bn11eak8bdgc6"]
 
-[ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://Scripts/Cards/Effects/card_effect.gd" id="1_y8ovt"]
-[ext_resource type="Script" uid="uid://ccjhdh0f3x2hu" path="res://Scripts/Cards/Effects/gain_defense_effect.gd" id="2_hmv5b"]
-[ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://Scripts/Cards/card_style.gd" id="4_iaw1c"]
-[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://Scripts/Cards/card_data.gd" id="5_nea2w"]
-[ext_resource type="Script" uid="uid://hq6poehfo3mx" path="res://Scripts/Selection/selection_spec.gd" id="6_w6xr2"]
-[ext_resource type="Script" uid="uid://bg0dqlc2gg5lf" path="res://Scripts/Selection/self_selection.gd" id="6_y8ovt"]
-[ext_resource type="PackedScene" uid="uid://ddiyc3nsur0u6" path="res://Scenes/Selection/selection_view.tscn" id="7_yhfms"]
+[ext_resource type="Script" uid="uid://c66gwj3qrkcjt" path="res://scripts/Cards/Effects/card_effect.gd" id="1_y8ovt"]
+[ext_resource type="Script" uid="uid://ccjhdh0f3x2hu" path="res://scripts/Cards/Effects/gain_defense_effect.gd" id="2_hmv5b"]
+[ext_resource type="Script" uid="uid://bxkotdmlu11v" path="res://scripts/Cards/card_style.gd" id="4_iaw1c"]
+[ext_resource type="Script" uid="uid://kaflyex0gc61" path="res://scripts/Cards/card_data.gd" id="5_nea2w"]
+[ext_resource type="Script" uid="uid://hq6poehfo3mx" path="res://scripts/Selection/selection_spec.gd" id="6_w6xr2"]
+[ext_resource type="Script" uid="uid://bg0dqlc2gg5lf" path="res://scripts/Selection/self_selection.gd" id="6_y8ovt"]
+[ext_resource type="PackedScene" uid="uid://ddiyc3nsur0u6" path="res://scenes/Selection/selection_view.tscn" id="7_yhfms"]
 
 [sub_resource type="Resource" id="Resource_gcil5"]
 script = ExtResource("2_hmv5b")

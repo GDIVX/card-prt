@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dngb5kqolupgc"
-path="res://.godot/imported/icon_call.png-a52e2a1c98de6a16fc4175a9175b4fa6.ctex"
+path="res://.godot/imported/icon_call.png-ed3bb38e6e95d2f51d1a7f81b39cc42c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/IconGodotNode/node/icon_call.png"
-dest_files=["res://.godot/imported/icon_call.png-a52e2a1c98de6a16fc4175a9175b4fa6.ctex"]
+source_file="res://sprites/IconGodotNode/node/icon_call.png"
+dest_files=["res://.godot/imported/icon_call.png-ed3bb38e6e95d2f51d1a7f81b39cc42c.ctex"]
 
 [params]
 

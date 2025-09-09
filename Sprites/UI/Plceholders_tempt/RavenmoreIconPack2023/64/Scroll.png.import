@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnr440qjyq6qd"
-path="res://.godot/imported/Scroll.png-24eb0a85185270d5482eb35a2785154e.ctex"
+path="res://.godot/imported/Scroll.png-cc2b2631989730ecd412d8861f6a9172.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/Scroll.png"
-dest_files=["res://.godot/imported/Scroll.png-24eb0a85185270d5482eb35a2785154e.ctex"]
+source_file="res://sprites/UI/Plceholders_tempt/RavenmoreIconPack2023/64/Scroll.png"
+dest_files=["res://.godot/imported/Scroll.png-cc2b2631989730ecd412d8861f6a9172.ctex"]
 
 [params]
 

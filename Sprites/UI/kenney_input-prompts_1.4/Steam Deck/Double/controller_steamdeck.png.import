@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6elu16hpewx6"
-path="res://.godot/imported/controller_steamdeck.png-93600d0b3ce76b7abea32425acab9e7e.ctex"
+path="res://.godot/imported/controller_steamdeck.png-5b78ffffde9e23e3ce60191e8d43e574.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/kenney_input-prompts_1.4/Steam Deck/Double/controller_steamdeck.png"
-dest_files=["res://.godot/imported/controller_steamdeck.png-93600d0b3ce76b7abea32425acab9e7e.ctex"]
+source_file="res://sprites/UI/kenney_input-prompts_1.4/Steam Deck/Double/controller_steamdeck.png"
+dest_files=["res://.godot/imported/controller_steamdeck.png-5b78ffffde9e23e3ce60191e8d43e574.ctex"]
 
 [params]
 
