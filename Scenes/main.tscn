@@ -16,7 +16,12 @@ script = ExtResource("1_h2yge")
 [node name="World" type="Node" parent="."]
 script = ExtResource("2_1bvp3")
 
-[node name="Battle" parent="World" instance=ExtResource("3_lquwl")]
+[node name="Battle" parent="World" node_paths=PackedStringArray("groups_per_faction") instance=ExtResource("3_lquwl")]
+groups_per_faction = {
+0: NodePath("TurnsManager/PlayerGroup"),
+1: NodePath("TurnsManager/EnemyGroup"),
+2: NodePath("TurnsManager/NeutralGroup")
+}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
 environment = SubResource("Environment_8gbba")
