@@ -8,6 +8,6 @@ func set_count(text) -> void:
 
 	if text is String:
 		counter_label.text = text
-		return
-	counter_label.text = str(text)
+	else:
+		counter_label.text = str(text)
 

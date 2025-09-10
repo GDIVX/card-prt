@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dtr5kbqy68nck"]
+[gd_scene load_steps=54 format=3 uid="uid://dtr5kbqy68nck"]
 
 [ext_resource type="Script" uid="uid://buadw7jswgygx" path="res://scripts/Entities/character.gd" id="1_3g3so"]
 [ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://shaders/unit.gdshader" id="2_02qqi"]
@@ -9,11 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://s7qukrrgu27b" path="res://sprites/Hana Caraka - Base Character [sample]/run.png" id="6_02qqi"]
 [ext_resource type="Texture2D" uid="uid://t6nwpxl1v63i" path="res://sprites/Hana Caraka - Base Character [sample]/walk.png" id="7_qko8k"]
 [ext_resource type="PackedScene" uid="uid://yxqq5vrhs2cy" path="res://scenes/Entities/health.tscn" id="10_bymjo"]
+[ext_resource type="PackedScene" uid="uid://dgibetgd24vje" path="res://scenes/Widgets/counter.tscn" id="11_0lp65"]
 [ext_resource type="Script" uid="uid://cepxy0vx2gh6q" path="res://scripts/Entities/unit_sprite.gd" id="11_02qqi"]
 [ext_resource type="PackedScene" uid="uid://sc44qjvo5m7k" path="res://scenes/Widgets/health_bar.tscn" id="11_7pkn3"]
 [ext_resource type="Script" uid="uid://d22grvoyem0me" path="res://scripts/Entities/team.gd" id="12_8sanv"]
 [ext_resource type="Script" uid="uid://dqclvii17cmeo" path="res://scripts/Entities/hurt_box.gd" id="13_a65fh"]
 [ext_resource type="Script" uid="uid://bqye0k023i403" path="res://scripts/Entities/Projectiles/projectile_emitter.gd" id="14_02qqi"]
+[ext_resource type="Script" uid="uid://bmeybtk0sncvn" path="res://scripts/Utilities/obserable_points.gd" id="15_o5j6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kr7ts"]
 size = Vector2(30, 30)
@@ -326,7 +328,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02qqi"]
 size = Vector2(40, 48)
 
-[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("raycast", "knockback", "projectile_emitter", "team", "nav_agent", "health")]
+[node name="Unit" type="CharacterBody2D" node_paths=PackedStringArray("raycast", "knockback", "projectile_emitter", "team", "nav_agent", "movement_points", "health")]
 disable_mode = 1
 motion_mode = 1
 platform_floor_layers = 4294967294
@@ -336,9 +338,8 @@ raycast = NodePath("RayCast2D")
 knockback = NodePath("KnockbackReceiver")
 projectile_emitter = NodePath("ProjectileEmitter")
 team = NodePath("Team")
-pixels_moved_per_movement = 250.0
-speed = 500.0
 nav_agent = NodePath("NavigationAgent2D")
+movement_points = NodePath("MovementPoints")
 health = NodePath("Health")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -387,6 +388,11 @@ fill_tween_trans = 5
 fill_tween_ease = 1
 fill_color_healthy = Color(1.2, 0, 0, 1)
 
+[node name="Counter" parent="EntityGui" instance=ExtResource("11_0lp65")]
+offset_right = 15.0
+offset_bottom = 15.0
+mouse_filter = 2
+
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 path_desired_distance = 30.0
 target_desired_distance = 20.0
@@ -419,7 +425,13 @@ script = ExtResource("14_02qqi")
 displacement_radius = 50.0
 metadata/_custom_type_script = "uid://bqye0k023i403"
 
+[node name="MovementPoints" type="Node" parent="."]
+script = ExtResource("15_o5j6q")
+value = 3
+metadata/_custom_type_script = "uid://bmeybtk0sncvn"
+
 [connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="defense_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_defense_changed"]
 [connection signal="health_changed" from="Health" to="EntityGui/HealthBar" method="_on_health_health_changed"]
 [connection signal="received_damage" from="Health" to="UnitSprite" method="_on_health_received_damage"]
+[connection signal="value_changed" from="MovementPoints" to="EntityGui/Counter" method="set_count"]

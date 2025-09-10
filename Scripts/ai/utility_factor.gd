@@ -1,9 +1,21 @@
-##Base class for calculating a utility factor score
-class_name UtilityFactor extends Node
+## Base class for calculating a utility factor score
+class_name UtilityFactor
+extends Node
 
-var decision : UtilityDecision
+@export_range(0,1) var bias : float = 0.0
 
-##Abstract method to calculate a factor score. Do not call it from [UtilityFactor], override it instead.
-func calculate_factor_score() -> float:
-	print("WARNING: Called factor calculation from base class which is meant to be overwritten, returns 0 (UtilityFactor -> calculate_factor_score)")
-	return 0
+signal selected
+
+func get_score() -> float:
+	return _calculate_score() + bias
+
+
+func select():
+	selected.emit()
+
+## Abstract entry point
+func _calculate_score() -> float:
+	push_error("UtilityFactor._calculate_score() is abstract. Override in a subclass.")
+	return bias
+
+
