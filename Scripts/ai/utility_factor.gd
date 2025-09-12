@@ -1,5 +1,4 @@
 @icon("res://sprites/IconGodotNode/64x-hidpi/symbols/todo-yellow.png")
-@tool
 ## Base class for calculating a utility factor score
 ## Abstract base for Utility AI "factor" nodes.
 ##
@@ -62,3 +61,11 @@ func _calculate_score() -> float:
 	push_error("UtilityFactor._calculate_score() is abstract. Override in a subclass.")
 	return 0
 
+
+#Helpers
+
+func get_agent() -> TacticalUnit:
+	if owner is not TacticalUnit:
+		push_warning("Expected owner ["+ owner.name +"] to be [TacticalUnit] ")
+		return null
+	return owner as TacticalUnit

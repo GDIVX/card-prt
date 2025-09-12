@@ -162,4 +162,5 @@ func  _selection_cleanup() -> void:
 	selection.all_targets.clear()
 
 func _on_card_gameplay_system_card_discarded(card:Card) -> void:
-	card.pending_play.disconnect(_on_card_pending_play)
+	if card.pending_play.has_connections():
+		card.pending_play.disconnect(_on_card_pending_play)
