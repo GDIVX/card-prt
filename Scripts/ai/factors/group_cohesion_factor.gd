@@ -1,5 +1,5 @@
 class_name GroupCohesionFactor
-extends UtilityFactor
+extends UtilityFactorBase
 
 @export var group_path: NodePath = ^"/root/Main/World/Battle/TurnsManager/PlayerGroup"
 @export var curve: Curve

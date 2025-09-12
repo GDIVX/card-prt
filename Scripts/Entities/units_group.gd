@@ -41,7 +41,8 @@ func add_unit(unit : TacticalUnit):
 	unit.turn_ended.connect(func  ():
 		if active_units.has(unit):
 			active_units.erase(unit)
-		if active_units.size() == 0: end_turn())
+		if active_units.size() == 0:
+			end_turn())
 
 	
 
@@ -63,7 +64,6 @@ func start_turn() -> void:
 
 	print("Starting turn for " + name)
 	if state == GroupState.DEFEATED or units.size() == 0:
-		print("Group is empty or defeated. Ending turn")
 		call_deferred("end_turn")
 		return
 
@@ -74,7 +74,6 @@ func start_turn() -> void:
 
 
 func end_turn() -> void:
-	print("Ending turn for " + name)
 	state = GroupState.WAITING
 
 	#if the turn was ended early, let all units end their turn
@@ -83,3 +82,6 @@ func end_turn() -> void:
 		unit.end_turn() 
 
 	turn_ended.emit()
+
+	if get_parent().has_method("next_turn"):
+		get_parent().next_turn()

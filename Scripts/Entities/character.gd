@@ -47,6 +47,8 @@ func _ready():
 		if p <= 0:
 			await nav_agent.navigation_finished
 			end_turn())
+	
+	play_state = PlayState.SLEEPING
 
 
 

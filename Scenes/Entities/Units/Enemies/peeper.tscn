@@ -16,19 +16,19 @@ shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="Curve" id="Curve_r6i7f"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.501786, 0.5079), 2.84562, 2.84562, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0.504058), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_4twn0"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.501412, 0.5), -2.62018, -2.62018, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Curve" id="Curve_le3a0"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.252252, 0.00389612), -0.0504545, -0.0504545, 0, 0, Vector2(0.65045, 0.490027), 3.92368, 3.92368, 0, 0, Vector2(0.848649, 1), -0.0229664, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.486486, 0.351994), 0.0, 0.0, 0, 0, Vector2(0.50193, 0.621166), -2.62018, -2.62018, 0, 0, Vector2(1, 0.252301), 0.0, 0.0, 0, 0]
 point_count = 4
 
+[sub_resource type="Curve" id="Curve_le3a0"]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.5, 0.5), 0.612867, 0.612867, 0, 0, Vector2(0.848649, 1), -0.0229664, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="Curve" id="Curve_vgfbe"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.204787), -2.79837, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.531442), -1.0902, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_gwp45"]
@@ -44,8 +44,8 @@ _data = [Vector2(0, 0.148604), 0.0, 0.0, 0, 0, Vector2(0.500901, 1), 0.0, 0.0, 0
 point_count = 3
 
 [sub_resource type="Curve" id="Curve_u7vnq"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.751786, 0), -0.0886524, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.756757, 0), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Peeper" node_paths=PackedStringArray("ai_root") instance=ExtResource("1_lefer")]
 script = ExtResource("2_qnp81")
@@ -61,21 +61,20 @@ editor_description = "The agent is a cowardly creature that will avoid risky con
 - GROUP_COHESION: The agent want to have numerical advantage and it is currently feels threatened by having too many player unit near it and too few of its own allies to back him up.
  - COWARD: The agent feels that it is loosing the battle due to reciving damage, facing well armored foes or seeing its own allies dies. It is looking to disengage from combat and to seek safty, eitheir by finding allies or hiding behind a cover that block player units' raycasting from it."
 script = ExtResource("4_qnp81")
+print_selection = true
 metadata/_custom_type_script = "uid://dlhyfumyogvcm"
 
 [node name="CHARGE" type="Node" parent="UtilityAI" index="0"]
 script = ExtResource("5_i2pij")
 calculation_method = 2
-bias = -0.15
-noise_min = -0.3
-noise_max = 0.2
+noise_max = 0.05
 metadata/_custom_type_script = "uid://cve4wv006jqq7"
 
 [node name="AlliesNearby" type="Node" parent="UtilityAI/CHARGE" index="0"]
 editor_description = "Am I near allies? The more, the better"
 script = ExtResource("6_r6i7f")
 group_path = NodePath("/root/Main/World/Battle/TurnsManager/EnemyGroup")
-proximity_curve = SubResource("Curve_r6i7f")
+curve = SubResource("Curve_r6i7f")
 metadata/_custom_type_script = "uid://cgpwiqubrinra"
 
 [node name="PlayerUnitsSpreadOut" type="Node" parent="UtilityAI/CHARGE" index="1"]
@@ -91,26 +90,29 @@ defense_curve = SubResource("Curve_gwp45")
 distance_curve = SubResource("Curve_tyhwi")
 proximity_to_others_curve = SubResource("Curve_oydme")
 domain_path = NodePath("/root/World/Battle/TurnsManager/PlayerGroup")
-noise_min = -0.3
-noise_max = 0.2
+bias = 0.15
+noise_max = 0.4
 metadata/_custom_type_script = "uid://gxt08rjweb2k"
 
 [node name="REGROUP" type="Node" parent="UtilityAI" index="1"]
 script = ExtResource("5_i2pij")
 calculation_method = 2
+noise_min = -0.05
+noise_max = 0.05
 metadata/_custom_type_script = "uid://cve4wv006jqq7"
 
 [node name="AlliesNearby" type="Node" parent="UtilityAI/REGROUP" index="0"]
 editor_description = "Am I near allies? The more, the better"
 script = ExtResource("6_r6i7f")
 group_path = NodePath("/root/Main/World/Battle/TurnsManager/EnemyGroup")
-proximity_curve = SubResource("Curve_u7vnq")
+curve = SubResource("Curve_u7vnq")
 metadata/_custom_type_script = "uid://cgpwiqubrinra"
 
 [node name="FLEE" type="Node" parent="UtilityAI" index="2"]
 script = ExtResource("5_i2pij")
 calculation_method = 2
-bias = 0.2
+bias = 0.02
+noise_max = 0.05
 metadata/_custom_type_script = "uid://cve4wv006jqq7"
 
 [connection signal="selected" from="UtilityAI/CHARGE" to="." method="_on_charge_selected"]

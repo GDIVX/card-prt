@@ -21,24 +21,16 @@ func _ready():
 
 
 
-func next_turn():
+func start_turn():
 	if current.has_method("start_turn"):
-		print("called [start_turn] on " + current.name)
 		current.start_turn()
 		turn_started.emit(current)
-
-		if current.has_signal("turn_ended"):
-			print("waiting for [signal turn_ended]")
-			await current.turn_ended
-			print("Done waiting")
-
-	# Start the next turn after the current turn had ended
-	index += 1
-	print("Starting next turn")
-	call_deferred("next_turn")
 	
+func next_turn():
+	index += 1
+	start_turn()
 
 
 func force_turn(turn_index):
 	index = turn_index
-	next_turn()
+	start_turn()

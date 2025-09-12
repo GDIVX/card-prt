@@ -9,8 +9,8 @@
 ##
 ## Calling [method select] after scoring emits [signal selected_with_context]
 ## with [member _best_target]. If no candidate was found,
-## it falls back to [method UtilityFactor.select] and emits the base
-## [signal UtilityFactor.selected].
+## it falls back to [method UtilityFactorBase.select] and emits the base
+## [signal UtilityFactorBase.selected].
 ##
 ## To use, extend this class and override [method _score_candidate] to return a
 ## normalized score for each candidate (commonly 0..1). Return 0.0 for
@@ -29,7 +29,7 @@
 ##     return 0.0
 ## [/codeblock]
 class_name SeekFactor
-extends UtilityFactor
+extends UtilityFactorBase
 
 ## Path to the domain node whose direct children are evaluated as candidates.
 @export var domain_path: NodePath = "/root/Main/World/Battle/TurnsManager/PlayerGroup"
@@ -77,7 +77,7 @@ func _calculate_score() -> float:
 
 
 ## Emits [signal selected_with_context] with the best candidate if present,
-## otherwise falls back to [method UtilityFactor.select].
+## otherwise falls back to [method UtilityFactorBase.select].
 func select():
 	if _best_target:
 		selected_with_context.emit(_best_target)

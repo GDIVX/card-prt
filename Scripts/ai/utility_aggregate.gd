@@ -1,6 +1,6 @@
 ## Aggregates child factor scores into a single utility value.
 ##
-## [UtilityAggregate] is a [UtilityFactor] that looks for child nodes
+## [UtilityAggregate] is a [UtilityFactorBase] that looks for child nodes
 ## implementing a `get_score()` method, gathers their scores each frame
 ## it is queried, and combines them into one value using a selectable
 ## [enum CalculationMethod]. This allows composing complex AI utility
@@ -13,7 +13,7 @@
 ## Use [member calculation_method] to choose how scores are combined
 ## (add, subtract, multiply, divide, average, min, or max).
 @tool
-extends UtilityFactor
+extends UtilityFactorBase
 class_name UtilityAggregate
 
 #region Variables

@@ -10,12 +10,16 @@ func start_turn() -> void:
 
 
 func _on_flee_selected() -> void:
-	pass # Replace with function body.
+	print("flee selected :: Replace with implementation")
+	end_turn()
 
 
 func _on_regroup_selected() -> void:
-	pass # Replace with function body.
+	print("regroup selected :: :: Replace with implementation")
+	end_turn()
+
 
 
 func _on_charge_selected() -> void:
-	pass # Replace with function body.
+	print("charge selected :: :: Replace with implementation")
+	end_turn()

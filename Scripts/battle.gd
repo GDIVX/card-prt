@@ -38,7 +38,7 @@ func _ready() -> void:
 		for hero in heroes_data:
 			create_hero(hero, _get_spawn_position())
 	
-	turn_manager.next_turn()
+	turn_manager.start_turn()
 
 
 func _get_spawn_position() -> Vector2:

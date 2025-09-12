@@ -23,6 +23,9 @@ groups_per_faction = {
 2: NodePath("TurnsManager/NeutralGroup")
 }
 
+[node name="Peeper" parent="World/Battle/TurnsManager/EnemyGroup" index="0"]
+position = Vector2(220, -209)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
 environment = SubResource("Environment_8gbba")
 

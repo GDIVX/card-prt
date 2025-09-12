@@ -2,7 +2,7 @@
 ## Base class for calculating a utility factor score
 ## Abstract base for Utility AI "factor" nodes.
 ##
-## A UtilityFactor computes a floating-point score via a subclass-defined
+## A UtilityFactorBase computes a floating-point score via a subclass-defined
 ## [_calculate_score] and combines it with a constant [member bias] and a
 ## random component in the range [[member noise_min], [member noise_max]].
 ## Use this as a building block for Utility AI selectors.
@@ -14,7 +14,7 @@
 ## [b]Example[/b]:
 ## [codeblock]
 ## class_name HealthFactor
-## extends UtilityFactor
+## extends UtilityFactorBase
 ##
 ## var current_health: float
 ## var max_health: float = 100.0
@@ -22,8 +22,9 @@
 ## func _calculate_score() -> float:
 ##     return clampf(current_health / max_health, 0.0, 1.0)
 ## [/codeblock]
-class_name UtilityFactor
+class_name UtilityFactorBase
 extends Node
+
 
 ## Constant value added to the computed score.
 ## Expected range is -1..1.
@@ -46,7 +47,9 @@ signal selected
 ## [returns] The computed score as a float.
 func get_score() -> float:
 	var noise := randf_range(noise_min , noise_max)
-	return _calculate_score() + bias + noise
+	var total :float = _calculate_score() + bias + noise
+	# print("Factor "+name+" score :: "+str(total))
+	return total
 
 
 ## Emits the [signal selected] signal. Helper for selectors.
@@ -58,7 +61,7 @@ func select():
 ## The default implementation reports an error and returns 0.
 ## [returns] The base score before bias/noise.
 func _calculate_score() -> float:
-	push_error("UtilityFactor._calculate_score() is abstract. Override in a subclass.")
+	push_error("UtilityFactorBase._calculate_score() is abstract. Override in a subclass.")
 	return 0
 
 
