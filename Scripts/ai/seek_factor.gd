@@ -32,7 +32,7 @@ class_name SeekFactor
 extends UtilityFactor
 
 ## Path to the domain node whose direct children are evaluated as candidates.
-@export var domain_path: NodePath
+@export var domain_path: NodePath = "/root/World/Battle/TurnsManager/PlayerGroup"
 
 ## Emitted when [method select] chooses a best target.
 ## [param target]: The selected candidate node.

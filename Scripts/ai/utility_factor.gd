@@ -1,3 +1,5 @@
+@icon("res://sprites/IconGodotNode/64x-hidpi/symbols/todo-yellow.png")
+@tool
 ## Base class for calculating a utility factor score
 ## Abstract base for Utility AI "factor" nodes.
 ##
@@ -21,8 +23,6 @@
 ## func _calculate_score() -> float:
 ##     return clampf(current_health / max_health, 0.0, 1.0)
 ## [/codeblock]
-@tool
-@icon("res://sprites/IconGodotNode/64x-hidpi/symbols/todo-yellow.png")
 class_name UtilityFactor
 extends Node
 

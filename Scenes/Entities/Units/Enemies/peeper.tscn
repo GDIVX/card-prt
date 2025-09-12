@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://w5k2ld7ylm7a"]
+[gd_scene load_steps=14 format=3 uid="uid://w5k2ld7ylm7a"]
 
 [ext_resource type="PackedScene" uid="uid://byw6u7y0i7nj" path="res://scenes/Entities/Units/Enemies/enemy.tscn" id="1_lefer"]
 [ext_resource type="Script" uid="uid://jrd5321gkw55" path="res://scenes/Entities/Units/Enemies/peeper.gd" id="2_qnp81"]
 [ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://shaders/unit.gdshader" id="2_xdqpy"]
 [ext_resource type="Script" uid="uid://dlhyfumyogvcm" path="res://scripts/ai/utility_selector.gd" id="4_qnp81"]
 [ext_resource type="Script" uid="uid://cve4wv006jqq7" path="res://scripts/ai/utility_aggregate.gd" id="5_i2pij"]
+[ext_resource type="Script" uid="uid://cgpwiqubrinra" path="res://scripts/ai/utility_factor.gd" id="6_8xsnm"]
+[ext_resource type="Script" uid="uid://08erkc3ylo3l" path="res://scripts/ai/factors/seek_unit.gd" id="7_r6i7f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qnp81"]
 resource_local_to_scene = true
@@ -12,26 +14,97 @@ shader = ExtResource("2_xdqpy")
 shader_parameter/blink_color = Color(1, 1, 1, 1)
 shader_parameter/blink_intensity = 0.0
 
-[node name="Peeper" instance=ExtResource("1_lefer")]
+[sub_resource type="Curve" id="Curve_le3a0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.252252, 0.00389612), -0.0504545, -0.0504545, 0, 0, Vector2(0.65045, 0.490027), 3.92368, 3.92368, 0, 0, Vector2(0.848649, 1), -0.0229664, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_vgfbe"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.204787), -2.79837, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_gwp45"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.502703, 0.801197), -0.767552, -0.767552, 0, 0, Vector2(1, 0.196144), -0.109028, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_tyhwi"]
+_data = [Vector2(0, 0.515958), 0.0, 0.0, 0, 0, Vector2(0.754955, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_oydme"]
+_data = [Vector2(0, 0.148604), 0.0, 0.0, 0, 0, Vector2(0.500901, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.995678), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Peeper" node_paths=PackedStringArray("ai_root") instance=ExtResource("1_lefer")]
 script = ExtResource("2_qnp81")
+ai_root = NodePath("UtilityAI")
 
 [node name="UnitSprite" parent="." index="3"]
 material = SubResource("ShaderMaterial_qnp81")
 
 [node name="UtilityAI" type="Node" parent="." index="11"]
+editor_description = "The agent is a cowardly creature that will avoid risky confrontation, but will go after soft targets if it has the numbers to back it up.
+
+- CHARGE : The agent decided that it feels comfortable to attack. It will pick the best suitable target, preferably a weak and isolated unit, and will move towards it to attack, or if that is not possible, will try to get close 
+- GROUP_COHESION: The agent want to have numerical advantage and it is currently feels threatened by having too many player unit near it and too few of its own allies to back him up.
+ - COWARD: The agent feels that it is loosing the battle due to reciving damage, facing well armored foes or seeing its own allies dies. It is looking to disengage from combat and to seek safty, eitheir by finding allies or hiding behind a cover that block player units' raycasting from it."
 script = ExtResource("4_qnp81")
 metadata/_custom_type_script = "uid://dlhyfumyogvcm"
 
 [node name="CHARGE" type="Node" parent="UtilityAI" index="0"]
 script = ExtResource("5_i2pij")
+calculation_method = 2
+bias = -0.15
 noise_min = -0.3
 noise_max = 0.2
 metadata/_custom_type_script = "uid://cve4wv006jqq7"
 
+[node name="AlliesNearby" type="Node" parent="UtilityAI/CHARGE" index="0"]
+editor_description = "Am I near allies? The more, the better"
+script = ExtResource("6_8xsnm")
+metadata/_custom_type_script = "uid://cgpwiqubrinra"
+
+[node name="PlayerUnitsSpreadOut" type="Node" parent="UtilityAI/CHARGE" index="1"]
+script = ExtResource("6_8xsnm")
+metadata/_custom_type_script = "uid://cgpwiqubrinra"
+
+[node name="SeekTarget" type="Node" parent="UtilityAI/CHARGE" index="2"]
+script = ExtResource("7_r6i7f")
+aggression_curve = SubResource("Curve_le3a0")
+health_curve = SubResource("Curve_vgfbe")
+defense_curve = SubResource("Curve_gwp45")
+distance_curve = SubResource("Curve_tyhwi")
+proximity_to_others_curve = SubResource("Curve_oydme")
+noise_min = -0.3
+noise_max = 0.2
+metadata/_custom_type_script = "uid://gxt08rjweb2k"
+
+[node name="UtilitySelector" type="Node" parent="UtilityAI/CHARGE" index="3"]
+script = ExtResource("4_qnp81")
+metadata/_custom_type_script = "uid://dlhyfumyogvcm"
+
 [node name="REGROUP" type="Node" parent="UtilityAI" index="1"]
 script = ExtResource("5_i2pij")
+calculation_method = 2
 metadata/_custom_type_script = "uid://cve4wv006jqq7"
+
+[node name="AlliesNearby" type="Node" parent="UtilityAI/REGROUP" index="0"]
+editor_description = "Am I near allies? The more, the better"
+script = ExtResource("6_8xsnm")
+bias = 0.3
+noise_min = -0.3
+noise_max = 0.2
+metadata/_custom_type_script = "uid://cgpwiqubrinra"
+
+[node name="UtilitySelector" type="Node" parent="UtilityAI/REGROUP" index="1"]
+script = ExtResource("4_qnp81")
+metadata/_custom_type_script = "uid://dlhyfumyogvcm"
 
 [node name="FLEE" type="Node" parent="UtilityAI" index="2"]
 script = ExtResource("5_i2pij")
+calculation_method = 2
+bias = 0.2
 metadata/_custom_type_script = "uid://cve4wv006jqq7"
+
+[node name="UtilitySelector" type="Node" parent="UtilityAI/FLEE" index="0"]
+script = ExtResource("4_qnp81")
+metadata/_custom_type_script = "uid://dlhyfumyogvcm"

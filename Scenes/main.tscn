@@ -31,3 +31,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[editable path="World/Battle"]
+[editable path="World/Battle/GUI/CardGameplaySystem"]
+[editable path="World/Battle/GUI/CardGameplaySystem/Counter"]
+[editable path="World/Battle/Map"]

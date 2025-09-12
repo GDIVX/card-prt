@@ -11,6 +11,10 @@ var current: Node :
 	get:
 		if turn_order.is_empty(): return null
 		return turn_order[index]
+	
+
+signal turn_started(current : Node)
+
 
 func _ready():
 	turn_order = get_children()
@@ -19,15 +23,21 @@ func _ready():
 
 func next_turn():
 	if current.has_method("start_turn"):
+		print("called [start_turn] on " + current.name)
 		current.start_turn()
-	
-	if current.has_signal("turn_ended"):
-		await current.turn_ended
+		turn_started.emit(current)
 
-	index += 1
+		if current.has_signal("turn_ended"):
+			print("waiting for [signal turn_ended]")
+			await current.turn_ended
+			print("Done waiting")
+
 	# Start the next turn after the current turn had ended
+	index += 1
+	print("Starting next turn")
 	call_deferred("next_turn")
 	
+
 
 func force_turn(turn_index):
 	index = turn_index

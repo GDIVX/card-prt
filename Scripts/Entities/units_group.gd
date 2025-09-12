@@ -17,10 +17,18 @@ enum GroupState{
 
 var state : GroupState
 
+
+func _ready() -> void:
+	for node in get_children():
+		if node is TacticalUnit:
+			add_unit(node)
+
 func add_unit(unit : TacticalUnit):
 	if units.has(unit): return
 
-	add_child(unit)
+	if not get_children().has(unit):
+		add_child(unit)
+		
 	units.append(unit)
 	unit.team.faction = faction
 	unit.health.entity_died.connect(func (): remove_unit(unit))
@@ -53,7 +61,9 @@ func remove_unit(unit : TacticalUnit):
 
 func start_turn() -> void:
 
+	print("Starting turn for " + name)
 	if state == GroupState.DEFEATED or units.size() == 0:
+		print("Group is empty or defeated. Ending turn")
 		call_deferred("end_turn")
 		return
 
@@ -64,6 +74,7 @@ func start_turn() -> void:
 
 
 func end_turn() -> void:
+	print("Ending turn for " + name)
 	state = GroupState.WAITING
 
 	#if the turn was ended early, let all units end their turn

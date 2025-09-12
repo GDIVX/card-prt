@@ -55,7 +55,3 @@ func get_best_factor() -> UtilityFactor:
 			highest_score = score
 			best_action = factor
 	return best_action
-
-
-
-
