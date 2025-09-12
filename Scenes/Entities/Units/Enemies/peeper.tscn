@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://w5k2ld7ylm7a"]
+
+[ext_resource type="PackedScene" uid="uid://byw6u7y0i7nj" path="res://scenes/Entities/Units/Enemies/enemy.tscn" id="1_lefer"]
+[ext_resource type="Script" uid="uid://jrd5321gkw55" path="res://scenes/Entities/Units/Enemies/peeper.gd" id="2_qnp81"]
+[ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://shaders/unit.gdshader" id="2_xdqpy"]
+[ext_resource type="Script" uid="uid://dlhyfumyogvcm" path="res://scripts/ai/utility_selector.gd" id="4_qnp81"]
+[ext_resource type="Script" uid="uid://cve4wv006jqq7" path="res://scripts/ai/utility_aggregate.gd" id="5_i2pij"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qnp81"]
+resource_local_to_scene = true
+shader = ExtResource("2_xdqpy")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[node name="Peeper" instance=ExtResource("1_lefer")]
+script = ExtResource("2_qnp81")
+
+[node name="UnitSprite" parent="." index="3"]
+material = SubResource("ShaderMaterial_qnp81")
+
+[node name="UtilityAI" type="Node" parent="." index="11"]
+script = ExtResource("4_qnp81")
+metadata/_custom_type_script = "uid://dlhyfumyogvcm"
+
+[node name="CHARGE" type="Node" parent="UtilityAI" index="0"]
+script = ExtResource("5_i2pij")
+noise_min = -0.3
+noise_max = 0.2
+metadata/_custom_type_script = "uid://cve4wv006jqq7"
+
+[node name="REGROUP" type="Node" parent="UtilityAI" index="1"]
+script = ExtResource("5_i2pij")
+metadata/_custom_type_script = "uid://cve4wv006jqq7"
+
+[node name="FLEE" type="Node" parent="UtilityAI" index="2"]
+script = ExtResource("5_i2pij")
+metadata/_custom_type_script = "uid://cve4wv006jqq7"

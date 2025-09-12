@@ -1,11 +1,29 @@
+## Aggregates child factor scores into a single utility value.
+##
+## [UtilityAggregate] is a [UtilityFactor] that looks for child nodes
+## implementing a `get_score()` method, gathers their scores each frame
+## it is queried, and combines them into one value using a selectable
+## [enum CalculationMethod]. This allows composing complex AI utility
+## values from simpler, reusable factors.
+##
+## Children can be added or removed at runtime. The node automatically
+## tracks children entering and exiting the tree and only considers
+## children that implement `get_score()`.
+##
+## Use [member calculation_method] to choose how scores are combined
+## (add, subtract, multiply, divide, average, min, or max).
+@tool
 extends UtilityFactor
 class_name UtilityAggregate
 
 #region Variables
+## How to combine scores from child factors.
 @export var calculation_method : CalculationMethod
+
 
 var factors : Array
 
+## Supported aggregation operations.
 enum CalculationMethod {
 	ADD,
 	SUBTRACT,
@@ -24,10 +42,14 @@ func _ready() -> void:
 	child_exiting_tree.connect(factors.erase)
 
 
+## Registers a child node if it exposes `get_score()`.
+## @param child: Candidate node to evaluate and possibly track.
 func _evaluate_child(child : Node):
 	if child.has_method("get_score"): factors.append(child)
 
 
+## Returns the aggregated score from all tracked factors.
+## @return The combined utility score according to [member calculation_method].
 func _calculate_score() -> float:
 	var scores : Array[float]
 	for factor in factors:
@@ -38,6 +60,7 @@ func _calculate_score() -> float:
 
 
 # ---- Math helpers (static: no instance state) ----
+## Combines an array of scores using a given method.
 static func calculate_final_score(method: CalculationMethod, scores: Array[float]) -> float:
 	match method:
 		CalculationMethod.ADD:
@@ -123,4 +146,3 @@ static func _max(a: Array[float]) -> float:
 	for i in range(1, a.size()):
 		if a[i] > m: m = a[i]
 	return m
-

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://byw6u7y0i7nj"]
+
+[ext_resource type="PackedScene" uid="uid://dtr5kbqy68nck" path="res://scenes/Entities/unit.tscn" id="1_bppmt"]
+[ext_resource type="Shader" uid="uid://uov1uvsvkgaa" path="res://shaders/unit.gdshader" id="2_iia1f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_malig"]
+resource_local_to_scene = true
+shader = ExtResource("2_iia1f")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[node name="Enemy" instance=ExtResource("1_bppmt")]
+
+[node name="UnitSprite" parent="." index="3"]
+material = SubResource("ShaderMaterial_malig")
+
+[node name="Team" parent="." index="7"]
+faction = 1
+
+[node name="HurtBox" parent="." index="8"]
+collision_layer = 13

@@ -1,23 +1,64 @@
 ## Base class for calculating a utility factor score
+## Abstract base for Utility AI "factor" nodes.
+##
+## A UtilityFactor computes a floating-point score via a subclass-defined
+## [_calculate_score] and combines it with a constant [member bias] and a
+## random component in the range [[member noise_min], [member noise_max]].
+## Use this as a building block for Utility AI selectors.
+##
+## To use, extend this class and override [_calculate_score] to return a
+## normalized score (commonly 0..1) based on your context. Call
+## [method get_score] to obtain the final value used by the selector.
+##
+## [b]Example[/b]:
+## [codeblock]
+## class_name HealthFactor
+## extends UtilityFactor
+##
+## var current_health: float
+## var max_health: float = 100.0
+##
+## func _calculate_score() -> float:
+##     return clampf(current_health / max_health, 0.0, 1.0)
+## [/codeblock]
+@tool
+@icon("res://sprites/IconGodotNode/64x-hidpi/symbols/todo-yellow.png")
 class_name UtilityFactor
 extends Node
 
-@export_range(0,1) var bias : float = 0.0
-@export var noise_range : Vector2
+## Constant value added to the computed score.
+## Expected range is -1..1.
+@export_range(-1,1) var bias : float = 0.0
+## Minimum random noise added to the score (inclusive).
+## Automatically keeps [member noise_max] >= [member noise_min]. Range: -1..1.
+@export_range(-1, 1) var noise_min: float = 0.0:
+	set(value):
+		noise_min = value
+		if noise_max < value: 
+			noise_max = value
+## Maximum random noise added to the score (inclusive). Range: -1..1.
+@export_range(-1, 1) var noise_max: float = 0.0
 
+
+## Emitted when [method select] is called.
 signal selected
 
+## Returns the final score: [_calculate_score] + [member bias] + random noise.
+## [returns] The computed score as a float.
 func get_score() -> float:
-	var noise := randf_range(noise_range.x , noise_range.y)
+	var noise := randf_range(noise_min , noise_max)
 	return _calculate_score() + bias + noise
 
 
+## Emits the [signal selected] signal. Helper for selectors.
 func select():
 	selected.emit()
 
 ## Abstract entry point
+## Override in subclasses to provide the base score used by [method get_score].
+## The default implementation reports an error and returns 0.
+## [returns] The base score before bias/noise.
 func _calculate_score() -> float:
 	push_error("UtilityFactor._calculate_score() is abstract. Override in a subclass.")
-	return bias
-
+	return 0
 
