@@ -7,3 +7,15 @@ func start_turn() -> void:
 	ai_root.select_factor()
 
 	
+
+
+func _on_flee_selected() -> void:
+	pass # Replace with function body.
+
+
+func _on_regroup_selected() -> void:
+	pass # Replace with function body.
+
+
+func _on_charge_selected() -> void:
+	pass # Replace with function body.

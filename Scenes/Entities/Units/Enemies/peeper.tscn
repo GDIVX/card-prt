@@ -112,3 +112,7 @@ script = ExtResource("5_i2pij")
 calculation_method = 2
 bias = 0.2
 metadata/_custom_type_script = "uid://cve4wv006jqq7"
+
+[connection signal="selected" from="UtilityAI/CHARGE" to="." method="_on_charge_selected"]
+[connection signal="selected" from="UtilityAI/REGROUP" to="." method="_on_regroup_selected"]
+[connection signal="selected" from="UtilityAI/FLEE" to="." method="_on_flee_selected"]
