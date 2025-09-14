@@ -12,7 +12,6 @@
 ##
 ## Use [member calculation_method] to choose how scores are combined
 ## (add, subtract, multiply, divide, average, min, or max).
-@tool
 extends UtilityFactorBase
 class_name UtilityAggregate
 
