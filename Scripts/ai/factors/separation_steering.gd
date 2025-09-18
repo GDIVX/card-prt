@@ -18,7 +18,7 @@ func _calculate_steering() -> Vector2:
         if agent is not Node2D: continue
         
         var to_me :Vector2 = agent.global_position.direction_to(this.global_position)
-        var distance := agent.global_position.distance_to(this.global_position)
+        var distance :float= agent.global_position.distance_to(this.global_position)
 
         if distance <= 0.001 or distance > radius: continue
 
