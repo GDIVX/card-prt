@@ -24,6 +24,9 @@ var player_units: Dictionary[String, PlayerUnit]
 
 
 func _ready() -> void:
+
+	Services.register("Battle" , self)
+
 	if not card_gameplay_system:
 		push_error("CardGameplaySystem is not set. Please set it in the inspector.")
 		return

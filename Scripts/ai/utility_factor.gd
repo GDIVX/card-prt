@@ -22,6 +22,7 @@
 ## func _calculate_score() -> float:
 ##     return clampf(current_health / max_health, 0.0, 1.0)
 ## [/codeblock]
+@abstract
 class_name UtilityFactorBase
 extends Node
 
@@ -60,9 +61,8 @@ func select():
 ## Override in subclasses to provide the base score used by [method get_score].
 ## The default implementation reports an error and returns 0.
 ## [returns] The base score before bias/noise.
-func _calculate_score() -> float:
-	push_error("UtilityFactorBase._calculate_score() is abstract. Override in a subclass.")
-	return 0
+@abstract
+func _calculate_score() -> float
 
 
 #Helpers

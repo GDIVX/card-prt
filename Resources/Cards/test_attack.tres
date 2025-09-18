@@ -15,7 +15,6 @@
 [sub_resource type="Resource" id="Resource_1lylf"]
 script = ExtResource("2_401c5")
 damage_value = 6
-damage_type = 0
 metadata/_custom_type_script = "uid://c0umi5wu1if7i"
 
 [sub_resource type="Curve" id="Curve_f4odl"]
@@ -58,20 +57,15 @@ metadata/_custom_type_script = "uid://c301ur022dni0"
 [sub_resource type="Resource" id="Resource_odagn"]
 script = ExtResource("6_f4odl")
 relation_mask = 1
-mode = 0
 strategy = SubResource("Resource_d0uci")
 visualScene = ExtResource("8_j3n6i")
-max_targets = 1
-min_targets = 1
 repeats = 3
 max_range = 300.0
-required_nodes = Array[NodePath]([NodePath("Health")])
 metadata/_custom_type_script = "uid://hq6poehfo3mx"
 
 [resource]
 script = ExtResource("5_bcf7w")
 card_style = SubResource("Resource_4uo8f")
-rarity = "Common"
 cost = 1
 selection = SubResource("Resource_odagn")
 card_effects = Array[ExtResource("1_bofkc")]([SubResource("Resource_f4odl")])

@@ -20,6 +20,10 @@ func _on_regroup_selected() -> void:
 
 
 
-func _on_charge_selected() -> void:
-	print("charge selected :: :: Replace with implementation")
+
+func _on_move_to_attack_selected_with_steering(steering: Vector2) -> void:
+	var movement := steering if steering.length() <= remaining_movement_length \
+	else steering.normalized() * remaining_movement_length
+
+	await move_to(movement)
 	end_turn()

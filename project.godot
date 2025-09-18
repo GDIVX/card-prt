@@ -12,7 +12,17 @@ config_version=5
 
 config/name="Card Prt"
 run/main_scene="uid://bdmn1auii1xpm"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
+
+[autoload]
+
+Services="*res://scenes/Global/service_locator.tscn"
+
+[global_group]
+
+UnitGroups=""
+Player=""
+Enemy=""
 
 [layer_names]
 

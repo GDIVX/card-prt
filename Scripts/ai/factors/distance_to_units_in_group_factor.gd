@@ -1,18 +1,17 @@
 class_name NearbyUnitsFactor
 extends UtilityFactorBase
 
-@export var group_path: NodePath = ^"/root/Main/World/Battle/TurnsManager/PlayerGroup"
+@export var team_group : StringName
 @export var curve: Curve
 
+
 func _calculate_score() -> float:
-	var group := get_node_or_null(group_path)
+
 	var agent := get_agent()
-	if group == null or agent == null:
-		return 0.0
 
 	# Collect unit positions
 	var units: Array[Node2D] = []
-	for c in group.get_children():
+	for c in get_tree().get_nodes_in_group(team_group):
 		if c is Node2D:
 			units.append(c)
 	var n := units.size()

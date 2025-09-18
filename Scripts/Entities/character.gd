@@ -115,6 +115,7 @@ func move_to(end_position: Vector2) -> void:
 	var used_points :int = max(ceili(global_position.distance_to(end_position) / pixels_moved_per_movement) , 0)
 	movement_points.value -= used_points
 	nav_agent.target_position = end_position
+	await nav_agent.navigation_finished
 
 
 func _on_navigation_agent_2d_velocity_computed(safe_velocity:Vector2) -> void:
@@ -124,6 +125,7 @@ func _on_navigation_agent_2d_velocity_computed(safe_velocity:Vector2) -> void:
 
 func start_turn() -> void:
 	if play_state == PlayState.DEAD: return
+	print(name  + " STARTED TURN")
 	play_state = PlayState.ACTIVE
 	movement_points.value = movement_points_per_turn
 	turn_started.emit()
@@ -131,6 +133,7 @@ func start_turn() -> void:
 
 func end_turn() -> void:
 	if play_state == PlayState.DEAD: return
+	print(name  + " ENDED TURN")
 	play_state = PlayState.SLEEPING
 	movement_points.value = 0
 	turn_ended.emit()

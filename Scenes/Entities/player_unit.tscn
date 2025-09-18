@@ -31,7 +31,7 @@ shader_parameter/opacity = 0.8
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v52jf"]
 size = Vector2(30, 30)
 
-[node name="PlayerUnit" instance=ExtResource("1_dwi70")]
+[node name="PlayerUnit" groups=["Player"] instance=ExtResource("1_dwi70")]
 script = ExtResource("2_tlcot")
 
 [node name="ClickAndDragMovement" type="Node" parent="." index="0" node_paths=PackedStringArray("movement_points", "drag", "path_line", "unit")]
@@ -44,6 +44,9 @@ metadata/_custom_type_script = "uid://dyfpgk65mqpln"
 
 [node name="UnitSprite" parent="." index="4"]
 material = SubResource("ShaderMaterial_d8fa7")
+
+[node name="Counter" parent="EntityGui" index="1"]
+layout_mode = 0
 
 [node name="CharacterDrag" parent="." index="6" instance=ExtResource("2_sqtjf")]
 smoothness_speed = 5.0

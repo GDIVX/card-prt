@@ -1,18 +1,20 @@
 class_name GroupCohesionFactor
 extends UtilityFactorBase
 
-@export var group_path: NodePath = ^"/root/Main/World/Battle/TurnsManager/PlayerGroup"
+@export var team_group : StringName
 @export var curve: Curve
 @export var soft_scale: float = 200.0  # tunable distance scale (pixels)
 
-func _calculate_score() -> float:
-	var group := get_node_or_null(group_path)
-	if group == null:
+func _calculate_score() -> float: 
+
+
+	#if the group has only a single unit, return 0
+	if get_tree().get_node_count_in_group(team_group) == 1:
 		return 0.0
 
 	# Collect positions of units in the group (Node2D only)
 	var positions: Array[Vector2] = []
-	for child in group.get_children():
+	for child in get_tree().get_nodes_in_group(team_group):
 		if child is Node2D:
 			positions.append((child as Node2D).global_position)
 

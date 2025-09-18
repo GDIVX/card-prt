@@ -132,17 +132,17 @@ health_object = NodePath("../StaticBody2D/Health")
 [node name="TurnsManager" type="Node" parent="."]
 script = ExtResource("13_6ni85")
 
-[node name="PlayerGroup" type="Node" parent="TurnsManager"]
+[node name="PlayerGroup" type="Node" parent="TurnsManager" groups=["UnitGroups"]]
 script = ExtResource("13_vd41i")
 
-[node name="EnemyGroup" type="Node" parent="TurnsManager"]
+[node name="EnemyGroup" type="Node" parent="TurnsManager" groups=["UnitGroups"]]
 script = ExtResource("13_vd41i")
 faction = 1
 
 [node name="Peeper" parent="TurnsManager/EnemyGroup" instance=ExtResource("15_vceff")]
 position = Vector2(-232, -209)
 
-[node name="NeutralGroup" type="Node" parent="TurnsManager"]
+[node name="NeutralGroup" type="Node" parent="TurnsManager" groups=["UnitGroups"]]
 script = ExtResource("13_vd41i")
 faction = 2
 
